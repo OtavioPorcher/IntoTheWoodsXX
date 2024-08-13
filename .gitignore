@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+#Visual Studio BS
+.vs
+JogoSFML
+x64
+Debug
+JogoSFML.sln
+JogoSFML.vcxproj
+JogoSFML.vcxproj.filters
+JogoSFML.vcxproj.user
