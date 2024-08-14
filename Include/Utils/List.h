@@ -20,7 +20,7 @@ namespace Utils
 			Element<ETYPE>* pPrev;
 			const unsigned int id;
 		public:
-			Element(ETYPE* dI = NULL, const unsigned int i) : pData(dI), pNext(NULL), pPrev(NULL), id(i) : {	}
+			Element(ETYPE* dI = NULL, const unsigned int i = -1) : pData(dI), pNext(NULL), pPrev(NULL), id(i)  {	}
 			~Element()
 			{
 				if (pData)
@@ -29,10 +29,10 @@ namespace Utils
 			}
 
 			ETYPE* getData() { return pData; }
-			Element<ETYPE>* getNext{ return pNext; }
-			Element<ETYPE>* getPrev{ return pPrev; }
+			Element<ETYPE>* getNext(){ return pNext; }
+			Element<ETYPE>* getPrev(){ return pPrev; }
 
-			void setData(ETYPE* d) { pData = e; }
+			void setData(ETYPE* d) { pData = d; }
 			void setNext(Element<ETYPE>* n) { pNext = n; }
 			void setPrev(Element<ETYPE>* p) { pPrev = p; }
 		};
@@ -40,7 +40,7 @@ namespace Utils
 		class Iterator
 		{
 		private:
-			Element<ITYPE>* pE
+			Element<ITYPE>* pE;
 
 		public:
 			Iterator(Element<ITYPE>* pe = NULL) : pE(pe) {	}
@@ -72,26 +72,24 @@ namespace Utils
 			bool operator==(Element<ITYPE>* pE2)const { return pE == pE2; }
 			bool operator!=(Element<ITYPE>* pE2)const { return !(pE == pE2); }
 			void operator= (Element<ITYPE>* pE2) { pE = pE2; }
-			ITYPE* operator*() { return pE->getData }
-			Element<ITYPE>* getElement() { return pE }
+			ITYPE* operator*() { return pE->getData; }
+			Element<ITYPE>* getElement() { return pE; }
 		};
-		template <class LTYPE>
-		class List
-		{
+	
 		private:
-			Element<LTYPE>* pFirst;
-			Element<LTYPE>* pLast;
+			Element<TYPE>* pFirst;
+			Element<TYPE>* pLast;
 			unsigned int size;
 
-			void insert(LTYPE* dI, const bool optionIndex) /* InsertFront: optionIndex == 1 | InsertBack: optionIndex == 0 */
+			void insert(TYPE* dI, const bool optionIndex) /* InsertFront: optionIndex == 1 | InsertBack: optionIndex == 0 */
 			{
-				if !(dI)
+				if (!dI)
 				{
 					std::cout << "ERROR: Unable to insert a NULL pointer to the List" << std::endl;
 					return;
 				}
-				Element<LTYPE>* aux = new Element<LTYPE>(dI, size);
-				if !(aux)
+				Element<TYPE>* aux = new Element<TYPE>(dI, size);
+				if (!aux)
 				{
 					std::cout << "ERROR: Unable to allocate memory" << std::endl;
 					return;
@@ -111,7 +109,7 @@ namespace Utils
 
 					return;
 				}
-				if !(optionIndex)
+				if (!optionIndex)
 				{
 					if (pFirst)
 					{
@@ -130,52 +128,66 @@ namespace Utils
 			List() : pFirst(NULL), pLast(NULL), size(0) {		}
 			~List()
 			{
-				this->clear();
+				if (empty())
+					return;
+				Element<TYPE>* pAux = NULL;
+				int size_aux = size;
+				while(pFirst!=NULL)
+				{
+					pAux = pFirst;
+					remove(0);
+				}
 				pFirst = NULL;
 				pLast = NULL;
 			}
 
-			void insertFront(LTYPE* dI) { insert(dI, true); }
-			void insertBack(LTYPE* dI) { insert(dI, false); }
-
-			LTYPE* operator[](int i)
+			void insertFront(TYPE* dI) { insert(dI, true); }
+			void insertBack(TYPE* dI) { insert(dI, false); }
+			
+			Element<TYPE>* runThrough(int index)
 			{
-				if (idx < 0 || idx > size)
+				if (index < 0 || index > size)
 				{
 					std::cout << "ERROR: List Segmentation Fault" << std::endl;
 					exit(1);
 				}
-				Element<T>* pAux = pFirst;
+				Element<TYPE>* pAux = pFirst;
 				if (!pAux)
 				{
 					std::cout << "ERROR: NULL Pointer List Index";
 					exit(1);
 				}
-				for (int i = 0; i < idx; i++)
+				for (int i = 0; i < index; i++)
 				{
-					pAux = pAux->next;
+					pAux = pAux->getNext();
 				}
-				return pAux->data;
+				return pAux;
+			}
+			TYPE* operator[](int index)
+			{
+				return *runThrough(index);
 			}
 
-			void remove(int index)
+			void remove(unsigned int index)
 			{
 				if (index >= size)
 				{
-					cout << "ERROR: Segmentation fault"
+					std::cout << "ERROR: Segmentation fault" << std::endl;
 						return;
 				}
-				Element<LTYPE>* pAux = operator[](index);
-				Element<LTYPE>* pPrevAux = pAux->getPrev();
+				Element<TYPE>* pAux = runThrough(index);
+				Element<TYPE>* pPrevAux = pAux->getPrev();
 
 				if (!pAux)
 				{
-					cout << "ERROR: Can't remove a NULL element"
+					std::cout << "ERROR: Can't remove a NULL element" << std::endl;
 						return;
 				}
 				if (pAux == pLast)
 					pLast = pPrevAux;
-				pPrevAux->getNext(pAux->getNext());
+				if(pAux == pFirst)
+					pFirst = pAux->getNext();
+				pPrevAux->setNext(pAux->getNext());
 
 				pAux = NULL;
 				pPrevAux = NULL;
@@ -183,9 +195,9 @@ namespace Utils
 			}
 
 				const bool empty()const { return(size == 0 ? true : false); }
-				const unsigned int()const { return size; }
+				const unsigned int getSize()const { return size; }
 
 
 			};
-		};
-	}
+		}
+	

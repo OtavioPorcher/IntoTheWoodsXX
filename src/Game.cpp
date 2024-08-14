@@ -1,11 +1,14 @@
 #include "..\Include\Game.h"
+#include <iostream>
 
 Game::Game() :
 	window(sf::VideoMode(RES_X, RES_Y), "Into The Woods++"),
-	player({ 60.0f,60.0f },{0.3f,0.3f})
+	player({ 60.0f,60.0f },{0.3f,0.3f}),
+	pList()
 	
 {
-	
+	pList.insertFront(&player);
+	std::cout << pList.getSize() << std::endl;
 }
 Game::~Game()
 {
