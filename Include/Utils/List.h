@@ -1,14 +1,16 @@
 #pragma once
 
 #include <iostream>
+#include <stdlib.h>
 
-Namespace Utils
+namespace Utils
 {
 
 	template <class TYPE>
 	class List
 	{
 	public:
+
 		template<class ETYPE>
 		class Element
 		{
@@ -18,7 +20,7 @@ Namespace Utils
 			Element<ETYPE>* pPrev;
 			const unsigned int id;
 		public:
-			Element(ETYPE* dI = NULL, const unsigned int i): pData(dI), pNext(NULL), pPrev(NULL), id(i) : {	}
+			Element(ETYPE* dI = NULL, const unsigned int i) : pData(dI), pNext(NULL), pPrev(NULL), id(i) : {	}
 			~Element()
 			{
 				if (pData)
@@ -27,7 +29,7 @@ Namespace Utils
 			}
 
 			ETYPE* getData() { return pData; }
-			Element<ETYPE>* getNext { return pNext; }
+			Element<ETYPE>* getNext{ return pNext; }
 			Element<ETYPE>* getPrev{ return pPrev; }
 
 			void setData(ETYPE* d) { pData = e; }
@@ -41,17 +43,17 @@ Namespace Utils
 			Element<ITYPE>* pE
 
 		public:
-			Iterator(Element<ITYPE>* pe = NULL): pE(pe) {	}
+			Iterator(Element<ITYPE>* pe = NULL) : pE(pe) {	}
 			~Iterator() {	}
 			Iterator& operator++()
-			{ 
+			{
 				pE = pE->getNext();
-				return *this; 
+				return *this;
 			}
 			Iterator& operator+=(int num)
 			{
 				int i;
-				for(i = 0; i<num; i++)
+				for (i = 0; i < num; i++)
 					pE = pE->getNext();
 				return *this;
 			}
@@ -70,8 +72,8 @@ Namespace Utils
 			bool operator==(Element<ITYPE>* pE2)const { return pE == pE2; }
 			bool operator!=(Element<ITYPE>* pE2)const { return !(pE == pE2); }
 			void operator= (Element<ITYPE>* pE2) { pE = pE2; }
-			ITYPE* operator*() {return pE->getData}
-			Element<ITYPE>* getElement() {return pE}
+			ITYPE* operator*() { return pE->getData }
+			Element<ITYPE>* getElement() { return pE }
 		};
 		template <class LTYPE>
 		class List
@@ -125,7 +127,7 @@ Namespace Utils
 			}
 
 		public:
-			List(): pFirst(NULL), pLast(NULL), size(0) {		}
+			List() : pFirst(NULL), pLast(NULL), size(0) {		}
 			~List()
 			{
 				this->clear();
@@ -136,12 +138,54 @@ Namespace Utils
 			void insertFront(LTYPE* dI) { insert(dI, true); }
 			void insertBack(LTYPE* dI) { insert(dI, false); }
 
-			//void remove FAZER NA CLASSE ELEMENTO!!!
+			LTYPE* operator[](int i)
+			{
+				if (idx < 0 || idx > size)
+				{
+					std::cout << "ERROR: List Segmentation Fault" << std::endl;
+					exit(1);
+				}
+				Element<T>* pAux = pFirst;
+				if (!pAux)
+				{
+					std::cout << "ERROR: NULL Pointer List Index";
+					exit(1);
+				}
+				for (int i = 0; i < idx; i++)
+				{
+					pAux = pAux->next;
+				}
+				return pAux->data;
+			}
 
-			const bool empty()const { return(size == 0 ? true : false); }
-			const unsigned int()const { return size; }
+			void remove(int index)
+			{
+				if (index >= size)
+				{
+					cout << "ERROR: Segmentation fault"
+						return;
+				}
+				Element<LTYPE>* pAux = operator[](index);
+				Element<LTYPE>* pPrevAux = pAux->getPrev();
 
-			
+				if (!pAux)
+				{
+					cout << "ERROR: Can't remove a NULL element"
+						return;
+				}
+				if (pAux == pLast)
+					pLast = pPrevAux;
+				pPrevAux->getNext(pAux->getNext());
+
+				pAux = NULL;
+				pPrevAux = NULL;
+				size--;
+			}
+
+				const bool empty()const { return(size == 0 ? true : false); }
+				const unsigned int()const { return size; }
+
+
+			};
 		};
-	};
-}
+	}
