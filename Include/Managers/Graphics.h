@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-//incompleto ainda
+
 namespace Managers {
 
     class Graphics {
@@ -11,19 +11,23 @@ namespace Managers {
         std::map<const char*, sf::Texture*> textureMap;
         sf::Clock clock;
         sf::Font* font;
+        static float dt;
         static Managers::Graphics* instance;
         Graphics();
     public:
         ~Graphics();
         static Graphics* getInstance();
-        void Render(sf::RectangleShape* body); //Pode ser sprite
+        void Render(sf::RectangleShape* body);
         void Render(sf::Text* text);
         void display();
         void clear();
-        bool isWindowOpen();
+        bool isWindowOpen() const;
         void closeWindow();
         void handleWindowSize();
         sf::Vector2u getWindowSize() const;
-
+        void centerView(Math::CoordF pos);
+        sf::Texture* loadTexture(const char* path);
+        sf::Font* getFont();
+        void updateDeltaTime();
     };
 }
