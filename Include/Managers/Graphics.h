@@ -17,8 +17,8 @@ namespace Managers {
     public:
         ~Graphics();
         static Graphics* getInstance();
-        void Render(sf::RectangleShape* body);
-        void Render(sf::Text* text);
+        void render(sf::RectangleShape* body);
+        void render(sf::Text* text);
         void display();
         void clear();
         bool isWindowOpen() const;
