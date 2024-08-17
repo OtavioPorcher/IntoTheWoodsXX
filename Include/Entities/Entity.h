@@ -4,7 +4,7 @@
 
 namespace Entities
 {
-	class Entities
+	class Entity
 	{
 	private:
 		unsigned int id;
@@ -13,11 +13,16 @@ namespace Entities
 		sf::Vector2f size;
 		sf::Vector2f pos;
 		sf::Vector2f vel;
+		sf::RectangleShape body;
 
 	public:
-		Entities();
-		~Entities();
+		Entity(sf::Vector2f size = { 50.0f,50.0f });
+		~Entity();
 
-		virtual void move() = 0;
+		virtual void Move() = 0;
+		virtual void setGrounded(bool a) = 0;
+		void Gravity();
+
+		const sf::RectangleShape getBody() { return body; }
 	};
 }

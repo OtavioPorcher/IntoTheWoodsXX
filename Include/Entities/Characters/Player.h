@@ -8,11 +8,25 @@ namespace Entities
 	{
 		class Player:public Character
 		{
+		private:
+			unsigned int lives;
+			float friction;
+			bool grounded;
+			bool MovingLeft;
+			bool MovingRight;
+			bool Falling;
+			bool Blocking;
 		public:
-			Player(sf::Vector2f size = { 50.0f,50.0f }, sf::Vector2f vel = { 0.1f, 0.1f });
+			Player();
 			~Player();
 			
-			void move();
+			void Move();
+			void Jump();
+			void MoveRight(const bool b);
+			void MoveLeft(const bool b);
+			void Fall();
+			void Block(bool b);
+			void setGrounded(bool b);
 		};
 	}
 
