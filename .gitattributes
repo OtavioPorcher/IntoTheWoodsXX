@@ -62,4 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 ###############################################################################
-SFML-2.6.1/* linguist-vendored
+SFML-2.6.1/** linguist-vendored
