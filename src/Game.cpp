@@ -3,7 +3,7 @@
 
 Game::Game() :
 	window(sf::VideoMode(RES_X, RES_Y), "Into The Woods++"),
-	player({ 60.0f,60.0f },{0.3f,0.3f}),
+	player(),
 	pList()
 	
 {
@@ -29,7 +29,8 @@ void Game::executar()
 		window.draw(player.getBody());
 		window.display();
 
-		player.move();
+		player.Move();
 		
 	}
+
 }

@@ -128,17 +128,20 @@ namespace Utils
 			List() : pFirst(NULL), pLast(NULL), size(0) {		}
 			~List()
 			{
+
 				if (empty())
 					return;
 				Element<TYPE>* pAux = NULL;
-				int size_aux = size;
+
 				while(pFirst!=NULL)
 				{
 					pAux = pFirst;
 					remove(0);
 				}
+
 				pFirst = NULL;
 				pLast = NULL;
+
 			}
 
 			void insertFront(TYPE* dI) { insert(dI, true); }
@@ -146,7 +149,7 @@ namespace Utils
 			
 			Element<TYPE>* runThrough(int index)
 			{
-				if (index < 0 || index > size)
+				if (index < 0 || index > (int)size)
 				{
 					std::cout << "ERROR: List Segmentation Fault" << std::endl;
 					exit(1);
@@ -176,21 +179,24 @@ namespace Utils
 						return;
 				}
 				Element<TYPE>* pAux = runThrough(index);
-				Element<TYPE>* pPrevAux = pAux->getPrev();
+				//Element<TYPE>* pPrevAux = pAux->getPrev();
 
 				if (!pAux)
 				{
 					std::cout << "ERROR: Can't remove a NULL element" << std::endl;
 						return;
 				}
+
 				if (pAux == pLast)
-					pLast = pPrevAux;
-				if(pAux == pFirst)
+					pLast = pAux->getPrev();
+				if ((pAux == pFirst)&&(pAux->getNext()))
 					pFirst = pAux->getNext();
-				pPrevAux->setNext(pAux->getNext());
+				if (pAux != pFirst)
+					(pAux->getPrev())->setNext(pAux->getNext());
+				else
+					pFirst = NULL;
 
 				pAux = NULL;
-				pPrevAux = NULL;
 				size--;
 			}
 

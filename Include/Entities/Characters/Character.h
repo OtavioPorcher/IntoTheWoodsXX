@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\Entities\Entities.h"
+#include "..\Entity.h"
 
 namespace Entities
 {
@@ -8,17 +8,17 @@ namespace Entities
 	namespace Characters
 	{
 
-		class Character
+		class Character : public Entity
 		{
 		protected:
-			sf::RectangleShape body;
-			sf::Vector2f vel;
+		
 		public:
-			Character(sf::Vector2f size = { 50.0f,50.0f }, sf::Vector2f vel = { 0.1f, 0.1f });
+			Character(sf::Vector2f size = { 50.0f,50.0f });
 			virtual ~Character();
-			virtual void move() = 0;
+			virtual void Move() = 0;
+			virtual void setGrounded(bool a) = 0;
 
-			const sf::RectangleShape getBody() { return body; }
+		
 		};
 	}
 }
