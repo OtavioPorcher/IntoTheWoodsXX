@@ -1,3 +1,3 @@
-#include "../include/Entities/Obstacles/Obstacle.h"
+//#include "../include/Entities/Obstacles/Obstacle.h"
 
-Entities::Characters::
+//Entities::Characters::
