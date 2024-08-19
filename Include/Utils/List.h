@@ -69,8 +69,12 @@ namespace Utils
 					pE = pE->getPrev();
 				return *this;
 			}
-			bool operator==(Element<ITYPE>* pE2)const { return pE == pE2; }
-			bool operator!=(Element<ITYPE>* pE2)const { return !(pE == pE2); }
+			const bool operator==(Element<ITYPE>* pE2)const { return pE == pE2; }
+			const bool operator==(ITYPE* pD2)const { return pE->getData() == pD2; }
+
+			const bool operator!=(Element<ITYPE>* pE2)const { return !(pE == pE2); }
+			const bool operator!=(ITYPE* pD2)const { return !(pE->getData() == pD2); }
+			
 			void operator= (Element<ITYPE>* pE2) { pE = pE2; }
 			ITYPE* operator*() { return pE->getData; }
 			Element<ITYPE>* getElement() { return pE; }
@@ -122,22 +126,28 @@ namespace Utils
 
 					return;
 				}
+				
 			}
 
 		public:
-			List() : pFirst(NULL), pLast(NULL), size(0) {		}
-			~List()
-			{
 
+			void clear()
+			{
 				if (empty())
 					return;
 				Element<TYPE>* pAux = NULL;
 
-				while(pFirst!=NULL)
+				while (pFirst != NULL)
 				{
 					pAux = pFirst;
-					remove(0);
+					remove((unsigned int) 0);
 				}
+			}
+
+			List() : pFirst(NULL), pLast(NULL), size(0) {		}
+			~List()
+			{
+				clear();
 
 				pFirst = NULL;
 				pLast = NULL;
@@ -171,6 +181,21 @@ namespace Utils
 				return *runThrough(index);
 			}
 
+			int find(TYPE* pE)
+			{
+				unsigned int i = 0;
+				Iterator<TYPE> it = pFirst;
+
+				for (it; it != end(); it.operator++())
+				{
+					if ((it.getElement())->getData() == pE)
+						return i;
+					i++;
+				}
+
+				return -1;
+			}
+
 			void remove(unsigned int index)
 			{
 				if (index >= size)
@@ -199,9 +224,19 @@ namespace Utils
 				pAux = NULL;
 				size--;
 			}
+			void remove(TYPE* pT)
+			{
+				int aux = find(pT);
+				if (aux < 0)
+					return;
+				remove((unsigned int)aux);
+			}
 
 				const bool empty()const { return(size == 0 ? true : false); }
 				const unsigned int getSize()const { return size; }
+
+				Element<TYPE>* begin() { return pFirst; }
+				Element<TYPE>* end()   { return pLast->getNext();  }
 
 
 			};

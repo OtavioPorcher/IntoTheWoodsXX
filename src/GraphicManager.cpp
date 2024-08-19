@@ -3,19 +3,21 @@
 
 using namespace Managers;
 
-Graphics* Graphics::instance = nullptr;
-//incompleto e talvez no lugar errado
-float Graphics::dt = 0;
 
-Graphics::Graphics() {
+
+
+GraphicManager::GraphicManager() {
     window = (new sf::RenderWindow(sf::VideoMode(RES_X, RES_Y), "Into the woods++"));
 }
-Graphics::~Graphics() {
+GraphicManager::~GraphicManager() {
     delete(window);
 }
-void Graphics::render(sf::RectangleShape* body) {
+void GraphicManager::render(sf::RectangleShape* body) {
     window->draw(*body);
 }
-void Graphics::render(sf::Text* text) {
+void GraphicManager::render(sf::Text* text) {
     window->draw(*text);
 }
+
+float GraphicManager::dt(0.0f);
+GraphicManager* GraphicManager::instance(NULL);

@@ -5,19 +5,23 @@
 
 namespace Managers {
 
-    class Graphics {
+    class GraphicManager {
     private:
+        static Managers::GraphicManager* instance;
+        GraphicManager();
+
         sf::RenderWindow* window;
         sf::View view;
-        std::map<const char*, sf::Texture*> textureMap;
+        //std::map<const char*, sf::Texture*> textureMap;
         sf::Clock clock;
         sf::Font* font;
+
         static float dt;
-        static Managers::Graphics* instance;
-        Graphics();
+        
     public:
-        ~Graphics();
-        static Graphics* getInstance();
+        static GraphicManager* getInstance();
+        ~GraphicManager();
+        
         void render(sf::RectangleShape* body);
         void render(sf::Text* text);
         void display();

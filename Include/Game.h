@@ -2,7 +2,7 @@
 
 #include "..\Include\Entities\Characters\Player.h"
 #include "..\Include\Properties\GraphicProps.h"
-#include "SFML/Graphics.hpp"
+#include <SFML\Graphics.hpp>
 #include "..\Include\Utils\List.h"
 
 

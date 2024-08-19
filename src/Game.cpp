@@ -8,6 +8,8 @@ Game::Game() :
 	
 {
 	pList.insertFront(&player);
+	std::cout << pList.getSize() << std::endl; 
+	pList.remove(&player);
 	std::cout << pList.getSize() << std::endl;
 }
 Game::~Game()

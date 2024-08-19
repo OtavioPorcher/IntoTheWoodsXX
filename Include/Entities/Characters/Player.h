@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SFML/Graphics.hpp"
 #include "..\Entities\Characters\Character.h"
+
 namespace Entities
 {
 	namespace Characters 

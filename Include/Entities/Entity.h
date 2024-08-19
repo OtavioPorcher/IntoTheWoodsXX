@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\..\SFML-2.6.1\include\SFML\Graphics.hpp"
+#include <SFML\Graphics.hpp>
 
 namespace Entities
 {
