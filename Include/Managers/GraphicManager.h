@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "..\Properties\GraphicProps.h"
 
 namespace Managers {
 
@@ -25,7 +26,7 @@ namespace Managers {
         void closeWindow();
         void handleWindowSize();
         sf::Vector2u getWindowSize() const;
-        void centerView(Math::CoordF pos);
+        void centerView(sf::Vector2f pos);
         sf::Texture* loadTexture(const char* path);
         sf::Font* getFont();
         void updateDeltaTime();

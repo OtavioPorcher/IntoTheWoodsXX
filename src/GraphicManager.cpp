@@ -1,6 +1,5 @@
-#include "Managers/Graphics.h"
-#define WIDTH 800
-#define HEIGHT 600
+#include "..\Include\Managers\GraphicManager.h"
+
 
 using namespace Managers;
 
@@ -9,7 +8,7 @@ Graphics* Graphics::instance = nullptr;
 float Graphics::dt = 0;
 
 Graphics::Graphics() {
-    window = (new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Into the woods++"));
+    window = (new sf::RenderWindow(sf::VideoMode(RES_X, RES_Y), "Into the woods++"));
 }
 Graphics::~Graphics() {
     delete(window);

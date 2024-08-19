@@ -2,6 +2,7 @@
 #include "..\Include\Entities\Characters\Player.h"
 using namespace Entities;
 using namespace Characters;
+#include <iostream>
 
 Player::Player():Character({(float)SIZEX,(float)SIZEY}),
 	friction(0),
@@ -21,15 +22,15 @@ Player::~Player()
 }
 
 void Player::Move()
-{/*
+{
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::A)) && (body.getPosition().x>0))
 		body.move(-vel.x, 0.0f);
-	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::D)) && (body.getPosition().x<(960-body.getSize().x)))
+	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::D)) && (body.getPosition().x < (960 - body.getSize().x)))
 		body.move(vel.x, 0.0f);
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::W)) && (body.getPosition().y>0))
 		body.move(0.0f, -vel.y);
-	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::S))&&(body.getPosition().y<(540-body.getSize().y)))
-		body.move(0.0f, vel.y);*/
+	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::S)) && (body.getPosition().y < (540 - body.getSize().y)))
+		body.move(0.0f, vel.y);
 }
 void Player::Jump()
 {
@@ -61,5 +62,5 @@ void Player::Block(bool b)
 
 void Player::setGrounded(bool b)
 {
-
+	grounded = b;
 }

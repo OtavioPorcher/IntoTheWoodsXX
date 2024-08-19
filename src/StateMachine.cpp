@@ -1,7 +1,7 @@
 #include "..\Include\States\StateMachine.h"
 
 States::StateMachine::StateMachine():
-	currentState()
+	currentState(States::sID::empty)
 {
 
 }

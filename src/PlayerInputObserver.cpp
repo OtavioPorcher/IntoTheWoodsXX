@@ -11,7 +11,8 @@ Observers::PlayerInputObserver::PlayerInputObserver(Player* pP1, Player* pP2, St
 	inputSet["Right"] = "D";
 	inputSet["Left"] = "A";
 	inputSet["Down"] = "S";
-	inputSet["Attack"] = "F";
+	inputSet["Attack"] = "E";
+
 	inputSet2["Jump"] = "Up";
 	inputSet2["Right"] = "Right";
 	inputSet2["Left"] = "Left";
@@ -35,7 +36,8 @@ void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 		currentState->changeState(States::sID::pauseMenu);
 
 	playerInputPressed(1, key);
-	playerInputPressed(2, key);
+	if(pPlayer2)
+		playerInputPressed(2, key);
 	
 	
 }
@@ -47,11 +49,13 @@ void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 	if (playerIdx == 1)
 	{
 		pPlayerAux = pPlayer1;
+		mapIt = inputSet.begin();
 		mapEnd = inputSet.end();
 	}
 	else if (playerIdx == 2)
 	{
 		pPlayerAux = pPlayer2;
+		mapIt = inputSet2.begin();
 		mapEnd = inputSet2.end();
 	}
 	else
@@ -97,7 +101,8 @@ void Observers::PlayerInputObserver::notifyKeyReleased(std::string key)
 	if(!currentState->getIsRuning())
 		return;
 	playerInputReleased(1, key);
-	playerInputReleased(2, key);
+	if (pPlayer2)
+		playerInputReleased(2, key);
  }
 void Observers::PlayerInputObserver::playerInputReleased(int playerIdx, std::string key)
 {
