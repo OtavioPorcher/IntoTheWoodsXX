@@ -1,11 +1,16 @@
 #include "..\Entities\Characters\Character.h"
 
-Entities::Characters::Character::Character(sf::Vector2f size) : Entity(size)
+using namespace Entities;
+using namespace Characters;
+
+Character::Character(sf::Vector2f size) : 
+	Entity(size),
+	alive(true)
 {
 
 }
 
-Entities::Characters::Character::~Character()
+Character::~Character()
 {
 
 }

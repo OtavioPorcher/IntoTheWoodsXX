@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(Into the Woods++ VERSION 1.0)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+add_executable(Into the Woods src/main.cpp src/Being.cpp src/Character.cpp src/Enemy.cpp src/Entity.cpp src/Game.cpp src/Observer.cpp src/Obstacle.cpp src/Player.cpp src/PlayerInputObserver.cpp src/StateMachine.cpp src/States.cpp)
+
+target_include_directories(Into the Woods++ PUBLIC include)
+
+//nao implementado ainda
