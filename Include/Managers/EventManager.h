@@ -15,8 +15,10 @@ namespace Managers
 
 		InputManager* pIM;
 		GraphicManager* pGM;
+	public:
+		~EventManager();
+		static EventManager* getInstance();
 
-
-		
+		void Run();		
 	};
 }

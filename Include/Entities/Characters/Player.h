@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Entities\Characters\Character.h"
+#include "Character.h"
 
 namespace Entities
 {

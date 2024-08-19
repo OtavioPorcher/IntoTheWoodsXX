@@ -26,10 +26,13 @@ namespace Managers {
         void render(sf::Text* text);
         void display();
         void clear();
+
         bool isWindowOpen() const;
         void closeWindow();
         void handleWindowSize();
         sf::Vector2u getWindowSize() const;
+        sf::RenderWindow* getWindow()const;
+
         void centerView(sf::Vector2f pos);
         sf::Texture* loadTexture(const char* path);
         sf::Font* getFont();
