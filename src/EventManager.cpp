@@ -32,7 +32,7 @@ EventManager::~EventManager()
 void EventManager::Run()
 {
 	sf::Event event;
-	while (pGM->getWindow()->pollEvent(event))
+	if(pGM->getWindow()->pollEvent(event))
 	{
 		if (event.type == sf::Event::Closed)
 			pGM->closeWindow();

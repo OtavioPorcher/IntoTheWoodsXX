@@ -23,6 +23,6 @@ namespace Entities
 		virtual void setGrounded(bool a) = 0;
 		void Gravity();
 
-		const sf::RectangleShape getBody() { return body; }
+		const sf::RectangleShape* getBody() { return &body; }
 	};
 }

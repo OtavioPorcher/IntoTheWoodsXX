@@ -1,4 +1,4 @@
-#include "Entities\Characters\Character.h"
+#include "..\Include\Entities\Characters\Character.h"
 
 using namespace Entities;
 using namespace Characters;

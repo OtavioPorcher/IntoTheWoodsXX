@@ -10,11 +10,11 @@ namespace Managers {
         static Managers::GraphicManager* instance;
         GraphicManager();
 
-        sf::RenderWindow* window;
+        sf::RenderWindow window;
         sf::View view;
         //std::map<const char*, sf::Texture*> textureMap;
-        sf::Clock clock;
-        sf::Font* font;
+        //sf::Clock clock;
+        //sf::Font* font;
 
         static float dt;
         
@@ -27,15 +27,15 @@ namespace Managers {
         void display();
         void clear();
 
-        bool isWindowOpen() const;
+        const bool isWindowOpen() const;
         void closeWindow();
-        void handleWindowSize();
+        //void handleWindowSize();
         sf::Vector2u getWindowSize() const;
-        sf::RenderWindow* getWindow()const;
+        sf::RenderWindow* getWindow();
 
         void centerView(sf::Vector2f pos);
-        sf::Texture* loadTexture(const char* path);
-        sf::Font* getFont();
+        //sf::Texture* loadTexture(const char* path);
+        //sf::Font* getFont();
         void updateDeltaTime();
     };
 }
