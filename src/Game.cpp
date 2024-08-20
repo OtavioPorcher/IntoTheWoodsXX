@@ -5,14 +5,10 @@ Game::Game() :
 	pEM(EventManager::getInstance()),
 	pGM(GraphicManager::getInstance()),
 	pIM(InputManager::getInstance()),
-	player(),
-	pList()
+	player()
 	
 {
-	pList.insertFront(&player);
-	std::cout << pList.getSize() << std::endl; 
-	pList.remove(&player);
-	std::cout << pList.getSize() << std::endl;
+	addState(new Menus::MainMenu());
 }
 Game::~Game()
 {
@@ -22,10 +18,12 @@ void Game::executar()
 {
 	while(pGM->isWindowOpen())
 	{
-		pEM->Run();
+		
 		pGM->clear();
-		pGM->render((sf::RectangleShape*)player.getBody());
+		runCurrentState();
+		//pGM->render((sf::RectangleShape*)player.getBody());
 		pGM->display();
-		player.Move();
+		pEM->Run();
+		//player.Move();
 	}
 }

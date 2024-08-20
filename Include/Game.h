@@ -1,15 +1,19 @@
 #pragma once
 
-#include "..\Include\Entities\Characters\Player.h"
-#include "..\Include\Utils\List.h"
+#include "Entities\Characters\Player.h" // Provisório enquanto não há fase implementada
 
-#include "..\Include\Managers\EventManager.h"
-#include "..\Include\Managers\GraphicManager.h"
-#include "..\Include\Managers\InputManager.h"
+#include "States/StateMachine.h"
+using namespace States;
+
+#include "Managers\EventManager.h"
+#include "Managers\GraphicManager.h"
+#include "Managers\InputManager.h"
 using namespace Managers;
 
+#include "Menus/MainMenu.h"
 
-class Game
+
+class Game : public StateMachine
 {
 private:
 	EventManager* pEM;
@@ -17,7 +21,7 @@ private:
 	InputManager* pIM;
 
 	Entities::Characters::Player player;
-	Utils::List<Entities::Characters::Player> pList;
+	
 public:
 	Game();
 	~Game();

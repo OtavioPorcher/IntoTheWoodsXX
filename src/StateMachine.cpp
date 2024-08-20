@@ -1,33 +1,34 @@
 #include "..\Include\States\StateMachine.h"
+using namespace States;
 
-States::StateMachine::StateMachine():
-	currentState(States::sID::empty)
+StateMachine::StateMachine():
+	currentState(sID::empty)
 {
 
 }
 
-States::StateMachine::~StateMachine()
+StateMachine::~StateMachine()
 {
 
 }
 
-void States::StateMachine::changeCurrentState(States::sID id_)
+void StateMachine::changeCurrentState(sID id_)
 {
 	currentState = id_;
 }
 
-void States::StateMachine::runCurrentState()
+void StateMachine::runCurrentState()
 {
 	statesMap[currentState]->Update();
 	statesMap[currentState]->Draw();
 }
 
-const States::sID States::StateMachine::getCurrentStateID()
+const sID StateMachine::getCurrentStateID()const
 {
 	return currentState;
 }
 
-void States::StateMachine::push_State(States::State* pS)
+void StateMachine::addState(States::State* pS)
 {
-
+	statesMap[pS->getStateID()] = pS;
 }

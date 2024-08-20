@@ -10,9 +10,9 @@ namespace States
 		MainMenu	  =  0,
 		pauseMenu	  =  1,
 		newGameMenu   =  2,
-		leaderBoard	  =  3,
-		gameOverState =  4,
-		loadGameState =  5,
+		loadSave	  =  3,
+		gameOver	  =  4,
+		leaderBoard	  =  5,
 		Noon		  =	 6,
 		Dawn		  =	 7		
 	};

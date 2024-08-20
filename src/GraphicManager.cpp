@@ -3,14 +3,11 @@ using namespace Managers;
 
 #include <iostream>
 
-
-
-
 GraphicManager::GraphicManager():
-    window(sf::VideoMode(RES_X, RES_Y), "Into the woods++"),
+    window(sf::VideoMode(RES_X, RES_Y), "IntoTheWoods++"),
     view(window.getView())
 {
-
+    
 }
 GraphicManager* GraphicManager::getInstance()
 {
@@ -30,6 +27,7 @@ GraphicManager::~GraphicManager()
 {
 
 }
+
 void GraphicManager::render(sf::RectangleShape* body) 
 {
     window.draw(*body);
@@ -64,6 +62,18 @@ sf::RenderWindow* GraphicManager::getWindow()
     return (&window);
 }
 
-float GraphicManager::dt(0.0f);
+void GraphicManager::centerView(sf::Vector2f pos)
+{
+    view.setCenter(pos);
+    window.setView(view);
+}
+
+void GraphicManager::checkStutter(float dt)
+{
+    if (dt > 0.3f)
+    {
+        std::cout << "STUTTER DETECTED" << std::endl;
+    }
+}
 
 GraphicManager* GraphicManager::instance(NULL);

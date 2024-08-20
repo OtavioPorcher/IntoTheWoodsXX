@@ -17,7 +17,8 @@ namespace States
 
         void changeCurrentState(States::sID id_);
         void runCurrentState();
-        const States::sID getCurrentStateID();
-        void push_State(States::State* pS);
+        const States::sID getCurrentStateID()const;
+
+        void addState(States::State* pS);
 	};
 }
