@@ -3,18 +3,17 @@
 #include "..\States\StateMachine.h"
 using namespace States;
 
-
+#include "..\Include\Menus\MainMenu.h"
 
 namespace Menus
 {
-	class Menu;
 
 	class StateMenu : public State
 	{
 	private:
 		Menu* pMenu;
 	public:
-		StateMenu(Menu* pM, StateMachine* psm = NULL, sID id_ = sID::empty);
+		StateMenu(StateMachine* psm = NULL, sID id_ = sID::empty);
 		~StateMenu();
 
 		void Update();

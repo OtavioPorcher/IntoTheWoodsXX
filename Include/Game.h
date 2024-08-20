@@ -10,7 +10,9 @@ using namespace States;
 #include "Managers\InputManager.h"
 using namespace Managers;
 
+#include "Menus/StateMenu.h"
 #include "Menus/MainMenu.h"
+
 
 
 class Game : public StateMachine

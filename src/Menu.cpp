@@ -1,8 +1,10 @@
+#include"../Include/Menus/StateMenu.h"
 #include "..\Include\Menus\Menu.h"
 using namespace Menus;
 
-Menu::Menu():
-	pState(new StateMenu(this)),
+
+Menu::Menu(StateMenu* pS):
+	pState(pS),
 	pIM(Managers::InputManager::getInstance())
 {
 

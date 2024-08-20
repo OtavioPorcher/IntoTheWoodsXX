@@ -2,9 +2,10 @@
 
 #include"..\Managers\InputManager.h"
 #include "..\Being.h"
-#include "StateMenu.h"
+
 namespace Menus
 {
+	class StateMenu;
 
 	class Menu : public Being
 	{
@@ -12,7 +13,7 @@ namespace Menus
 		Managers::InputManager* pIM;
 		StateMenu* pState;
 	public:
-		Menu();
+		Menu(StateMenu* pS);
 		~Menu();
 
 		virtual void Update() = 0;

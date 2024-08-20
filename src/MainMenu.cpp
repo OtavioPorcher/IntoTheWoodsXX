@@ -1,7 +1,7 @@
 #include "..\Include\Menus\MainMenu.h"
 using namespace Menus;
 
-MainMenu::MainMenu():Menu()
+MainMenu::MainMenu(StateMenu* pS):Menu(pS)
 {
 
 }

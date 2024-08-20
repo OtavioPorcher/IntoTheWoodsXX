@@ -8,7 +8,7 @@ Game::Game() :
 	player()
 	
 {
-	addState(new Menus::MainMenu());
+	addState(static_cast<State*>(new Menus::StateMenu()));
 }
 Game::~Game()
 {
@@ -20,10 +20,10 @@ void Game::executar()
 	{
 		
 		pGM->clear();
-		runCurrentState();
-		//pGM->render((sf::RectangleShape*)player.getBody());
+		//runCurrentState();
+		pGM->render((sf::RectangleShape*)player.getBody());
 		pGM->display();
 		pEM->Run();
-		//player.Move();
+		player.Move();
 	}
 }

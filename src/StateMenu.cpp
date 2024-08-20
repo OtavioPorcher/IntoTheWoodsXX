@@ -1,13 +1,14 @@
-#include "..\Include\Menus\Menu.h"
+#include "..\Include\Menus\StateMenu.h"
 using namespace Menus;
 
-#include "..\Include\Menus\StateMenu.h"
-using namespace States;
-
-StateMenu::StateMenu(Menu* pM, StateMachine* pSM, sID id_) : 
-	pMenu(pM)
+StateMenu::StateMenu(StateMachine* pSM, sID id_) : 
+	pMenu()
 {
-
+	switch(id_)
+	{
+	case sID::MainMenu:
+		pMenu = static_cast<Menu*>(new MainMenu(this));
+	}
 }
 
 StateMenu::~StateMenu()

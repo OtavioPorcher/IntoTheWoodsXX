@@ -10,7 +10,7 @@ namespace Menus
 	private:
 
 	public:
-		MainMenu();
+		MainMenu(StateMenu* pS);
 		~MainMenu();
 
 		void Update();
