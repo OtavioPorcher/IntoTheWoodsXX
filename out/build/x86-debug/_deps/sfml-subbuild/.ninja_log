@@ -1,18 +1,18 @@
 # ninja log v5
 1	48	7458041297853449	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir	286dbfb459f5c41e
 1	48	7458041297853449	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir	286dbfb459f5c41e
-48	13916	7458041436544642	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download	788ea33da0a683df
-48	13916	7458041436544642	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download	788ea33da0a683df
+15419	15460	7458041451983153	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	d6f2996267839f36
+6	47	7458997903765905	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download	788ea33da0a683df
 13916	15296	0	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update	5ad882c7bc961c22
+6	47	7458997903765905	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download	788ea33da0a683df
 13916	15296	0	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update	5ad882c7bc961c22
-15297	15338	7458041450755321	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	79efbc63d56d888c
 15297	15338	7458041450755321	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	79efbc63d56d888c
-15338	15379	7458041451168608	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	88028aa1ce72d894
+15297	15338	7458041450755321	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	79efbc63d56d888c
 15338	15379	7458041451168608	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	88028aa1ce72d894
+15338	15379	7458041451168608	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	88028aa1ce72d894
 15379	15419	7458041451574661	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build	3fba63239219d75e
 15379	15419	7458041451574661	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build	3fba63239219d75e
 15419	15460	7458041451983153	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	d6f2996267839f36
-15419	15460	7458041451983153	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	d6f2996267839f36
 15460	15500	7458041452384061	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test	759bb84d97d829db
 15460	15500	7458041452384061	C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test	759bb84d97d829db
 15500	15556	7458041452945906	CMakeFiles/sfml-populate-complete	e8f1280799f54978
