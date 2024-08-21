@@ -14,6 +14,17 @@ Game::~Game()
 {
 
 }
+
+Game* Game::getInstance()
+{
+	if (!instance)
+	{
+		instance = new Game();
+	}
+
+	return instance;
+}
+
 void Game::executar()
 {
 	while(pGM->isWindowOpen())
@@ -27,3 +38,5 @@ void Game::executar()
 		player.Move();
 	}
 }
+
+Game* Game::instance(NULL);

@@ -2,8 +2,8 @@
 #include "..\Include\Game.h"
 int main()
 {
-    Game Principal;
-    Principal.executar();
+    Game* Principal = Game::getInstance();
+    Principal->executar();
 
     return 0;
 }
