@@ -1,7 +1,7 @@
 #pragma once
 
 #include "..\Obstacle\Obstacle.h"
-#include "..\..\Entity.h"
+#include "..\Entity.h"
 
 namespace Entities
 {
