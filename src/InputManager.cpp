@@ -86,6 +86,8 @@ void InputManager::remObserver(Observers::Observer* pO)
 
 void InputManager::pressedInput(sf::Event::KeyEvent key)
 {
+	system("cls");
+	std::cout << "Pressed Input:" << keyMap[key.code] << std::endl;
 	listIt = obsList.begin();
 	for (listIt; listIt != obsList.end(); listIt++)
 	{
@@ -95,6 +97,8 @@ void InputManager::pressedInput(sf::Event::KeyEvent key)
 
 void InputManager::releasedInput(sf::Event::KeyEvent key)
 {
+	std::cout << "Released Input:" << keyMap[key.code] << std::endl;
+	
 	listIt = obsList.begin();
 	for (listIt; listIt != obsList.end(); listIt++)
 	{
