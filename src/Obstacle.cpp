@@ -1,4 +1,6 @@
-#include "..\Include\Entities\Characters\Obstacle\Obstacle.h"
+#include "..\Entities\Characters\Obstacles\Obstacle.h"
+
+using namespace Entities;
 
 Entities::Obstacle::Obstacle::Obstacle(const sf::Vector2f pos) :
 	Entity(size)

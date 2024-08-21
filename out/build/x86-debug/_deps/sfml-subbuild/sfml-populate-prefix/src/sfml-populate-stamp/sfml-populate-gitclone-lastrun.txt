@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-P;C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-subbuild/sfml-populate-prefix/tmp/sfml-populate-gitclone.cmake
-source_dir=C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps/sfml-src
-work_dir=C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-debug/_deps
+command=C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-P;C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-Debug/_deps/sfml-subbuild/sfml-populate-prefix/tmp/sfml-populate-gitclone.cmake
+source_dir=C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-Debug/_deps/sfml-src
+work_dir=C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-Debug/_deps
 repository=https://github.com/SFML/SFML.git
 remote=origin
 init_submodules=TRUE
