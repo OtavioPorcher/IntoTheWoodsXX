@@ -32,7 +32,7 @@ namespace Utils
 			Element<ETYPE>* getNext(){ return pNext; }
 			Element<ETYPE>* getPrev(){ return pPrev; }
 
-			void setData(ETYPE* d) { pData = d; }
+			void setData(ETYPE* dI) { pData = dI; }
 			void setNext(Element<ETYPE>* n) { pNext = n; }
 			void setPrev(Element<ETYPE>* p) { pPrev = p; }
 		};
