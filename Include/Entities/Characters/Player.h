@@ -6,11 +6,11 @@ namespace Entities
 {
 	namespace Characters 
 	{
-		class Player:public Character
+		class Player : public Character
 		{
 		private:
 			unsigned int lives;
-			float friction;
+	
 			bool grounded;
 			bool MovingLeft;
 			bool MovingRight;
@@ -27,6 +27,9 @@ namespace Entities
 			void Fall();
 			void Block(bool b);
 			void setGrounded(bool b);
+
+			void Update();
+			void Draw();
 		};
 	}
 

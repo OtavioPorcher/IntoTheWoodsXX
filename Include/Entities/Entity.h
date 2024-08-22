@@ -1,14 +1,11 @@
 #pragma once
 
-#include <SFML\Graphics.hpp>
+#include "..\Being.h"
 
 namespace Entities
 {
-	class Entity
+	class Entity : public Being
 	{
-	private:
-		unsigned int id;
-		static unsigned int counter;
 	protected:
 		sf::Vector2f size;
 		sf::Vector2f pos;
@@ -19,8 +16,11 @@ namespace Entities
 		Entity(sf::Vector2f size = { 50.0f,50.0f });
 		~Entity();
 
+		virtual void Update() = 0;
+		virtual void Draw() = 0;
 		virtual void Move() = 0;
 		virtual void setGrounded(bool a) = 0;
+
 		void Gravity();
 
 		const sf::RectangleShape* getBody() { return &body; }

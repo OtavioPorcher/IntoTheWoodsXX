@@ -5,7 +5,6 @@ using namespace Characters;
 #include <iostream>
 
 Player::Player():Character({(float)SIZEX,(float)SIZEY}),
-	friction(0),
 	lives(LIVES),
 	grounded(true),
 	MovingLeft(false),
@@ -63,4 +62,14 @@ void Player::Block(bool b)
 void Player::setGrounded(bool b)
 {
 	grounded = b;
+}
+
+void Player::Update()
+{
+
+}
+
+void Player::Draw()
+{
+
 }
