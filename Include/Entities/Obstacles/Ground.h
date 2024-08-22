@@ -10,11 +10,13 @@ namespace Entities
 		private:
 
 		public:
-			Ground();
+			Ground(sf::Vector2f position = {0.f,0.f});
 			~Ground();
 
 			void Move();
 			void Update();
+			void Draw();
+			void setGrounded(bool a);
 		};
 	}
 }

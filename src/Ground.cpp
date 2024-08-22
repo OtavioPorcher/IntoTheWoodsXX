@@ -1,22 +1,33 @@
-#define X 128.f
-#define Y 128.f
 #include "..\Include\Entities\Obstacles\Ground.h"
+using namespace Entities;
+using namespace Obstacles;
 
-Entities::Obstacles::Ground::Ground():
-	Obstacle(sf::Vector2f(X, Y))
+Ground::Ground(sf::Vector2f position):
+	Obstacle()
 {
+	pos = position;
 	body.setFillColor(sf::Color::Green);
 }
-Entities::Obstacles::Ground::~Ground()
+Ground::~Ground()
 {
 }
 
-void Entities::Obstacles::Ground::Move()
+void Ground::Move()
 {
 
 }
 
-void Entities::Obstacles::Ground::Update()
+void Ground::Update()
+{
+	body.setPosition(pos);
+}
+
+void Ground::Draw()
 {
 	pGM->render(&body);
+}
+
+void Ground::setGrounded(bool a)
+{
+
 }

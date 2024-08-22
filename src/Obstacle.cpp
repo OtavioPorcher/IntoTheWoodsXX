@@ -1,4 +1,4 @@
-#include "..\Entities\Characters\Obstacles\Obstacle.h"
+#include "..\Entities\Obstacles\Obstacle.h"
 
 using namespace Entities;
 using namespace Obstacles;

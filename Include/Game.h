@@ -2,6 +2,7 @@
 
 #include "Entities\Characters\Player.h" // Provisório enquanto não há fase implementada
 #include "Entities/Characters/Enemies/Scorpion.h"
+#include "Entities\Obstacles\Ground.h"
 
 #include "States/StateMachine.h"
 using namespace States;
@@ -27,6 +28,8 @@ private:
 
 	Entities::Characters::Player player;
 	Entities::Characters::Enemies::Scorpion scorpion;
+	Entities::Obstacles::Ground ground;
+	
 
 	Game();
 	

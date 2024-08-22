@@ -6,7 +6,8 @@ Game::Game() :
 	pGM(GraphicManager::getInstance()),
 	pIM(InputManager::getInstance()),
 	player(),
-	scorpion()
+	scorpion(),
+	ground({RES_X-50.f,RES_Y-50.f})
 {
 	scorpion.setOrigin({ 480.0f, RES_Y - 50.0f });
 }
@@ -34,8 +35,10 @@ void Game::executar()
 		//runCurrentState();
 		player.Draw();
 		scorpion.Draw();
+		ground.Draw();
 		player.Update();
 		scorpion.Update();
+		ground.Update();
 		pGM->display();
 		pEM->Run();
 	}
