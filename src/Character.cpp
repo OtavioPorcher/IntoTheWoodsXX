@@ -14,3 +14,7 @@ Character::~Character()
 {
 
 }
+void Character::setGrounded(bool a)
+{
+	grounded = a;
+}

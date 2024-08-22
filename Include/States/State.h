@@ -13,7 +13,7 @@ namespace States
 		loadSave	  =  3,
 		gameOver	  =  4,
 		leaderBoard	  =  5,
-		Noon		  =	 6,
+		Evening		  =	 6,
 		Dawn		  =	 7		
 	};
 

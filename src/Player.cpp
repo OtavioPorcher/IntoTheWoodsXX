@@ -66,10 +66,10 @@ void Player::setGrounded(bool b)
 
 void Player::Update()
 {
-
+	Move();
 }
 
 void Player::Draw()
 {
-
+	pGM->render(&body);
 }

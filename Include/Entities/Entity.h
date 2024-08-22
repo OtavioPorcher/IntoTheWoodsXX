@@ -23,6 +23,6 @@ namespace Entities
 
 		void Gravity();
 
-		const sf::RectangleShape* getBody() { return &body; }
+		const sf::RectangleShape* getBody();
 	};
 }
