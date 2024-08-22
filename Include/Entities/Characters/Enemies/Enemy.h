@@ -11,19 +11,12 @@ namespace Entities
 		{
 			class Enemy : public Character
 			{
-			private:
-				Player* pPlayer;
 			protected:
-				float distanceEnemy;
+				float atkCd;
 			public:
-				Enemy(sf::Vector2f position = {0.0f , 0.0f},
-					sf::Vector2f size = { 0.0f , 0.0f },
-					int life = 1,
-					Entities::Characters::Player * pP = NULL,
-					const float atckCooldown = 1.0f);
+				Enemy(sf::Vector2f size = { 0.0f , 0.0f }, const float atckCooldown = 1.0f);
 				~Enemy();
-				void setpPlayer(Entities::Characters::Player* pP);
-				sf::Vector2f getPlayerPosition();
+
 				virtual void update(const float dt) = 0;
 				virtual void initialize() = 0;
 			};

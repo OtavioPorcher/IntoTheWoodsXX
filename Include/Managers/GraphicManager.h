@@ -29,7 +29,7 @@ namespace Managers {
         void closeWindow();
         //void handleWindowSize();
         //sf::Vector2u getWindowSize() const;
-        sf::RenderWindow* getWindow();
+        sf::RenderWindow* getWindow(); // Necessário no gerenciador de eventos
 
         void centerView(sf::Vector2f pos);
         //sf::Texture* loadTexture(const char* path);

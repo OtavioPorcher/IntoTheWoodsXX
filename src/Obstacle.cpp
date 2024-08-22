@@ -2,10 +2,11 @@
 
 using namespace Entities;
 
-Entities::Obstacle::Obstacle::Obstacle(const sf::Vector2f pos) :
-	Entity(size)
+Obstacle::Obstacle() : Entity()
 {
+
 }
-Entities::Obstacle::Obstacle::~Obstacle()
+Obstacle::~Obstacle()
 {
+
 }

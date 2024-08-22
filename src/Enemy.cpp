@@ -4,14 +4,14 @@ using namespace Entities;
 using namespace Characters;
 using namespace Enemies;
 
-Enemy::Enemy
-(sf::Vector2f position, sf::Vector2f size, int life, Player* pP, const float atckCooldown):
-	Character(size)
+Enemy::Enemy(sf::Vector2f size, const float atckCooldown):
+	Character(size),
+	atkCd(atckCooldown)
 {
-
+	
 }
 
 Enemy::~Enemy()
 {
-	pPlayer = nullptr;
+
 }

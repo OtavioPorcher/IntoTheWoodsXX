@@ -18,14 +18,18 @@ using namespace Managers;
 class Game : public StateMachine
 {
 private:
+	static Game* instance;
+
 	EventManager* pEM;
 	GraphicManager* pGM;
 	InputManager* pIM;
 
 	Entities::Characters::Player player;
+
+	Game();
 	
 public:
-	Game();
+	static Game* getInstance();
 	~Game();
 	void executar();
 };
