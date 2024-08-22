@@ -5,10 +5,10 @@ Game::Game() :
 	pEM(EventManager::getInstance()),
 	pGM(GraphicManager::getInstance()),
 	pIM(InputManager::getInstance()),
-	player()
-	
+	player(),
+	scorpion()
 {
-	addState(static_cast<State*>(new Menus::StateMenu()));
+	scorpion.setOrigin({ 480.0f, RES_Y - 50.0f });
 }
 Game::~Game()
 {
@@ -32,10 +32,12 @@ void Game::executar()
 		
 		pGM->clear();
 		//runCurrentState();
-		pGM->render((sf::RectangleShape*)player.getBody());
+		player.Draw();
+		scorpion.Draw();
+		player.Update();
+		scorpion.Update();
 		pGM->display();
 		pEM->Run();
-		player.Move();
 	}
 }
 

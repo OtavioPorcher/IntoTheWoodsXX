@@ -1,13 +1,19 @@
 #include "..\Include\Entities\Entity.h"
+using namespace Entities;
 
-Entities::Entity::Entity(sf::Vector2f size):
+Entity::Entity(sf::Vector2f size):
 	size(size),
 	body(size),
 	vel(0.1f,0.1f)
 {
 
 }
-Entities::Entity::~Entity()
+Entity::~Entity()
 {
 
+}
+
+const sf::RectangleShape* Entity::getBody()
+{
+	return &body;
 }
