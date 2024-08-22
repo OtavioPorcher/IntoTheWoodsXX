@@ -32,8 +32,9 @@ void Game::executar()
 		
 		pGM->clear();
 		//runCurrentState();
-		player.Draw();
+		//player.Draw();
 		scorpion.Draw();
+		level.Draw();
 		player.Update();
 		scorpion.Update();
 		pGM->display();

@@ -12,8 +12,9 @@ namespace Entities
 		public:
 			Ground();
 			~Ground();
+
 			void Move();
-			void Update();
+			void Draw();
 		};
 	}
 }

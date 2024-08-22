@@ -1,20 +1,23 @@
 #include "../include/Levels/Level.h"
 
-Levels::level::Level(sf::Vector2f size):
+using namespace Levels;
+
+Level::Level(sf::Vector2f size):
+	pIM(pIM),
+	pPlayer(NULL)
 {
 }
 
-Levels::level::~Level()
+Level::~Level()
 {
 }
 
-void Levels::level::CreatePlayer()
+void Level::CreatePlayer()
 {
-	Entities::Obstacles::Ground* aux = new Entities::Obstacles::Ground(pos);
-
+	player.Draw();
 }
 
-void Levels::level::CreateGround()
+void Level::CreateGround()
 {
 	
 }
