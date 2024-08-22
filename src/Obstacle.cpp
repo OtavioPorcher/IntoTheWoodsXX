@@ -1,10 +1,12 @@
-#include "..\Include\Entities\Obstacle\Obstacle.h"
+#include "..\Include\Entities\Obstacles\Obstacle.h"
+using namespace Entities;
+using namespace::Obstacles;
 
-Entities::Obstacle::Obstacle::Obstacle() : Entity()
+Obstacle::Obstacle() : Entity()
 {
 
 }
-Entities::Obstacle::Obstacle::~Obstacle()
+Obstacle::~Obstacle()
 {
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\Obstacle\Obstacle.h"
+#include "..\Obstacles\Obstacle.h"
 #include "..\Entity.h"
 
 namespace Entities
