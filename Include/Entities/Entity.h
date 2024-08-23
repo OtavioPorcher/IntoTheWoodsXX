@@ -12,6 +12,8 @@ namespace Entities
 		sf::Vector2f vel;
 		sf::RectangleShape body;
 
+		static float deltaTime;
+
 	public:
 		Entity(sf::Vector2f size = { 50.0f,50.0f });
 		~Entity();
@@ -22,6 +24,7 @@ namespace Entities
 		virtual void setGrounded(bool a) = 0;
 
 		void Gravity();
+		void updateDeltaTime(const float dt);
 
 		const sf::RectangleShape* getBody();
 	};

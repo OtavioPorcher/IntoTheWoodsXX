@@ -17,3 +17,10 @@ const sf::RectangleShape* Entity::getBody()
 {
 	return &body;
 }
+
+void Entity::updateDeltaTime(const float dt)
+{
+	deltaTime = dt;
+}
+
+float Entity::deltaTime(0);
