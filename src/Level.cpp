@@ -1,11 +1,11 @@
 #include "../include/Levels/Level.h"
-
 using namespace Levels;
 
-Level::Level(sf::Vector2f size):
+Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	pIM(pIM),
-	pPlayer(NULL)
+	clock()
 {
+
 }
 
 Level::~Level()

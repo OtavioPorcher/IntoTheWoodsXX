@@ -4,21 +4,23 @@
 #include "../Entities/Characters/Player.h"
 #include "../Entities/Obstacles/Ground.h"
 #include "../States/State.h"
-#include "../Observers/PlayerInputManager.h"
+using namespace States;
+#include "../Observers/PlayerInputObserver.h"
 
 namespace Levels
 {
-    class Level :public States::State {
+    class Level :public State {
     protected:
+        sf::Clock clock;
         Managers::InputManager* pIM;
-        Observers::PlayerInputManager* pPim;
-        Entities::Characters::Player* pPlayer;
+        Observers::PlayerInputObserver* pPIO;
     public:
-        Level();
+        Level(StateMachine* psm, sID id_);
         virtual ~Level();
         
         virtual void Draw() = 0;
         virtual void Update() = 0;
+        virtual void Reset() = 0;
         //Observers::PlayerInputManager* getPlayerInputManager() const;
         void CreatePlayer();
         void CreateGround();
