@@ -50,6 +50,11 @@ namespace List
 				pE = pE->getNext();
 				return *this;
 			}
+			Iterator& operator++(int)
+			{
+				pE = pE->getNext();
+				return *this;
+			}
 			Iterator& operator+=(int num)
 			{
 				int i;
@@ -76,7 +81,7 @@ namespace List
 			const bool operator!=(ITYPE* pD2)const { return !(pE->getData() == pD2); }
 			
 			void operator= (Element<ITYPE>* pE2) { pE = pE2; }
-			ITYPE* operator*() { return pE->getData; }
+			ITYPE* operator*() { return pE->getData(); }
 			Element<ITYPE>* getElement() { return pE; }
 		};
 	
