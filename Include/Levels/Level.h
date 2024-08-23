@@ -34,7 +34,10 @@ namespace Levels
         virtual void Update() = 0;
         virtual void Reset() = 0;
         //Observers::PlayerInputManager* getPlayerInputManager() const;
+
         virtual void createMap() = 0;
+        void setupLevel();
+
         void CreatePlayer(sf::Vector2f pos);
         void CreateGround(sf::Vector2f pos);
     };

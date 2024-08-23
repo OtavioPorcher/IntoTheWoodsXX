@@ -3,15 +3,26 @@ using namespace Levels;
 
 Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	pIM(InputManager::getInstance()),
+	pPIO(NULL),
 	clock(),
 	pPlayer1(NULL),
 	pPlayer2(NULL),
 	dinamicEntities(),
 	staticEntities()
 {
-	//createMap();
-	try 
-	{ 
+	
+}
+
+Level::~Level()
+{
+
+}
+
+void Level::setupLevel()
+{
+	createMap();
+	try
+	{
 		pPIO = new Observers::PlayerInputObserver(pPlayer1, pPlayer2, static_cast<State*>(this));
 		pIM->setObserver(static_cast<Observer*>(pPIO));
 	}
@@ -23,11 +34,6 @@ Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 			exit(1);
 		}
 	}
-	
-}
-
-Level::~Level()
-{
 }
 
 void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYCATCH!
