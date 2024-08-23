@@ -31,15 +31,6 @@ GraphicManager::~GraphicManager()
 
 }
 
-void GraphicManager::render(sf::RectangleShape* body) 
-{
-    window.draw(*body);
-}
-void GraphicManager::render(sf::Text* text) 
-{
-    window.draw(*text);
-}
-
 void GraphicManager::display()
 {
     window.display();

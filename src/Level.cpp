@@ -19,6 +19,14 @@ Level::~Level()
 
 }
 
+void Level::Draw()
+{
+	//background.setPos(pGM->getViewCenter());
+	//pGM->draw(background);
+	dinamicEntities.DrawEntities();
+	staticEntities.DrawEntities();
+}
+
 void Level::setupLevel()
 {
 	createMap();

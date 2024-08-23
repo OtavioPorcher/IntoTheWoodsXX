@@ -20,8 +20,9 @@ namespace Managers {
         static GraphicManager* getInstance();
         ~GraphicManager();
         
-        void render(sf::RectangleShape* body);
-        void render(sf::Text* text);
+
+        template<class type>
+        void render(type* target) { window.draw(*target); }
         void display();
         void clear();
 

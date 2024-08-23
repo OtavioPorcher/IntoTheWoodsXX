@@ -29,11 +29,14 @@ namespace Levels
 
         EntityList dinamicEntities;
         EntityList staticEntities;
+
+        //Background
+        //Texture
     public:
         Level(StateMachine* psm, sID id_);
         virtual ~Level();
         
-        virtual void Draw() = 0;
+        void Draw();
         virtual void Update() = 0;
         void updateDeltaTime();
         virtual void Reset() = 0;
