@@ -10,14 +10,15 @@ Player::Player():Character({(float)SIZEX,(float)SIZEY}),
 	MovingLeft(false),
 	MovingRight(false),
 	Falling(false),
-	Blocking(false)
+	Blocking(false),
+	playerId(counter++)
 {
 	body.setFillColor(sf::Color::Magenta);
 }
 
 Player::~Player()
 {
-
+	counter--;
 }
 
 void Player::Move()
@@ -73,3 +74,5 @@ void Player::Draw()
 {
 	pGM->render(&body);
 }
+
+unsigned char Player::counter(0);

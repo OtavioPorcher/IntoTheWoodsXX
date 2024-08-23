@@ -14,6 +14,9 @@ namespace Levels
         sf::Clock clock;
         Managers::InputManager* pIM;
         Observers::PlayerInputObserver* pPIO;
+
+        Player* pPlayer1;
+        Player* pPlayer2;
     public:
         Level(StateMachine* psm, sID id_);
         virtual ~Level();
@@ -22,6 +25,7 @@ namespace Levels
         virtual void Update() = 0;
         virtual void Reset() = 0;
         //Observers::PlayerInputManager* getPlayerInputManager() const;
+        virtual void createMap() = 0;
         void CreatePlayer();
         void CreateGround();
     };

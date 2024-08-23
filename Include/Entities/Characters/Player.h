@@ -9,6 +9,9 @@ namespace Entities
 		class Player : public Character
 		{
 		private:
+			static unsigned char counter;
+			unsigned char playerId;
+
 			unsigned int lives;
 	
 			bool grounded;

@@ -3,9 +3,12 @@ using namespace Levels;
 
 Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	pIM(pIM),
-	clock()
+	clock(),
+	pPlayer1(NULL),
+	pPlayer2(NULL)
 {
-
+	//createMap();
+	pPIO = new Observers::PlayerInputObserver(pPlayer1, pPlayer2, static_cast<State*>(this));
 }
 
 Level::~Level()
