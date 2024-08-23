@@ -75,4 +75,9 @@ void Player::Draw()
 	pGM->render(&body);
 }
 
+const unsigned char Player::getCounter()const
+{
+	return counter;
+}
+
 unsigned char Player::counter(0);

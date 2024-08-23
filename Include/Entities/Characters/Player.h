@@ -10,7 +10,7 @@ namespace Entities
 		{
 		private:
 			static unsigned char counter;
-			unsigned char playerId;
+			const unsigned char playerId;
 
 			unsigned int lives;
 	
@@ -33,6 +33,8 @@ namespace Entities
 
 			void Update();
 			void Draw();
+
+			const unsigned char getCounter()const;
 		};
 	}
 
