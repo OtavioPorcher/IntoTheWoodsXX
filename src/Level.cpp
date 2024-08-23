@@ -10,15 +10,27 @@ Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	staticEntities()
 {
 	//createMap();
-	pPIO = new Observers::PlayerInputObserver(pPlayer1, pPlayer2, static_cast<State*>(this));
-	pIM->setObserver(static_cast<Observer*>(pPIO));
+	try 
+	{ 
+		pPIO = new Observers::PlayerInputObserver(pPlayer1, pPlayer2, static_cast<State*>(this));
+		pIM->setObserver(static_cast<Observer*>(pPIO));
+	}
+	catch (int error)
+	{
+		if (!error)
+		{
+			std::cout << "ERROR: Failed to Allocate Memory (PlayerInputObserver)" << std::endl;
+			exit(1);
+		}
+	}
+	
 }
 
 Level::~Level()
 {
 }
 
-void Level::CreatePlayer(sf::Vector2f pos)
+void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYCATCH!
 {
 	Entities::Characters::Player* aux = new Entities::Characters::Player();
 	if (aux->getCounter() == 1)
@@ -35,7 +47,7 @@ void Level::CreatePlayer(sf::Vector2f pos)
 	dinamicEntities.insertFront(static_cast<Entity*>(aux));
 }
 
-void Level::CreateGround(sf::Vector2f pos)
+void Level::CreateGround(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYCATCH!
 {
 	Entities::Obstacles::Ground* aux = new Entities::Obstacles::Ground();
 	staticEntities.insertFront(static_cast<Entity*>(aux));

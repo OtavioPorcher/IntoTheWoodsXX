@@ -56,11 +56,14 @@ InputManager* InputManager::getInstance()
 {
 	if (!instance)
 	{
-		instance = new InputManager();
-		if (!instance)
+		try { instance = new InputManager(); }
+		catch (int error)
 		{
-			std::cout << "ERROR: Failed to allocate the InputManager" << std::endl;
-			exit(1);
+			if (!error)
+			{
+				std::cout << "ERROR: Failed to Allocate Memory (InputManager)" << std::endl;
+				exit(1);
+			}
 		}
 	}
 	return instance;

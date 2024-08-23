@@ -20,7 +20,15 @@ Game* Game::getInstance()
 {
 	if (!instance)
 	{
-		instance = new Game();
+		try { instance = new Game(); }
+		catch (int error)
+		{
+			if (!error)
+			{
+				std::cout << "ERROR: Failed to Allocate Memory" << std::endl;
+				exit(1);
+			}
+		}
 	}
 
 	return instance;

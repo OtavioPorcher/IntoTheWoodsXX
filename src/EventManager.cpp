@@ -13,11 +13,14 @@ EventManager* EventManager::getInstance()
 {
 	if (!instance)
 	{
-		instance = new EventManager();
-		if (!instance)
+		try { instance = new EventManager(); }
+		catch (int error)
 		{
-			std::cout << "ERROR: Failed to allocate the EventManager!" << std::endl;
-			exit(1);
+			if (!error)
+			{
+				std::cout << "ERROR: Failed to Allocate Memory (EventManager)" << std::endl;
+				exit(1);
+			}
 		}
 	}
 	return instance;

@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "..\Include\Menus\StateMenu.h"
 using namespace Menus;
 
@@ -7,7 +9,15 @@ StateMenu::StateMenu(StateMachine* pSM, sID id_) :
 	switch(id_)
 	{
 	case sID::MainMenu:
-		pMenu = static_cast<Menu*>(new MainMenu(this));
+		try { pMenu = static_cast<Menu*>(new MainMenu(this)); }
+		catch (int error)
+		{
+			if (!error)
+			{
+				std::cout << "ERROR: Failed to Allocate Memory (MainMenu)" << std::endl;
+				exit(1);
+			}
+		}
 	}
 }
 

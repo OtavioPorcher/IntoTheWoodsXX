@@ -13,11 +13,14 @@ GraphicManager* GraphicManager::getInstance()
 {
     if (!instance)
     {
-        instance = new GraphicManager();
-        if (!instance)
+        try { instance = new GraphicManager(); }
+        catch (int error)
         {
-            std::cout << "ERROR: Failed to Allocate the GraphicManager" << std::endl;
-            exit(1);
+            if (!error)
+            {
+                std::cout << "ERROR: Failed to Allocate Memory (Graphic Manager)" << std::endl;
+                exit(1);
+            }
         }
     }
     return instance;
