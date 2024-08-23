@@ -15,9 +15,12 @@ using namespace List;
 
 namespace Levels
 {
-    class Level :public State {
+    class Level : public Being, public State 
+    {
     protected:
         sf::Clock clock;
+        float dt;
+
         Managers::InputManager* pIM;
         Observers::PlayerInputObserver* pPIO;
 
@@ -32,6 +35,7 @@ namespace Levels
         
         virtual void Draw() = 0;
         virtual void Update() = 0;
+        void updateDeltaTime();
         virtual void Reset() = 0;
         //Observers::PlayerInputManager* getPlayerInputManager() const;
 

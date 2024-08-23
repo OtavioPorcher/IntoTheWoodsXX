@@ -5,6 +5,7 @@ Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	pIM(InputManager::getInstance()),
 	pPIO(NULL),
 	clock(),
+	dt(0),
 	pPlayer1(NULL),
 	pPlayer2(NULL),
 	dinamicEntities(),
@@ -57,4 +58,12 @@ void Level::CreateGround(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 {
 	Entities::Obstacles::Ground* aux = new Entities::Obstacles::Ground();
 	staticEntities.insertFront(static_cast<Entity*>(aux));
+}
+
+void Level::updateDeltaTime()
+{
+	dt = clock.getElapsedTime().asSeconds();
+	Entity::updateDeltaTime(dt);
+	pGM->checkStutter(dt);
+	clock.restart();
 }

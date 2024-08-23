@@ -24,7 +24,7 @@ namespace Entities
 		virtual void setGrounded(bool a) = 0;
 
 		void Gravity();
-		void updateDeltaTime(const float dt);
+		static void updateDeltaTime(const float dt);
 
 		const sf::RectangleShape* getBody();
 	};
