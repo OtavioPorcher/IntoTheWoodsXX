@@ -24,11 +24,14 @@ namespace Levels
         Managers::InputManager* pIM;
         Observers::PlayerInputObserver* pPIO;
 
+        static bool twoPlayers;
         Player* pPlayer1;
         Player* pPlayer2;
 
         EntityList dinamicEntities;
         EntityList staticEntities;
+
+        float end;
 
         //Background
         //Texture
@@ -36,9 +39,12 @@ namespace Levels
         Level(StateMachine* psm, sID id_);
         virtual ~Level();
         
+        static void setTwoPlayers(const bool b);
+
         void Draw();
         virtual void Update() = 0;
         void updateDeltaTime();
+        void updateView();
         virtual void Reset() = 0;
         //Observers::PlayerInputManager* getPlayerInputManager() const;
 
@@ -49,5 +55,9 @@ namespace Levels
 
         void CreatePlayer(sf::Vector2f pos);
         void CreateGround(sf::Vector2f pos);
+
+        const bool checkWipe()const;
+        const bool checkDone()const;
+
     };
 }

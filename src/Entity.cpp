@@ -19,7 +19,7 @@ const sf::RectangleShape* Entity::getBody()
 	return &body;
 }
 
-const sf::Vector2f Entity::getPosition()
+const sf::Vector2f Entity::getPosition()const
 {
 	return pos;
 }

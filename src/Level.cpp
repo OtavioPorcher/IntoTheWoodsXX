@@ -11,7 +11,8 @@ Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	pPlayer1(NULL),
 	pPlayer2(NULL),
 	dinamicEntities(),
-	staticEntities()
+	staticEntities(),
+	end()
 {
 	
 }
@@ -61,8 +62,10 @@ void Level::createMap()
 	for(unsigned int i = 0; std::getline(Map,line); i++)
 		for (unsigned int j = 0; j < line.size(); j++)
 		{
-			if (j != ' ')
-				CreateEntity(line[j], sf::Vector2f((float)i, (float)j));
+			if (line[j] == '*')
+				end = j * 50.0f;
+			else if (line[j] != ' ')
+				CreateEntity(line[j], sf::Vector2f((float)j, (float)i));
 		}
 
 }
@@ -83,6 +86,8 @@ void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 	else if (aux->getPlayerId() == 2)
 	{
 		pPlayer2 = aux;
+		if (!twoPlayers)
+			pPlayer2->setActive(false);
 	}
 	else
 	{
@@ -107,3 +112,45 @@ void Level::updateDeltaTime()
 	pGM->checkStutter(dt);
 	clock.restart();
 }
+
+void Level::updateView()
+{
+	sf::Vector2f auxView = { 0.f, 0.f };
+	unsigned int auxCounter = 0;
+	if (pPlayer1->getActive())
+	{
+		auxView += pPlayer1->getPosition();
+		auxCounter++;
+	}
+	if (pPlayer2->getActive())
+	{
+		auxView += pPlayer2->getPosition();
+		auxCounter++;
+	}
+	
+	auxView.x /= auxCounter;
+	auxView.y /= auxCounter;
+
+	pGM->centerView(auxView);
+}
+
+const bool Level::checkWipe()const
+{
+	if (!pPlayer1->getActive() && (!twoPlayers || !pPlayer2->getActive()))
+		return 1;
+	return 0;
+}
+
+const bool Level::checkDone()const
+{
+	if ((pPlayer1->getPosition().x >= end) || (pPlayer2->getPosition().x >= end))
+		return true;
+	return false;
+}
+
+void Level::setTwoPlayers(bool b)
+{
+	twoPlayers = b;
+}
+
+bool Level::twoPlayers(false);
