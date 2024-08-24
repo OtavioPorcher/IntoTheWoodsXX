@@ -1,29 +1,32 @@
-﻿cmake_minimum_required(VERSION 3.29)
-project(CMakeSFMLProject LANGUAGES CXX)
+﻿cmake_minimum_required(VERSION 3.11)
+project(${PROJECT_NAME}Jogo LANGUAGES CXX)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
-include(FetchContent)
-FetchContent_Declare(SFML
+if(NOT SFML_FOUND)
+  message("local installation of SFML not found, \
+  cloning sfml 2.x.x repo")
+  include(FetchContent)
+  FetchContent_Declare(sfml
     GIT_REPOSITORY https://github.com/SFML/SFML.git
-    GIT_TAG 2.6.x)
-FetchContent_MakeAvailable(SFML)
-
-add_executable(Jogo src/main.cpp src/Being.cpp src/Character.cpp src/Enemy.cpp src/Entity.cpp src/Game.cpp src/Observer.cpp src/Obstacle.cpp src/Player.cpp src/PlayerInputObserver.cpp src/StateMachine.cpp src/States.cpp src/EventManager.cpp "Include/Levels/Forest.h")
-target_include_directories(Jogo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(Jogo PRIVATE
-    sfml-graphics
-    sfml-window
-    sfml-system
-)
-target_compile_features(Jogo PRIVATE cxx_std_17)
-
-if(WIN32)
-    add_custom_command(
-        TARGET Jogo
-        COMMENT "Copy OpenAL DLL"
-        PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${SFML_SOURCE_DIR}/extlibs/bin/$<IF:$<EQUAL:${CMAKE_SIZEOF_VOID_P},8>,x64,x86>/openal32.dll $<TARGET_FILE_DIR:Jogo>
-        VERBATIM)
+    GIT_TAG e39f48742b702400424db46f3b28e8a09459ca38 #Este é o commit hash do commit mecionado acima
+  )
+  FetchContent_MakeAvailable(sfml)
 endif()
-install(TARGETS Jogo DESTINATION bin)
+
+
+add_executable(${PROJECT_NAME}Jogo)
+
+target_include_directories(${PROJECT_NAME}Jogo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(${PROJECT_NAME}Jogo PRIVATE sfml-graphics sfml-window sfml-system)
+target_compile_features(${PROJECT_NAME}Jogo PRIVATE cxx_std_17)
+target_sources(${PROJECT_NAME}Jogo PRIVATE ${cpp_source_files} src/main.cpp src/Being.cpp src/Character.cpp src/Enemy.cpp 
+src/Entity.cpp src/Game.cpp src/Observer.cpp src/Obstacle.cpp 
+src/Player.cpp src/PlayerInputObserver.cpp src/StateMachine.cpp 
+src/States.cpp src/EventManager.cpp src/Level.cpp src/GraphicManager.cpp 
+src/MainMenu.cpp src/Scorpion.cpp src/Ground.cpp src/InputManager.cpp
+src/Menu.cpp src/EntityList.cpp)
+
+install(TARGETS ${PROJECT_NAME}Jogo)

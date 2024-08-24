@@ -41,12 +41,12 @@ endif()
 
 execute_process(
   COMMAND "C:/Program Files/Git/cmd/git.exe"
-          checkout "2.6.x" --
+          checkout "e39f48742b702400424db46f3b28e8a09459ca38" --
   WORKING_DIRECTORY "C:/Users/Diogo/Documents/Projetos/Jogo/out/build/x86-Debug/_deps/sfml-src"
   RESULT_VARIABLE error_code
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to checkout tag: '2.6.x'")
+  message(FATAL_ERROR "Failed to checkout tag: 'e39f48742b702400424db46f3b28e8a09459ca38'")
 endif()
 
 set(init_submodules TRUE)
