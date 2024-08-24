@@ -10,7 +10,7 @@ namespace Entities
         class Obstacle : public Entity
         {
         protected:
-            
+            //sprite
         public:
             Obstacle();
             virtual ~Obstacle();

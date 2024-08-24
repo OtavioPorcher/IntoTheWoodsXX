@@ -48,17 +48,19 @@ void Level::setupLevel()
 void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYCATCH!
 {
 	Entities::Characters::Player* aux = new Entities::Characters::Player();
-	if (aux->getCounter() == 1)
+	if (aux->getPlayerId() == 1)
 	{
 		pPlayer1 = aux;
 	}
-	else if (aux->getCounter() == 2)
+	else if (aux->getPlayerId() == 2)
 	{
 		pPlayer2 = aux;
 	}
 	else
+	{
+		delete aux;
 		return;
-
+	}
 	dinamicEntities.insertFront(static_cast<Entity*>(aux));
 }
 

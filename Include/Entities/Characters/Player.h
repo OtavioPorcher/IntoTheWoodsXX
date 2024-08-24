@@ -34,7 +34,7 @@ namespace Entities
 			void Update();
 			void Draw();
 
-			const unsigned char getCounter()const;
+			const unsigned char getPlayerId()const;
 		};
 	}
 
