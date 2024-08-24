@@ -11,6 +11,8 @@ namespace Entities
 		private:
 			static unsigned char counter;
 			const unsigned char playerId;
+
+			static unsigned int points;
 	
 			bool grounded;
 			bool MovingLeft;
@@ -33,6 +35,8 @@ namespace Entities
 			void Draw();
 
 			const unsigned char getPlayerId()const;
+
+			static void Score(bID id_);
 		};
 	}
 

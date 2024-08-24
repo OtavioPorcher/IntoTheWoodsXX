@@ -81,4 +81,21 @@ const unsigned char Player::getPlayerId()const
 	return playerId;
 }
 
+void Player::Score(bID id_)
+{
+	switch (id_)
+	{
+	case bID::scorpion:
+		points += 1000;
+		break;
+	case bID::snake:
+		points += 3000;
+		break;
+	case bID::bear:
+		points += 20000;
+		break;
+	}
+}
+
 unsigned char Player::counter(1);
+unsigned int Player::points(0);
