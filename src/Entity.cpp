@@ -19,9 +19,23 @@ const sf::RectangleShape* Entity::getBody()
 	return &body;
 }
 
+const sf::Vector2f Entity::getPosition()
+{
+	return pos;
+}
+
 void Entity::updateDeltaTime(const float dt)
 {
 	deltaTime = dt;
 }
 
+void Entity::setActive(const bool b)
+{
+	active = b;
+}
+
+const bool Entity::getActive()const
+{
+	return active;
+}
 float Entity::deltaTime(0);

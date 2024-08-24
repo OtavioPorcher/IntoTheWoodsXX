@@ -28,5 +28,9 @@ namespace Entities
 		static void updateDeltaTime(const float dt);
 
 		const sf::RectangleShape* getBody();
+		const sf::Vector2f getPosition()const;
+
+		void setActive(const bool b);
+		const bool getActive()const;
 	};
 }
