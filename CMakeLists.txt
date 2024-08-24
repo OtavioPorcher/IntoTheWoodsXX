@@ -1,5 +1,5 @@
 ﻿cmake_minimum_required(VERSION 3.11)
-project(${PROJECT_NAME}Jogo LANGUAGES CXX)
+project(IntoTheWoods++ VERSION 1.0)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -16,6 +16,7 @@ if(NOT SFML_FOUND)
   FetchContent_MakeAvailable(sfml)
 endif()
 
+set(INTOTHEWOODS_PATH ${PROJECT_SOURCE_DIR})
 
 add_executable(${PROJECT_NAME}Jogo)
 
