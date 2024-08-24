@@ -1,8 +1,7 @@
 #include "..\Include\Levels\Evening.h"
 using namespace Levels;
 
-Evening::Evening(StateMachine* psm):Level(psm, sID::Evening),
-	done(false)
+Evening::Evening(StateMachine* psm):Level(psm, sID::Evening)
 {
 
 }
