@@ -4,8 +4,7 @@ using namespace Entities;
 using namespace Characters;
 using namespace Enemies;
 
-Enemy::Enemy(sf::Vector2f size, const float atckCooldown):
-	Character(size),
+Enemy::Enemy(sf::Vector2f size, bID id_, const float atckCooldown) : Character(size, id_),
 	atkCd(atckCooldown)
 {
 	

@@ -3,7 +3,7 @@
 using namespace Entities;
 using namespace Obstacles;
 
-Obstacle::Obstacle() : Entity()
+Obstacle::Obstacle(bID id_) : Entity({50.0f,50.0f},id_)
 {
 
 }

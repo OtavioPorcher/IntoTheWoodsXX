@@ -14,7 +14,7 @@ namespace Entities
 			protected:
 				float atkCd;
 			public:
-				Enemy(sf::Vector2f size = { 50.0f , 50.0f }, const float atckCooldown = 1.0f);
+				Enemy(sf::Vector2f size, bID id_, const float atckCooldown = 1.0f);
 				~Enemy();
 
 				virtual void Move() = 0;

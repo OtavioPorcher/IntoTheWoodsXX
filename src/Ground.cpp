@@ -3,7 +3,7 @@ using namespace Entities;
 using namespace Obstacles;
 
 Ground::Ground(sf::Vector2f position):
-	Obstacle()
+	Obstacle(bID::ground)
 {
 	pos = position;
 	body.setFillColor(sf::Color::Green);

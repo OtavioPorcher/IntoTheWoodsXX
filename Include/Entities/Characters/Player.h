@@ -11,8 +11,6 @@ namespace Entities
 		private:
 			static unsigned char counter;
 			const unsigned char playerId;
-
-			unsigned int lives;
 	
 			bool grounded;
 			bool MovingLeft;

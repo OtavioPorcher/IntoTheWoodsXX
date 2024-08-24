@@ -12,7 +12,7 @@ namespace Entities
         protected:
             //sprite
         public:
-            Obstacle();
+            Obstacle(bID id_);
             virtual ~Obstacle();
 
             virtual void Move() = 0;
