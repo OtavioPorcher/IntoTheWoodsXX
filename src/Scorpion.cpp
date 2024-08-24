@@ -4,13 +4,13 @@ using namespace Entities;
 using namespace Characters;
 using namespace Enemies;
 
-Scorpion::Scorpion() : Enemy(),
-originSet(false),
-origin(0.0f, 0.0f),
+Scorpion::Scorpion(sf::Vector2f position) : Enemy(),
+origin(position),
 facingRight(true),
 range(160.0f),
 dist(0.0f)
 {
+	pos = position;
 	body.setFillColor(sf::Color::Cyan);
 }
 
@@ -40,13 +40,3 @@ void Scorpion::Draw()
 {
 	pGM->render(&body);
 }
-
-void Scorpion::setOrigin(sf::Vector2f o)
-{
-	if (!originSet)
-	{
-		origin = o;
-		pos = o;
-	}
-}
-

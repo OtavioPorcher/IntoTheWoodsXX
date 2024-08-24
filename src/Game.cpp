@@ -5,11 +5,11 @@ Game::Game() :
 	pEM(EventManager::getInstance()),
 	pGM(GraphicManager::getInstance()),
 	pIM(InputManager::getInstance()),
-	player(),
-	scorpion(),
+	player({0.f,0.f}),
+	scorpion({ 480.0f, RES_Y - 50.0f }),
 	ground({RES_X-50.f,RES_Y-50.f})
 {
-	scorpion.setOrigin({ 480.0f, RES_Y - 50.0f });
+	
 }
 Game::~Game()
 {

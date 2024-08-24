@@ -10,7 +10,7 @@ namespace Entities
 		private:
 
 		public:
-			Ground(sf::Vector2f position = {0.f,0.f});
+			Ground(sf::Vector2f position);
 			~Ground();
 
 			void Move();

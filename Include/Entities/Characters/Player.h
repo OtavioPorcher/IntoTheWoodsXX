@@ -20,7 +20,7 @@ namespace Entities
 			bool Falling;
 			bool Blocking;
 		public:
-			Player();
+			Player(sf::Vector2f position);
 			~Player();
 			
 			void Move();

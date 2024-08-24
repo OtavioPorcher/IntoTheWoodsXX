@@ -4,7 +4,7 @@ using namespace Entities;
 using namespace Characters;
 #include <iostream>
 
-Player::Player():Character({(float)SIZEX,(float)SIZEY}),
+Player::Player(sf::Vector2f position):Character({(float)SIZEX,(float)SIZEY}),
 	lives(LIVES),
 	grounded(true),
 	MovingLeft(false),
@@ -13,6 +13,7 @@ Player::Player():Character({(float)SIZEX,(float)SIZEY}),
 	Blocking(false),
 	playerId(counter++)
 {
+	pos = position;
 	body.setFillColor(sf::Color::Magenta);
 }
 

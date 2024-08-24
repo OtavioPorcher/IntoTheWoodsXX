@@ -14,8 +14,8 @@ enum class bID
 	trap	   =  7,
 	menu	   =  8, 
 	button	   =  9, 
-	dawn	   = 10, //Lvl 1
-	evening	   = 11  //Lvl 2
+	evening	   = 10, //Lvl 1
+	dawn	   = 11  //Lvl 2
 };
 
 class Being

@@ -12,21 +12,18 @@ namespace Entities
 			{
 			private:
 				sf::Vector2f origin;
-				bool originSet;
 				bool facingRight;
 				
 				float range;
 				float dist;
 
 			public:
-				Scorpion();
+				Scorpion(sf::Vector2f position);
 				~Scorpion();
 
 				void Move();
 				void Update();
 				void Draw();
-
-				void setOrigin(sf::Vector2f o);
 			};
 		}
 	}
