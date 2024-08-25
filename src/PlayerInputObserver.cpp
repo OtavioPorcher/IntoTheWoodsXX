@@ -98,29 +98,33 @@ void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 
 void Observers::PlayerInputObserver::notifyKeyReleased(std::string key)
 {
-	if(!currentState->getIsRuning())
+	if (!currentState->getIsRuning())
 		return;
 	playerInputReleased(1, key);
 	if (pPlayer2)
 		playerInputReleased(2, key);
+		
  }
 void Observers::PlayerInputObserver::playerInputReleased(int playerIdx, std::string key)
 {
 	Player* pPlayerAux = NULL;
 	std::map<std::string, std::string>::iterator mapEnd;
-
+	
 	if (playerIdx == 1)
 	{
 		pPlayerAux = pPlayer1;
+		mapIt = inputSet.begin();
 		mapEnd = inputSet.end();
 	}
 	else if (playerIdx == 2)
 	{
 		pPlayerAux = pPlayer2;
+		mapIt = inputSet2.begin();
 		mapEnd = inputSet2.end();
 	}
 	else
 		return;
+	
 	for (mapIt; mapIt != mapEnd; mapIt++)
 	{
 		if (mapIt->second == key)

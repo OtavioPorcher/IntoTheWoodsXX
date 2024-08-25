@@ -8,6 +8,8 @@ Evening::Evening(StateMachine* psm):Level(psm, sID::Evening)
 	CreateScorpion({ 480.0f, RES_Y - 50.0f });
 	CreateGround({ RES_X - 50.f,RES_Y - 50.f });
 
+	setupLevel();
+
 }
 
 Evening::~Evening()
