@@ -124,7 +124,7 @@ void Observers::PlayerInputObserver::playerInputReleased(int playerIdx, std::str
 	}
 	else
 		return;
-	
+
 	for (mapIt; mapIt != mapEnd; mapIt++)
 	{
 		if (mapIt->second == key)
@@ -133,26 +133,25 @@ void Observers::PlayerInputObserver::playerInputReleased(int playerIdx, std::str
 			{
 				if (playerIdx == 1)
 					jumpKeyReleased1 = true;
-				if (playerIdx == 2) {
+				if (playerIdx == 2)
 					jumpKeyReleased2 = true;
 
-					break;
-				}
-				if (mapIt->first == "Left")
-				{
-					pPlayer1->MoveLeft(false);
-					break;
-				}
-				if (mapIt->first == "Right")
-				{
-					pPlayer1->MoveRight(false);
-					break;
-				}
-				if (mapIt->first == "Down")
+				break;
+			}
+			if (mapIt->first == "Left")
+			{
+				pPlayer1->MoveLeft(false);
+				break;
+			}
+			if (mapIt->first == "Right")
+			{
+				pPlayer1->MoveRight(false);
+				break;
+			}
+			if (mapIt->first == "Down")
 					pPlayer1->Block(false);
 			}
 		}
-	}
 	pPlayerAux = NULL;
 }
 void Observers::PlayerInputObserver::setPlayer1(Player* pP1)
