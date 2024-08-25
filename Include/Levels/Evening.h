@@ -21,5 +21,6 @@ namespace Levels
 
 		void CreateEntity(char id, sf::Vector2f pos);
 		void CreateScorpion(sf::Vector2f pos);
+		void CreateNest(sf::Vector2f pos);
 	};
 }

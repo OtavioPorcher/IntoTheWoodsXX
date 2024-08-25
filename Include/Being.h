@@ -10,12 +10,13 @@ enum class bID
 	bear	   =  3, //Boss
 	projectile =  4,
 	ground	   =  5,
-	grass	   =  6,
-	trap	   =  7,
-	menu	   =  8, 
-	button	   =  9, 
-	evening	   = 10, //Lvl 1
-	dawn	   = 11  //Lvl 2
+	nest	   =  6,
+	grass	   =  7,
+	trap	   =  8,
+	menu	   =  9, 
+	button	   = 10, 
+	evening	   = 11, //Lvl 1
+	dawn	   = 12  //Lvl 2
 };
 
 class Being
