@@ -17,7 +17,8 @@ void EntityList::UpdateEntities()
 	List<Entity>::Iterator<Entity> it = list.begin();
 	for (it; it != list.end(); it++)
 	{
-		(*it)->Update();
+		if((*it)->getActive())
+			(*it)->Update();
 	}
 }
 
@@ -26,7 +27,8 @@ void EntityList::DrawEntities()
 	List<Entity>::Iterator<Entity> it = list.begin();
 	for (it; it != list.end(); it++)
 	{
-		(*it)->Draw();
+		if ((*it)->getActive())
+			(*it)->Draw();
 	}
 }
 

@@ -5,7 +5,7 @@ Entity::Entity(sf::Vector2f size, bID id_) : Being(id_),
 	active(true),
 	size(size),
 	body(size),
-	vel(0.1f,0.1f)
+	vel(300.f,300.f)
 {
 
 }

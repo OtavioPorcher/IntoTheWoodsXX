@@ -22,9 +22,9 @@ Scorpion::~Scorpion()
 void Scorpion::Move()
 {
 	if (facingRight)
-		pos.x += vel.x;
+		pos.x += vel.x * deltaTime;
 	else
-		pos.x -= vel.x;
+		pos.x -= vel.x * deltaTime;
 	dist = std::fabs(pos.x - origin.x);
 }
 

@@ -24,20 +24,20 @@ Player::~Player()
 
 void Player::Move()
 {
-	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::A)) && (body.getPosition().x>0))
-		body.move(-vel.x, 0.0f);
-	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::D)) && (body.getPosition().x < (960 - body.getSize().x)))
-		body.move(vel.x, 0.0f);
+	if ((MovingLeft) && (body.getPosition().x>0))
+		body.move((-vel.x)*deltaTime, 0.0f);
+	if ((MovingRight) && (body.getPosition().x < (960 - body.getSize().x)))
+		body.move(vel.x*deltaTime, 0.0f);
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::W)) && (body.getPosition().y>0))
-		body.move(0.0f, -vel.y);
+		body.move(0.0f, -vel.y*deltaTime);
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::S)) && (body.getPosition().y < (540 - body.getSize().y)))
-		body.move(0.0f, vel.y);
+		body.move(0.0f, vel.y*deltaTime);
 }
 void Player::Jump()
 {
 	if (grounded)
 	{
-		vel.y = 0.1f;//JUMPHEIGHT;
+		//vel.y = -sqrt(2.0f * GRAVITY * JUMPHEIGHT); // EQUAÇÃO DE TORRICELLI APLICADA
 	}
 }
 
@@ -68,6 +68,7 @@ void Player::setGrounded(bool b)
 
 void Player::Update()
 {
+	//Gravity();
 	Move();
 }
 
