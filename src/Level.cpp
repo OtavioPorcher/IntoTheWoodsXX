@@ -115,23 +115,29 @@ void Level::updateDeltaTime()
 
 void Level::updateView()
 {
-	sf::Vector2f auxView = { 0.f, 0.f };
+	float auxView = 0.f;
+	float minX = RES_X / 2;
+	//float maxX = end - minX;
 	unsigned int auxCounter = 0;
+
 	if (pPlayer1->getActive())
 	{
-		auxView += pPlayer1->getPosition();
+		auxView += pPlayer1->getPosition().x;
 		auxCounter++;
 	}
 	if (pPlayer2->getActive())
 	{
-		auxView += pPlayer2->getPosition();
+		auxView += pPlayer2->getPosition().x;
 		auxCounter++;
 	}
-	
-	auxView.x /= auxCounter;
-	auxView.y /= auxCounter;
+	auxView /= auxCounter;
+	if (auxView < minX)
+		auxView = minX;
+	//if (auxView > maxX)
+	//	auxView = maxX;
 
-	pGM->centerView(auxView);
+
+	pGM->centerView({auxView, RES_Y/2});
 }
 
 const bool Level::checkWipe()const

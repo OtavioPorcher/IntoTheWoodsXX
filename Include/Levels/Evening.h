@@ -17,6 +17,7 @@ namespace Levels
 		std::string getFileName();
 
 		void Update();
+		void Reset();
 
 		void CreateEntity(char id, sf::Vector2f pos);
 		void CreateScorpion(sf::Vector2f pos);

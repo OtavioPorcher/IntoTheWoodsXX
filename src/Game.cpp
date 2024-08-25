@@ -4,12 +4,11 @@
 Game::Game() :
 	pEM(EventManager::getInstance()),
 	pGM(GraphicManager::getInstance()),
-	pIM(InputManager::getInstance()),
-	player({0.f,0.f}),
-	scorpion({ 480.0f, RES_Y - 50.0f }),
-	ground({RES_X-50.f,RES_Y-50.f})
+	pIM(InputManager::getInstance())
 {
-	
+	StateMachine* pAux = static_cast<StateMachine*>(this);
+	addState(static_cast<State*>(new Evening(pAux)));
+	changeCurrentState(sID::Evening);
 }
 Game::~Game()
 {
@@ -40,13 +39,7 @@ void Game::executar()
 	{
 		
 		pGM->clear();
-		//runCurrentState();
-		player.Draw();
-		scorpion.Draw();
-		ground.Draw();
-		player.Update();
-		scorpion.Update();
-		ground.Update();
+		runCurrentState();
 		pGM->display();
 		pEM->Run();
 	}

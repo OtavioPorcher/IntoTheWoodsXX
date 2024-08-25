@@ -15,7 +15,8 @@ using namespace Managers;
 #include "Menus/StateMenu.h"
 #include "Menus/MainMenu.h"
 
-
+#include "Levels/Evening.h"
+using namespace Levels;
 
 class Game : public StateMachine
 {
@@ -25,10 +26,6 @@ private:
 	EventManager* pEM;
 	GraphicManager* pGM;
 	InputManager* pIM;
-
-	Entities::Characters::Player player;
-	Entities::Characters::Enemies::Scorpion scorpion;
-	Entities::Obstacles::Ground ground;
 	
 
 	Game();

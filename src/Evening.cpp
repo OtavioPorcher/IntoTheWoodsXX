@@ -3,6 +3,10 @@ using namespace Levels;
 
 Evening::Evening(StateMachine* psm):Level(psm, sID::Evening)
 {
+	CreatePlayer({ 0.f,0.f });
+	CreatePlayer({ 400.0f, 400.0f });
+	CreateScorpion({ 480.0f, RES_Y - 50.0f });
+	CreateGround({ RES_X - 50.f,RES_Y - 50.f });
 
 }
 
@@ -22,6 +26,9 @@ void Evening::Update()
 	{
 		isRuning = true;
 	}
+
+
+
 	dinamicEntities.UpdateEntities();
 	staticEntities.UpdateEntities();
 	updateDeltaTime();
@@ -35,6 +42,11 @@ void Evening::Update()
 	{
 		//next level
 	}
+}
+
+void Evening::Reset()
+{
+
 }
 
 void Evening::CreateEntity(char id, sf::Vector2f pos)

@@ -19,8 +19,8 @@ void StateMachine::changeCurrentState(sID id_)
 
 void StateMachine::runCurrentState()
 {
-	statesMap[currentState]->Update();
 	statesMap[currentState]->Draw();
+	statesMap[currentState]->Update();
 }
 
 const sID StateMachine::getCurrentStateID()const
