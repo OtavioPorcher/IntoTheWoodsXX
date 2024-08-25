@@ -9,6 +9,7 @@ namespace Entities
 	class Entity : public Being
 	{
 	protected:
+		bool grounded;
 		bool active;
 
 		sf::Vector2f size;
@@ -27,6 +28,7 @@ namespace Entities
 		virtual void Move() = 0;
 
 		void Gravity();
+		void ThrustForce();
 
 		static void updateDeltaTime(const float dt);
 

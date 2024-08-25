@@ -21,10 +21,10 @@ Scorpion::~Scorpion()
 
 void Scorpion::Move()
 {
-	if (facingRight)
-		pos.x += vel.x * deltaTime;
-	else
-		pos.x -= vel.x * deltaTime;
+	if (!facingRight)
+		vel.x *= -1;
+
+	pos += vel * deltaTime;
 	dist = std::fabs(pos.x - origin.x);
 }
 
@@ -33,6 +33,9 @@ void Scorpion::Update()
 	body.setPosition(pos);
 	if (dist >= range)
 		facingRight = (!facingRight);
+
+	Gravity();
+	ThrustForce();
 	Move();
 }
 

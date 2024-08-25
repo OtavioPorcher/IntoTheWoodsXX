@@ -14,7 +14,6 @@ namespace Entities
 
 			static unsigned int points;
 	
-			bool grounded;
 			bool MovingLeft;
 			bool MovingRight;
 			bool Falling;
@@ -29,7 +28,6 @@ namespace Entities
 			void MoveLeft(const bool b);
 			void Fall();
 			void Block(bool b);
-			void setGrounded(bool b);
 
 			void Update();
 			void Draw();

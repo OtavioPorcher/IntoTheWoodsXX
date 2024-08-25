@@ -14,11 +14,14 @@ Ground::~Ground()
 
 void Ground::Move()
 {
-
+	pos += vel * deltaTime;
 }
 
 void Ground::Update()
 {
+	Gravity();
+	ThrustForce();
+	Move();
 	body.setPosition(pos);
 }
 

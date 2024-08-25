@@ -5,13 +5,13 @@ using namespace Characters;
 #include <iostream>
 
 Player::Player(sf::Vector2f position):Character({(float)SIZEX,(float)SIZEY}, bID::player),
-	grounded(true),
 	MovingLeft(false),
 	MovingRight(false),
 	Falling(false),
 	Blocking(false),
 	playerId(counter++)
 {
+	vel = { 300.f, 300.f };
 	lives = LIVES;
 	pos = position;
 	body.setFillColor(sf::Color::Magenta);
@@ -61,14 +61,10 @@ void Player::Block(bool b)
 	Blocking = b;
 }
 
-void Player::setGrounded(bool b)
-{
-	grounded = b;
-}
-
 void Player::Update()
 {
 	//Gravity();
+	//ThrustForce();
 	Move();
 }
 

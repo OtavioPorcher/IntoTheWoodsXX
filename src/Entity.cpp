@@ -2,10 +2,11 @@
 using namespace Entities;
 
 Entity::Entity(sf::Vector2f size, bID id_) : Being(id_),
+	grounded(false),
 	active(true),
 	size(size),
 	body(size),
-	vel(300.f,300.f)
+	vel(0.f,0.f)
 {
 
 }
@@ -17,6 +18,12 @@ Entity::~Entity()
 void Entity::Gravity()
 {
 	vel.y += GRAVITY * deltaTime;
+}
+
+void Entity::ThrustForce()
+{
+	if (grounded)
+		vel.y -= GRAVITY * deltaTime;
 }
 
 const sf::RectangleShape* Entity::getBody()
