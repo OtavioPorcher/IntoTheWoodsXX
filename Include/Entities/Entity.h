@@ -2,6 +2,8 @@
 
 #include "..\Being.h"
 
+#define GRAVITY 70.0f
+
 namespace Entities
 {
 	class Entity : public Being
@@ -25,6 +27,7 @@ namespace Entities
 		virtual void Move() = 0;
 
 		void Gravity();
+
 		static void updateDeltaTime(const float dt);
 
 		const sf::RectangleShape* getBody();

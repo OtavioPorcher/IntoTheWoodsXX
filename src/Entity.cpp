@@ -14,6 +14,11 @@ Entity::~Entity()
 
 }
 
+void Entity::Gravity()
+{
+	vel.y += GRAVITY * deltaTime;
+}
+
 const sf::RectangleShape* Entity::getBody()
 {
 	return &body;
