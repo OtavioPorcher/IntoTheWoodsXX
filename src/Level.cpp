@@ -32,7 +32,7 @@ void Level::Draw()
 
 void Level::setupLevel()
 {
-	createMap();
+	//createMap();
 	try
 	{
 		pPIO = new Observers::PlayerInputObserver(pPlayer1, pPlayer2, static_cast<State*>(this));
