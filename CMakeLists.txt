@@ -23,11 +23,30 @@ add_executable(${PROJECT_NAME}Jogo)
 target_include_directories(${PROJECT_NAME}Jogo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(${PROJECT_NAME}Jogo PRIVATE sfml-graphics sfml-window sfml-system)
 target_compile_features(${PROJECT_NAME}Jogo PRIVATE cxx_std_17)
-target_sources(${PROJECT_NAME}Jogo PRIVATE ${cpp_source_files} src/main.cpp src/Being.cpp src/Character.cpp src/Enemy.cpp 
-src/Entity.cpp src/Game.cpp src/Observer.cpp src/Obstacle.cpp 
-src/Player.cpp src/PlayerInputObserver.cpp src/StateMachine.cpp 
-src/States.cpp src/EventManager.cpp src/Level.cpp src/GraphicManager.cpp 
-src/MainMenu.cpp src/Scorpion.cpp src/Ground.cpp src/InputManager.cpp
-src/Menu.cpp src/EntityList.cpp)
+target_sources(${PROJECT_NAME}Jogo PRIVATE ${cpp_source_files} 
+src/main.cpp 
+src/Being.cpp 
+src/Character.cpp 
+src/Enemy.cpp 
+src/Entity.cpp 
+src/EntityList.cpp 
+src/Evening.cpp 
+src/EventManager.cpp 
+src/Game.cpp 
+src/GraphicManager.cpp 
+src/Ground.cpp 
+src/InputManager.cpp 
+src/Level.cpp 
+src/MainMenu.cpp 
+src/Observer.cpp 
+src/Obstacle.cpp 
+src/Player.cpp 
+src/PlayerInputObserver.cpp 
+src/Scorpion.cpp  
+src/StateMachine.cpp 
+src/States.cpp  
+src/StateMenu.cpp
+src/Menu.cpp 
+src/Nest.cpp)
 
 install(TARGETS ${PROJECT_NAME}Jogo)
