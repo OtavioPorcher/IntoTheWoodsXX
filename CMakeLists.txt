@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.15)
 project(IntoTheWoods++ VERSION 1.0)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -52,18 +52,6 @@ src/States.cpp)
 
 #exemplo de variavel
 set(INTO_THE_WOODS_PATH ${PROJECT_SOURCE_DIR})
-
-#define os diretorios de include
-#Isso eh interessante pois faz com que nao seja necessario dar include no 'Relative_Path', ou seja,
-#se um arquivo src/Foo.c quer incluir Bar.h inves de dar include em "../include/Bar.h"
-#Foo.c pode incluir apenas "Bar.h" se "include" estiver definido como diretorio de include
-target_include_directories(${PROJECT_NAME} PUBLIC  
-"${PROJECT_SOURCE_DIR}/include" "${PROJECT_SOURCE_DIR}/include/Entities" "${PROJECT_SOURCE_DIR}/include/Entities/Characters"
-"${PROJECT_SOURCE_DIR}/include/Entities/Obstacles"
-"${PROJECT_SOURCE_DIR}/include/Entities/Characters/Enemies" "${PROJECT_SOURCE_DIR}/include/Utils"
-"${PROJECT_SOURCE_DIR}/include/Managers" "${PROJECT_SOURCE_DIR}/include/States" "${PROJECT_SOURCE_DIR}/include/Levels" 
-"${PROJECT_SOURCE_DIR}/include/Menus" "${PROJECT_SOURCE_DIR}/include/Observers" "${PROJECT_SOURCE_DIR}/include/DefineSource" "${PROJECT_SOURCE_DIR}/include/Properties")
-
 
 #Exemplo de passagem de variavel CMAKE para variavel do Codigo
 configure_file(${PROJECT_SOURCE_DIR}/include/DefineSource/SourcePath.h.in ${PROJECT_SOURCE_DIR}/include/DefineSource/SourcePath.h)
