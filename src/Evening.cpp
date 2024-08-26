@@ -36,10 +36,10 @@ void Evening::Update()
 
 
 
-	dinamicEntities.UpdateEntities();
-	staticEntities.UpdateEntities();
+	entityList.UpdateEntities();
 	updateDeltaTime();
-	//CollisionManager run
+	pCM->Manage();
+
 	if (checkWipe())
 	{
 		//game over
@@ -84,7 +84,7 @@ void Evening::CreateScorpion(sf::Vector2f pos)
 		std::cout << "ERROR: Failed to Allocate Memory (Scorpion)!" << std::endl;
 		exit(1);
 	}
-	dinamicEntities.insertFront(aux);
+	entityList.insertFront(aux);
 	aux = NULL;
 }
 
@@ -96,6 +96,6 @@ void Evening::CreateNest(sf::Vector2f pos)
 		std::cout << "ERROR: Failed to Allocate Memory (Nest)!" << std::endl;
 		exit(1);
 	}
-	staticEntities.insertFront(aux);
+	entityList.insertFront(aux);
 	aux = NULL;
 }

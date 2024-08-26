@@ -240,8 +240,8 @@ namespace Lists
 				const bool empty()const { return(size == 0 ? true : false); }
 				const unsigned int getSize()const { return size; }
 
-				Element<TYPE>* begin() { return pFirst; }
-				Element<TYPE>* end()   { return pLast->getNext();  }
+				Element<TYPE>* begin() { return (empty() ? NULL : pFirst); }
+				Element<TYPE>* end() { return (empty() ? NULL : pLast->getNext()); }
 
 
 			};

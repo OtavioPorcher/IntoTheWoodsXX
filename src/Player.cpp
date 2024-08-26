@@ -9,7 +9,11 @@ Player::Player(sf::Vector2f position):Character({(float)SIZEX,(float)SIZEY}, bID
 	MovingRight(false),
 	Falling(false),
 	Blocking(false),
-	playerId(counter++)
+	velMultiplier(1),
+	playerId(counter++),
+	atkDurationTimer(0.f),
+	atkCDTimer(0.f),
+	attacking(false)
 {
 	vel = { 300.f, 300.f };
 	lives = LIVES;
@@ -33,9 +37,9 @@ void Player::Move()
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::S)) && (body.getPosition().y < (540 - body.getSize().y)))
 		body.move(0.0f, vel.y*deltaTime);
 }
-void Player::Jump()
+void Player::Jump(bool forced)
 {
-	if (grounded)
+	if (forced || grounded)
 	{
 		//vel.y = -sqrt(2.0f * GRAVITY * JUMPHEIGHT); // EQUAÇÃO DE TORRICELLI APLICADA
 	}
@@ -99,5 +103,62 @@ void Player::setGrounded(bool a)
 	grounded = a;
 }
 
+void atkDimentions(bool a, sf::Vector2f* pos, sf::Vector2f* size) // Função auxiliar para mudar o tamanho da hitbox durante um ataque
+{
+	if (a)
+	{
+		(*size).x += 30.f;
+	}
+	else
+	{
+		(*size).x -= 30.f;
+	}
+}
+
+void Player::attack(bool a)
+{
+	if (atkCDTimer < 0.5f)
+		return;
+
+	attacking = a;
+
+	atkDimentions(a, &pos, &size);
+	if (a)
+	{
+		atkDurationTimer = 0;
+	}
+	else
+	{
+		atkCDTimer = 0;
+	}
+}
+
+void Player::attack()
+{
+	if (!attacking)
+	{
+		atkCDTimer += deltaTime;
+		return;
+	}
+	atkDurationTimer += deltaTime;
+	if (atkDurationTimer > 0.5f)
+		attack(false);
+}
+
+void Player::sufferDMG(int damage, bool unstoppable)
+{
+	if (!unstoppable && (!Blocking && rand() % 2))
+		lives-= damage;
+}
+
+void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
+{
+	std::cout << "EU SOU UM DEUS!!!" << std::endl;
+}
+
+void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positive)
+{
+
+}
 unsigned char Player::counter(1);
 unsigned int Player::points(0);

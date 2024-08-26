@@ -1,6 +1,7 @@
 #pragma once
 
-#include "../Managers/EventManager.h"
+#include "../Managers/InputManager.h"
+#include "../Managers/CollisionManager.h"
 #include "../Entities/Characters/Player.h"
 #include "../Entities/Obstacles/Ground.h"
 
@@ -11,7 +12,7 @@ using namespace States;
 using namespace Observers;
 
 #include "../Utils/EntityList.h"
-using namespace List;
+using namespace Lists;
 
 namespace Levels
 {
@@ -22,15 +23,16 @@ namespace Levels
         float dt;
 
         Managers::InputManager* pIM;
+        Managers::CollisionManager* pCM;
         Observers::PlayerInputObserver* pPIO;
+
 
         static bool twoPlayers;
         Player* pPlayer1;
         Player* pPlayer2;
 
-        EntityList dinamicEntities;
-        EntityList staticEntities;
-
+        EntityList entityList;
+        
         float end;
 
         //Background
