@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.15)
 project(IntoTheWoods++ VERSION 1.0)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -49,5 +49,11 @@ src/Scorpion.cpp
 src/StateMachine.cpp  
 src/StateMenu.cpp 
 src/States.cpp)
+
+#exemplo de variavel
+set(INTO_THE_WOODS_PATH ${PROJECT_SOURCE_DIR})
+
+#Exemplo de passagem de variavel CMAKE para variavel do Codigo
+configure_file(${PROJECT_SOURCE_DIR}/include/DefineSource/SourcePath.h.in ${PROJECT_SOURCE_DIR}/include/DefineSource/SourcePath.h)
 
 install(TARGETS ${PROJECT_NAME}Jogo)
