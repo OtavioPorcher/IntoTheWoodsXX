@@ -3,13 +3,13 @@ using namespace Managers;
 
 #include <cmath>
 
-CollisionManager::CollisionManager(Lists::List<Entities::Entity>& rawList):
+CollisionManager::CollisionManager():
 	playerList(),
 	enemyList(),
 	obstacleList(),
 	projectileList()
 {
-	setLists(rawList);
+
 }
 
 CollisionManager::~CollisionManager()
@@ -17,35 +17,30 @@ CollisionManager::~CollisionManager()
 	
 }
 
-void CollisionManager::setLists(Lists::List<Entities::Entity>& rawList)
+void CollisionManager::addEntity(Entities::Entity* pEntity)
 {
-	Lists::List<Entities::Entity>::Iterator<Entities::Entity> it = rawList.begin();
-	
-	for(it; it != rawList.end(); it++)
+	switch (pEntity->getId())
 	{
-		switch ((*it)->getId())
-		{
-		case bID::player:
-			playerList.insertFront((*it));
-			break;
+	case bID::player:
+		playerList.insertFront(pEntity);
+		break;
 
-		case bID::scorpion:
-		case bID::snake:
-		case bID::bear:
-			enemyList.insertFront((*it));
-			break;
+	case bID::scorpion:
+	case bID::snake:
+	case bID::bear:
+		enemyList.insertFront(pEntity);
+		break;
 
-		case bID::ground:
-		case bID::grass:
-		case bID::nest:
-		case bID::trap:
-			obstacleList.insertFront((*it));
-			break;
+	case bID::ground:
+	case bID::grass:
+	case bID::nest:
+	case bID::trap:
+		obstacleList.insertFront(pEntity);
+		break;
 
-		case bID::projectile:
-			projectileList.insertFront((*it));
-			break;
-		}
+	case bID::projectile:
+		projectileList.insertFront(pEntity);
+		break;
 	}
 }
 

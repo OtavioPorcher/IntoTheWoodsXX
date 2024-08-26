@@ -6,6 +6,7 @@ using namespace Levels;
 Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	pIM(Managers::InputManager::getInstance()),
 	pPIO(NULL),
+	pCM(NULL),
 	clock(),
 	dt(0),
 	pPlayer1(NULL),
@@ -13,7 +14,15 @@ Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	entityList(),
 	end()
 {
-	
+	try { pCM = new Managers::CollisionManager(); }
+	catch (int error)
+	{
+		if (!error)
+		{
+			std::cout << "ERROR: Failed to Allocate Memory (CollisionManager)" << std::endl;
+			exit(1);
+		}
+	}
 }
 
 Level::~Level()
@@ -41,16 +50,6 @@ void Level::setupLevel()
 		if (!error)
 		{
 			std::cout << "ERROR: Failed to Allocate Memory (PlayerInputObserver)" << std::endl;
-			exit(1);
-		}
-	}
-
-	try { pCM = new Managers::CollisionManager(entityList.getList()); }
-	catch (int error)
-	{
-		if (!error)
-		{
-			std::cout << "ERROR: Failed to Allocate Memory (CollisionManager)" << std::endl;
 			exit(1);
 		}
 	}
@@ -102,15 +101,27 @@ void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 		delete aux;
 		return;
 	}
-	entityList.insertFront(static_cast<Entity*>(aux));
+
+	Entity* auxEntity = static_cast<Entity*>(aux);
+
+	entityList.insertFront(auxEntity);
+	pCM->addEntity(auxEntity);
+
 	aux = NULL;
+	auxEntity = NULL;
 }
 
 void Level::CreateGround(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYCATCH!
 {
 	Entities::Obstacles::Ground* aux = new Entities::Obstacles::Ground(pos);
-	entityList.insertFront(static_cast<Entity*>(aux));
+
+	Entity* auxEntity = static_cast<Entity*>(aux);
+
+	entityList.insertFront(auxEntity);
+	pCM->addEntity(auxEntity);
+
 	aux = NULL;
+	auxEntity = NULL;
 }
 
 void Level::updateDeltaTime()

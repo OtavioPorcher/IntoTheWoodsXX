@@ -84,8 +84,14 @@ void Evening::CreateScorpion(sf::Vector2f pos)
 		std::cout << "ERROR: Failed to Allocate Memory (Scorpion)!" << std::endl;
 		exit(1);
 	}
-	entityList.insertFront(aux);
+
+	Entity* auxEntities = static_cast<Entity*>(aux);
+
+	entityList.insertFront(auxEntities);
+	pCM->addEntity(auxEntities);
+
 	aux = NULL;
+	auxEntities = NULL;
 }
 
 void Evening::CreateNest(sf::Vector2f pos)
@@ -96,6 +102,12 @@ void Evening::CreateNest(sf::Vector2f pos)
 		std::cout << "ERROR: Failed to Allocate Memory (Nest)!" << std::endl;
 		exit(1);
 	}
-	entityList.insertFront(aux);
+
+	Entity* auxEntities = static_cast<Entity*>(aux);
+
+	entityList.insertFront(auxEntities);
+	pCM->addEntity(auxEntities);
+
 	aux = NULL;
+	auxEntities = NULL;
 }

@@ -17,10 +17,12 @@ namespace Managers
 		Lists::List<Entities::Entity> obstacleList;
 		Lists::List<Entities::Entity> projectileList;
 
-		void setLists(Lists::List<Entities::Entity>& rawList);
+		
 	public:
-		CollisionManager(Lists::List<Entities::Entity>& rawList);
+		CollisionManager();
 		~CollisionManager();
+
+		void addEntity(Entities::Entity* pEntidade);
 
 		void Manage();
 
