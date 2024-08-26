@@ -44,3 +44,6 @@ CppProperties.json
 
 #out (cmake)
 /out/
+
+#Personal Source Path Include file
+/Include/DefineSource/SourcePath.h
