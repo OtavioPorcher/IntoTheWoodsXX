@@ -1,22 +1,28 @@
-#Define a versao minima do CMake para gerar a build
-cmake_minimum_required(VERSION 3.15)
-#Define nome do projeto e informacoes basicas do projeto como: versao, descricao, url, linguagens utilizadas, etc...
+﻿cmake_minimum_required(VERSION 3.11)
 project(IntoTheWoods++ VERSION 1.0)
-#Construtura do projeto. (Em tutoriais mais antigos de CMake geralmente utilizam uma variavel para guardar
-#os 'source_files', em CMake moderno abandonamos essa funcionalidade e utilizamos as funcoes 'Target')
-add_executable(${PROJECT_NAME})
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
-# ---- exemplo de FetchContent
-include(FetchContent)
-FetchContent_Declare(sfml-dep
+if(NOT SFML_FOUND)
+  message("local installation of SFML not found, \
+  cloning sfml 2.x.x repo")
+  include(FetchContent)
+  FetchContent_Declare(sfml
     GIT_REPOSITORY https://github.com/SFML/SFML.git
-    GIT_TAG 2.5.x)
-FetchContent_MakeAvailable(sfml-dep)
-# ----- FetchContent
+    GIT_TAG e39f48742b702400424db46f3b28e8a09459ca38 #Este é o commit hash do commit mecionado acima
+  )
+  FetchContent_MakeAvailable(sfml)
+endif()
 
-#- Metodo recomendado para projetos com mais de um Dev
+set(INTOTHEWOODS_PATH ${PROJECT_SOURCE_DIR})
 
+add_executable(${PROJECT_NAME}Jogo)
+
+target_include_directories(${PROJECT_NAME}Jogo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(${PROJECT_NAME}Jogo PRIVATE sfml-graphics sfml-window sfml-system)
+target_compile_features(${PROJECT_NAME}Jogo PRIVATE cxx_std_17)
 target_sources(${PROJECT_NAME}Jogo PRIVATE ${cpp_source_files} 
 src/main.cpp 
 src/Being.cpp 
@@ -62,4 +68,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 #Exemplo de passagem de variavel CMAKE para variavel do Codigo
 configure_file(${PROJECT_SOURCE_DIR}/include/DefineSource/SourcePath.h.in ${PROJECT_SOURCE_DIR}/include/DefineSource/SourcePath.h)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC sfml-graphics sfml-window sfml-system)
+install(TARGETS ${PROJECT_NAME}Jogo)
