@@ -26,7 +26,8 @@ target_compile_features(${PROJECT_NAME}Jogo PRIVATE cxx_std_17)
 target_sources(${PROJECT_NAME}Jogo PRIVATE ${cpp_source_files} 
 src/main.cpp 
 src/Being.cpp 
-src/Character.cpp 
+src/Character.cpp
+src/CollisionManager.cpp
 src/Enemy.cpp 
 src/Entity.cpp 
 src/EntityList.cpp 
@@ -37,16 +38,16 @@ src/GraphicManager.cpp
 src/Ground.cpp 
 src/InputManager.cpp 
 src/Level.cpp 
-src/MainMenu.cpp 
+src/MainMenu.cpp
+src/Menu.cpp 
+src/Nest.cpp 
 src/Observer.cpp 
 src/Obstacle.cpp 
 src/Player.cpp 
 src/PlayerInputObserver.cpp 
 src/Scorpion.cpp  
-src/StateMachine.cpp 
-src/States.cpp  
-src/StateMenu.cpp
-src/Menu.cpp 
-src/Nest.cpp)
+src/StateMachine.cpp  
+src/StateMenu.cpp 
+src/States.cpp)
 
 install(TARGETS ${PROJECT_NAME}Jogo)
