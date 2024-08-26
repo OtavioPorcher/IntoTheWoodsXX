@@ -19,7 +19,7 @@ void Nest::Activate()
 {
 		pLevel->CreateScorpion({ pos.x,pos.y - size.y });
 		pLevel->CreateGround(pos);
-	setActive(false);
+		setActive(false);
 }
 
 void Nest::Move()
