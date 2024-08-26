@@ -34,6 +34,7 @@ namespace Entities
 
 		const sf::RectangleShape* getBody();
 		const sf::Vector2f getPosition()const;
+		const sf::Vector2f getSize()const;
 
 		void setActive(const bool b);
 		const bool getActive()const;

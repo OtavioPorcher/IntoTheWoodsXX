@@ -36,6 +36,11 @@ const sf::Vector2f Entity::getPosition()const
 	return pos;
 }
 
+const sf::Vector2f Entity::getSize()const
+{
+	return size;
+}
+
 void Entity::updateDeltaTime(const float dt)
 {
 	deltaTime = dt;

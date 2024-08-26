@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-namespace List
+namespace Lists
 {
 
 	template <class TYPE>

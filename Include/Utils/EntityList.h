@@ -4,7 +4,7 @@
 #include "..\Entities\Entity.h"
 using namespace Entities;
 
-namespace List
+namespace Lists
 {
 	class EntityList
 	{
@@ -23,6 +23,8 @@ namespace List
 
 		void Clear();
 		void deleteEntities();
+
+		List<Entity>& getList();
 
 		//void SaveEntities();
 		//void LoadEntities();

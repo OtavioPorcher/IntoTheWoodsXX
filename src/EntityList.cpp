@@ -1,5 +1,5 @@
 #include "..\Include\Utils\EntityList.h"
-using namespace List;
+using namespace Lists;
 
 EntityList::EntityList() : 
 	list()
@@ -54,6 +54,11 @@ void EntityList::deleteEntities()
 		if(*it)
 			delete(*it);
 	}
+}
+
+List<Entities::Entity>& EntityList::getList()
+{
+	return list;
 }
 
 int EntityList::getSize()

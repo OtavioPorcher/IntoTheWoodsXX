@@ -2,6 +2,10 @@
 
 #include "Character.h"
 
+#include "Enemies/Enemy.h"
+#include "..\Obstacles\Obstacle.h"
+//Projetil
+
 namespace Entities
 {
 	namespace Characters 
@@ -20,12 +24,16 @@ namespace Entities
 			bool MovingRight;
 			bool Falling;
 			bool Blocking;
+
+			bool attacking;
+			float atkDurationTimer;
+			float atkCDTimer;
 		public:
 			Player(sf::Vector2f position);
 			~Player();
 			
 			void Move();
-			void Jump();
+			void Jump(bool forced = false);
 			void MoveRight(const bool b);
 			void MoveLeft(const bool b);
 			void Fall();
@@ -39,6 +47,14 @@ namespace Entities
 			static void Score(bID id_);
 
 			void setGrounded(bool a);
+
+			void attack(bool a);
+			void attack();
+			void sufferDMG(int damage = 1, bool unstoppable = false);
+
+			void Collision(Enemies::Enemy* pE, bool xAxis, bool positive);
+			void Collision(Obstacles::Obstacle* pO, bool xAxis, bool positive);
+			//void Collision(Projectiles::Projectile, bool xAxis, bool positive);
 		};
 	}
 
