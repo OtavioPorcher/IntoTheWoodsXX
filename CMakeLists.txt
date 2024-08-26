@@ -45,7 +45,7 @@ src/StateMenu.cpp
 src/States.cpp)
 
 #exemplo de variavel
-set(THE_WIZARD_PATH ${PROJECT_SOURCE_DIR})
+set(INTO_THE_WOODS_PATH ${PROJECT_SOURCE_DIR})
 
 #define os diretorios de include
 #Isso eh interessante pois faz com que nao seja necessario dar include no 'Relative_Path', ou seja,
