@@ -94,5 +94,10 @@ void Player::Score(bID id_)
 	}
 }
 
+void Player::setGrounded(bool a)
+{
+	grounded = a;
+}
+
 unsigned char Player::counter(1);
 unsigned int Player::points(0);

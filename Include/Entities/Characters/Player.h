@@ -14,6 +14,8 @@ namespace Entities
 
 			static unsigned int points;
 	
+			float velMultiplier;
+
 			bool MovingLeft;
 			bool MovingRight;
 			bool Falling;
@@ -35,6 +37,8 @@ namespace Entities
 			const unsigned char getPlayerId()const;
 
 			static void Score(bID id_);
+
+			void setGrounded(bool a);
 		};
 	}
 

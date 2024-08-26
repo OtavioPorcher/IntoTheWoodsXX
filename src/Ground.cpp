@@ -30,7 +30,3 @@ void Ground::Draw()
 	pGM->render(&body);
 }
 
-void Ground::setGrounded(bool a)
-{
-
-}
