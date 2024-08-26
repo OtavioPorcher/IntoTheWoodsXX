@@ -36,6 +36,8 @@ void Player::Move()
 		body.move(0.0f, -vel.y*deltaTime);
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::S)) && (body.getPosition().y < (540 - body.getSize().y)))
 		body.move(0.0f, vel.y*deltaTime);
+
+	pos = body.getPosition();
 }
 void Player::Jump(bool forced)
 {
@@ -153,12 +155,12 @@ void Player::sufferDMG(int damage, bool unstoppable)
 
 void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
 {
-	std::cout << "EU SOU UM DEUS!!!" << std::endl;
+	std::cout << "Inimigo!!!" << std::endl;
 }
 
 void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positive)
 {
-
+	std::cout << "Obstáculo!!!" << std::endl;
 }
 unsigned char Player::counter(1);
 unsigned int Player::points(0);
