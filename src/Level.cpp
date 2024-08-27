@@ -72,7 +72,7 @@ void Level::createMap()
 			if (line[j] == '*')
 				end = j * 50.0f;
 			else if (line[j] != ' ')
-				CreateEntity(line[j], sf::Vector2f(j, i));
+				CreateEntity(line[j], sf::Vector2f((float)j, (float)i));
 		}
 
 }

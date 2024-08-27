@@ -213,6 +213,7 @@ void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTraject
 		pos.x = pO->getPosition().x + (positiveTrajectory ? -size.x + 0.0001f : size.x - 0.0001f);
 	}
 	
+	pO->Activate();
 }
 unsigned char Player::counter(1);
 unsigned int Player::points(0);

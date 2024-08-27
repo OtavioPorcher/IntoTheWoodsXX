@@ -4,7 +4,8 @@ using namespace Obstacles;
 
 Nest::Nest(Evening* pL, sf::Vector2f position): Obstacle(bID::nest),
 	pLevel(pL),
-	internalclock(0.f)
+	internalclock(0.f),
+	activated(false)
 {
 	pos = position;
 	body.setFillColor(sf::Color::Yellow);
@@ -17,9 +18,18 @@ Nest::~Nest()
 
 void Nest::Activate()
 {
+	if (!activated)
+	{
+		activated = true;
+		return;
+	}
+	internalclock += deltaTime;
+	if (internalclock >= 0.6f)
+	{
 		pLevel->CreateScorpion({ pos.x,pos.y - size.y });
 		pLevel->CreateGround(pos);
 		setActive(false);
+	}
 }
 
 void Nest::Move()
@@ -31,8 +41,7 @@ void Nest::Update()
 {
 	body.setPosition(pos);
 
-	internalclock += deltaTime;
-	if (internalclock >= 5.f)
+	if (activated)
 		Activate();
 
 	Gravity();

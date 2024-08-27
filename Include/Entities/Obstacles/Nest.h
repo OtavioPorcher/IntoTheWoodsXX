@@ -12,8 +12,11 @@ namespace Entities
 		class Nest : public Obstacle
 		{
 		private:
-			float internalclock; //Para teste enquanto não tem colisão
-			Evening* pLevel;
+
+			Evening* pLevel; 
+			
+			float internalclock; // Cooldown after collision
+			bool activated;
 		public:
 			Nest(Evening* pL, sf::Vector2f position);
 			~Nest();
