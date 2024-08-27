@@ -18,7 +18,15 @@ Player::Player(sf::Vector2f position):Character({(float)SIZEX,(float)SIZEY}, bID
 	maxVelocity = MAXVEL;
 	lives = LIVES;
 	pos = position;
-	body.setFillColor(sf::Color::Magenta);
+
+	if (playerId == 1)
+	{
+		body.setFillColor(sf::Color::Magenta);
+	}
+	else if (playerId ==2)
+	{
+		body.setFillColor(sf::Color::Red);
+	}
 }
 
 Player::~Player()

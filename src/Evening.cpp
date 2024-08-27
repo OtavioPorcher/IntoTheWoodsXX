@@ -7,15 +7,7 @@ using namespace Obstacles;
 
 Evening::Evening(StateMachine* psm):Level(psm, sID::Evening)
 {
-	/*CreatePlayer({0.f,0.f});
-	CreatePlayer({ 400.0f, 400.0f });
-	CreateScorpion({ 480.0f, RES_Y - 50.0f });
-	CreateGround({ RES_X - 50.f,RES_Y - 50.f });
-	CreateNest({ 455.f, (RES_Y/2)-25.f });
-	*/
-
 	setupLevel();
-
 }
 
 Evening::~Evening()
@@ -48,7 +40,7 @@ void Evening::Update()
 	updateView();
 	if (checkDone())
 	{
-		//next level
+		pGM->closeWindow();
 	}
 }
 

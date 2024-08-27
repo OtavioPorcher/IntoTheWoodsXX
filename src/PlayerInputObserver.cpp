@@ -81,16 +81,16 @@ void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 			}
 			if (mapIt->first == "Left")
 			{
-				pPlayer1->MoveLeft(true);
+				pPlayerAux->MoveLeft(true);
 				break;
 			}
 			if (mapIt->first == "Right")
 			{
-				pPlayer1->MoveRight(true);
+				pPlayerAux->MoveRight(true);
 				break;
 			}
 			if (mapIt->first == "Down")
-				pPlayer1->Block(true);
+				pPlayerAux->Block(true);
 		}
 	}
 	pPlayerAux = NULL;
@@ -140,16 +140,16 @@ void Observers::PlayerInputObserver::playerInputReleased(int playerIdx, std::str
 			}
 			if (mapIt->first == "Left")
 			{
-				pPlayer1->MoveLeft(false);
+				pPlayerAux->MoveLeft(false);
 				break;
 			}
 			if (mapIt->first == "Right")
 			{
-				pPlayer1->MoveRight(false);
+				pPlayerAux->MoveRight(false);
 				break;
 			}
 			if (mapIt->first == "Down")
-					pPlayer1->Block(false);
+					pPlayerAux->Block(false);
 			}
 		}
 	pPlayerAux = NULL;
