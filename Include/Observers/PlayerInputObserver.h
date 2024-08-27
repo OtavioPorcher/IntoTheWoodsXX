@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Observer.h"
-#include "..\States\State.h"
+
 #include "..\Entities\Characters\Player.h"
 using namespace Entities;
 using namespace Characters;
@@ -11,8 +11,6 @@ namespace Observers
 	class PlayerInputObserver : public Observer
 	{
 	private:
-		States::State* currentState;
-
 		Player* pPlayer1;
 		bool jumpKeyReleased1;
 		// bool attackKeyReleased1;

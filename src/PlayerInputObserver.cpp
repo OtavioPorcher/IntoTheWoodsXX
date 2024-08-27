@@ -1,9 +1,8 @@
 #include "..\Include\Observers\PlayerInputObserver.h"
 
-Observers::PlayerInputObserver::PlayerInputObserver(Player* pP1, Player* pP2, States::State* cState):
+Observers::PlayerInputObserver::PlayerInputObserver(Player* pP1, Player* pP2, States::State* cState) : Observer(cState),
 	pPlayer1(pP1),
 	pPlayer2(pP2),
-	currentState(cState),
 	jumpKeyReleased1(true),
 	jumpKeyReleased2(true)
 {
@@ -30,10 +29,10 @@ Observers::PlayerInputObserver::~PlayerInputObserver()
 
 void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 {
-	if (!currentState->getIsRuning())
+	if (!linkedState->getIsRuning())
 		return;
 	if (key == "Esc")
-		currentState->changeState(States::sID::pauseMenu);
+		linkedState->changeState(States::sID::pauseMenu);
 
 	playerInputPressed(1, key);
 	if(pPlayer2)
@@ -98,7 +97,7 @@ void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 
 void Observers::PlayerInputObserver::notifyKeyReleased(std::string key)
 {
-	if (!currentState->getIsRuning())
+	if (!linkedState->getIsRuning())
 		return;
 	playerInputReleased(1, key);
 	if (pPlayer2)
