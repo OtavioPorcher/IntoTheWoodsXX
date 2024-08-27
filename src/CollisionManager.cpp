@@ -108,7 +108,7 @@ public:
 		Center2 = pE2->getPosition() - (halfSize2);
 
 		distance = Center1 - Center2;
-		minDistance = halfSize1 + halfSize2;
+		minDistance = halfSize1 + halfSize2; 
 
 		collided = ((fabs(distance.x) < minDistance.x) && (fabs(distance.y) < minDistance.y));
 
@@ -123,7 +123,7 @@ public:
 		collisionDepth.y = (distance.y > 0 ? minDistance.y : -minDistance.y) - distance.y;
 
 		xAxis = (fabs(collisionDepth.x) < fabs(collisionDepth.y));
-		positiveTrajectory = (xAxis ? (collisionDepth.x > 0) : (collisionDepth.y > 0));
+		positiveTrajectory = (xAxis ? (collisionDepth.x < 0) : (collisionDepth.y < 0));
 
 	}
 

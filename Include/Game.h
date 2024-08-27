@@ -33,5 +33,6 @@ private:
 public:
 	static Game* getInstance();
 	~Game();
+
 	void executar();
 };

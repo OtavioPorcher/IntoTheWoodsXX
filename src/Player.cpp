@@ -15,7 +15,7 @@ Player::Player(sf::Vector2f position):Character({(float)SIZEX,(float)SIZEY}, bID
 	atkCDTimer(0.f),
 	attacking(false)
 {
-	vel = { 300.f, 300.f };
+	maxVelocity = MAXVEL;
 	lives = LIVES;
 	pos = position;
 	body.setFillColor(sf::Color::Magenta);
@@ -28,22 +28,47 @@ Player::~Player()
 
 void Player::Move()
 {
-	if ((MovingLeft) && (body.getPosition().x>0))
-		body.move((-vel.x)*deltaTime, 0.0f);
-	if ((MovingRight) && (body.getPosition().x < (960 - body.getSize().x)))
-		body.move(vel.x*deltaTime, 0.0f);
-	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::W)) && (body.getPosition().y>0))
-		body.move(0.0f, -vel.y*deltaTime);
-	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::S)) && (body.getPosition().y < (540 - body.getSize().y)))
-		body.move(0.0f, vel.y*deltaTime);
+	maxVelocity = MAXVEL * velMultiplier;
 
-	pos = body.getPosition();
+	if (MovingLeft)
+	{
+		if (vel.x > -maxVelocity)
+			vel.x -= ACCEL * deltaTime;
+		if (vel.x < -maxVelocity)
+			vel.x = -maxVelocity;
+	}
+	if (MovingRight)
+	{
+		if (vel.x < maxVelocity)
+			vel.x += ACCEL * deltaTime;
+		if (vel.x > maxVelocity)
+			vel.x = maxVelocity;
+	}
+
+	if (vel.x < 0)
+	{
+		vel.x += FRICTION * deltaTime;
+		if (vel.x > 0)
+			vel.x = 0;
+	}
+
+	if (vel.x > 0)
+	{
+		vel.x -= FRICTION * deltaTime;
+		if (vel.x < 0)
+			vel.x = 0;
+	}
+	
+	pos += vel * deltaTime * 10.f;
+
+	body.setPosition(pos);
 }
 void Player::Jump(bool forced)
 {
 	if (forced || grounded)
 	{
-		//vel.y = -sqrt(2.0f * GRAVITY * JUMPHEIGHT); // EQUAÇÃO DE TORRICELLI APLICADA
+		vel.y = -sqrt(2.0f * GRAVITY * JUMPHEIGHT); // EQUAÇÃO DE TORRICELLI APLICADA
+		setGrounded(false);
 	}
 }
 
@@ -69,9 +94,11 @@ void Player::Block(bool b)
 
 void Player::Update()
 {
-	//Gravity();
-	//ThrustForce();
 	Move();
+	Gravity();
+	ThrustForce();
+
+	setGrounded(false);
 }
 
 void Player::Draw()
@@ -102,7 +129,7 @@ void Player::Score(bID id_)
 
 void Player::setGrounded(bool a)
 {
-	grounded = a;
+	grounded = a;	
 }
 
 void atkDimentions(bool a, sf::Vector2f* pos, sf::Vector2f* size) // Função auxiliar para mudar o tamanho da hitbox durante um ataque
@@ -142,6 +169,7 @@ void Player::attack()
 		atkCDTimer += deltaTime;
 		return;
 	}
+
 	atkDurationTimer += deltaTime;
 	if (atkDurationTimer > 0.5f)
 		attack(false);
@@ -155,12 +183,36 @@ void Player::sufferDMG(int damage, bool unstoppable)
 
 void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
 {
-	std::cout << "Inimigo!!!" << std::endl;
+
 }
 
-void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positive)
+void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTrajectory)
 {
-	std::cout << "Obstáculo!!!" << std::endl;
+	static bool touchingGrass;
+
+	if ((!touchingGrass) && (pO->getId() == bID::grass))
+	{
+		touchingGrass = true;
+		velMultiplier = 0.8f;
+	}
+	if ((touchingGrass) && (pO->getId() != bID::grass))
+	{
+		touchingGrass = false;
+		velMultiplier = 1.f;
+	}
+	if (!xAxis)
+	{
+		vel.y = 0;
+		pos.y = pO->getPosition().y + (positiveTrajectory ? -size.y + 0.0001f : size.y - 0.0001f);
+		if ((positiveTrajectory) && (!grounded))
+			setGrounded(true);
+	}
+	else
+	{
+		vel.x = 0;
+		pos.x = pO->getPosition().x + (positiveTrajectory ? -size.x + 0.0001f : size.x - 0.0001f);
+	}
+	
 }
 unsigned char Player::counter(1);
 unsigned int Player::points(0);

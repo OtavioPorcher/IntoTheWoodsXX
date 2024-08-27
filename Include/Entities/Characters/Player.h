@@ -19,6 +19,7 @@ namespace Entities
 			static unsigned int points;
 	
 			float velMultiplier;
+			float maxVelocity;
 
 			bool MovingLeft;
 			bool MovingRight;
@@ -52,9 +53,9 @@ namespace Entities
 			void attack();
 			void sufferDMG(int damage = 1, bool unstoppable = false);
 
-			void Collision(Enemies::Enemy* pE, bool xAxis, bool positive);
-			void Collision(Obstacles::Obstacle* pO, bool xAxis, bool positive);
-			//void Collision(Projectiles::Projectile, bool xAxis, bool positive);
+			void Collision(Enemies::Enemy* pE, bool xAxis, bool positiveTrajectory);
+			void Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTrajectory);
+			//void Collision(Projectiles::Projectile, bool xAxis, bool positiveTrajectory);
 		};
 	}
 

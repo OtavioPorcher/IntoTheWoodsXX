@@ -39,7 +39,7 @@ void Level::Draw()
 
 void Level::setupLevel()
 {
-	//createMap();
+	createMap();
 	try
 	{
 		pPIO = new Observers::PlayerInputObserver(pPlayer1, pPlayer2, static_cast<State*>(this));
@@ -72,7 +72,7 @@ void Level::createMap()
 			if (line[j] == '*')
 				end = j * 50.0f;
 			else if (line[j] != ' ')
-				CreateEntity(line[j], sf::Vector2f((float)j, (float)i));
+				CreateEntity(line[j], sf::Vector2f(j, i));
 		}
 
 }
