@@ -7,5 +7,5 @@
 #define MAXVEL 45.f
 #define ACCEL 50.f
 #define FRICTION 30.f
-#define JUMPHEIGHT 12.0f
+#define JUMPHEIGHT 17.f
 #define PSPEED 0.8

@@ -211,7 +211,7 @@ void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTraject
 	if (!xAxis)
 	{
 		vel.y = 0;
-		pos.y = pO->getPosition().y + (positiveTrajectory ? -size.y + 0.0001f : size.y - 0.0001f);
+		pos.y = pO->getPosition().y + (positiveTrajectory ? -size.y + 0.0001f : size.y + 0.0001f);
 		if ((positiveTrajectory) && (!grounded))
 			setGrounded(true);
 	}
