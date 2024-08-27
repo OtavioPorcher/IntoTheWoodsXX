@@ -136,7 +136,7 @@ void Level::updateView()
 {
 	float auxView = 0.f;
 	float minX = RES_X / 2;
-	//float maxX = end - minX;
+	float maxX = end + (2* 50.f) - minX;
 	unsigned int auxCounter = 0;
 
 	if (pPlayer1->getActive())
@@ -152,8 +152,8 @@ void Level::updateView()
 	auxView /= auxCounter;
 	if (auxView < minX)
 		auxView = minX;
-	//if (auxView > maxX)
-	//	auxView = maxX;
+	if (auxView > maxX)
+		auxView = maxX;
 
 
 	pGM->centerView({auxView, RES_Y/2});
@@ -178,4 +178,4 @@ void Level::setTwoPlayers(bool b)
 	twoPlayers = b;
 }
 
-bool Level::twoPlayers(false);
+bool Level::twoPlayers(true);
