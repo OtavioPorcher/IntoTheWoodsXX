@@ -34,19 +34,22 @@ void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 		return;
 
 	if (key == "Esc")
+	{
 		//linkedState->changeState(States::sID::pauseMenu);
+	}
 
 	playerInputPressed(1, key);
 	if(pPlayer2)
 		playerInputPressed(2, key);
-	
-	
 }
+#include <iostream>
  void Observers::PlayerInputObserver::playerInputPressed(int playerIdx, std::string key)
 {
 	Player* pPlayerAux = NULL;
 	std::map<std::string, std::string>::iterator mapEnd;
 
+
+	
 	if (playerIdx == 1)
 	{
 		pPlayerAux = pPlayer1;
