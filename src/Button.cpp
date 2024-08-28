@@ -7,16 +7,8 @@ using namespace Menus;
 Button::Button(sf::Vector2f position, unsigned int pt, std::string txt) : Being(bID::button),
 	pos(position)
 {
-	try { font.loadFromFile("Assets/arialbd.ttf"); }
-	catch (int error)
-	{
-		if (!error)
-		{
-			std::cout << "ERROR: Unable to open font file!" << std::endl;
-		}
-	}
 	text.setPosition(pos);
-	text.setFont(font);
+	text.setFont(pGM->getFont());
 	text.setCharacterSize(pt);
 	setText(txt);
 	hovering(false);

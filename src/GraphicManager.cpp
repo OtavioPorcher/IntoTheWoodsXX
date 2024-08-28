@@ -7,7 +7,14 @@ GraphicManager::GraphicManager():
     window(sf::VideoMode(RES_X, RES_Y), "IntoTheWoods++"),
     view(window.getView())
 {
-    
+    try { font.loadFromFile("Assets/arialbd.ttf"); }
+    catch (int error)
+    {
+        if (!error)
+        {
+            std::cout << "ERROR: Unable to open font file!" << std::endl;
+        }
+    }
 }
 GraphicManager* GraphicManager::getInstance()
 {
@@ -56,6 +63,11 @@ sf::RenderWindow* GraphicManager::getWindow()
     return (&window);
 }
 
+sf::Font& GraphicManager::getFont()
+{
+    return font;
+}
+
 void GraphicManager::centerView(sf::Vector2f pos)
 {
     view.setCenter(pos);
@@ -71,3 +83,4 @@ void GraphicManager::checkStutter(float dt)
 }
 
 GraphicManager* GraphicManager::instance(NULL);
+sf::Font GraphicManager::font;

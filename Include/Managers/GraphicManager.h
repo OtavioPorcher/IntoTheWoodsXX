@@ -13,7 +13,7 @@ namespace Managers {
         sf::RenderWindow window;
         sf::View view;
         //std::map<const char*, sf::Texture*> textureMap;
-        //sf::Font* font;
+        static sf::Font font;
 
      
     public:
@@ -31,6 +31,7 @@ namespace Managers {
         //void handleWindowSize();
         //sf::Vector2u getWindowSize() const;
         sf::RenderWindow* getWindow(); // Necessário no gerenciador de eventos
+        static sf::Font& getFont();
 
         void centerView(sf::Vector2f pos);
         //sf::Texture* loadTexture(const char* path);
