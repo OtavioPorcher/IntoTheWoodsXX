@@ -21,11 +21,11 @@ void MainMenu::Select()
 	{
 	case 0:
 		pState->changeState(sID::Evening);
+		Levels::Level::setTwoPlayers(twoPlayers);
 		break;
 	case 1:
 		twoPlayers = !twoPlayers;
 		(twoPlayers ? buttonPool[1]->setText("Two Players: ON") : buttonPool[1]->setText("Two Players: OFF"));
-		Levels::Level::setTwoPlayers(twoPlayers);
 		break;
 	}
 }
