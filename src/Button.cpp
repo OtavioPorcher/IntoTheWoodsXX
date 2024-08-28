@@ -4,9 +4,10 @@ using namespace Menus;
 #include <iostream>
 
 
-Button::Button(sf::Vector2f position, unsigned int pt, std::string txt) : Being(bID::button)
+Button::Button(sf::Vector2f position, unsigned int pt, std::string txt) : Being(bID::button),
+	pos(position)
 {
-	try { font.loadFromFile("Assets\arialbd.ttf"); }
+	try { font.loadFromFile("Assets/arialbd.ttf"); }
 	catch (int error)
 	{
 		if (!error)
@@ -14,7 +15,7 @@ Button::Button(sf::Vector2f position, unsigned int pt, std::string txt) : Being(
 			std::cout << "ERROR: Unable to open font file!" << std::endl;
 		}
 	}
-
+	text.setPosition(pos);
 	text.setFont(font);
 	text.setCharacterSize(pt);
 	setText(txt);

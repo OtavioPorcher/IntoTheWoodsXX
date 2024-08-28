@@ -3,7 +3,10 @@
 #include "..\States\StateMachine.h"
 using namespace States;
 
-#include "..\Include\Menus\MainMenu.h"
+#include "MainMenu.h"
+
+#include "..\Managers\InputManager.h"
+namespace Observers { class MenuObserver; }
 
 namespace Menus
 {
@@ -12,13 +15,20 @@ namespace Menus
 	{
 	private:
 		Menu* pMenu;
+		Managers::InputManager* pIM;
+		Observers::MenuObserver* pMO;
 	public:
 		StateMenu(StateMachine* psm = NULL, sID id_ = sID::empty);
 		~StateMenu();
 
 		void Update();
 		void Draw();
-		void Reset();
+
+		void MoveUp();
+		void MoveDown();
+		void Select();
+		void Close();
+
 	};
 
 }

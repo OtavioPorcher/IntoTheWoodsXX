@@ -1,7 +1,10 @@
 #pragma once
 
-#include"..\Managers\InputManager.h"
 #include "..\Being.h"
+
+#include "..\GraphicElements\Button.h"
+#include "..\States\State.h"
+#include <vector>
 
 namespace Menus
 {
@@ -9,17 +12,25 @@ namespace Menus
 
 	class Menu : public Being
 	{
-	private:
-		Managers::InputManager* pIM;
+	protected:
 		StateMenu* pState;
+
+		std::vector<Button*> buttonPool; // Circular Buffer
+		int hovering;
 	public:
-		Menu(StateMenu* pS);
+		Menu(StateMenu* pS, bID id_);
 		~Menu();
 
-		virtual void Update() = 0;
-		virtual void Draw() = 0;
-		virtual void Reset() = 0;
+		void Update();
+		void Draw();
 
+		void MoveUp();
+		void MoveDown();
+		virtual void Select() = 0;
+
+		void Close();
+
+		void newButton(sf::Vector2f pos, unsigned int fontSize, std::string text);
 	};
 
 }
