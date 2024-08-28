@@ -11,6 +11,8 @@ namespace Observers
 	class PlayerInputObserver : public Observer
 	{
 	private:
+		States::State* linkedState;
+
 		Player* pPlayer1;
 		bool jumpKeyReleased1;
 		// bool attackKeyReleased1;

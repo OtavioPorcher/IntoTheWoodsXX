@@ -14,6 +14,7 @@ using namespace Managers;
 
 #include "Menus/StateMenu.h"
 #include "Menus/MainMenu.h"
+using namespace Menus;
 
 #include "Levels/Evening.h"
 using namespace Levels;

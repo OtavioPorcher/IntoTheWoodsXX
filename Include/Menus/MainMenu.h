@@ -8,13 +8,11 @@ namespace Menus
 	class MainMenu : public Menu
 	{
 	private:
-
+		bool twoPlayers;
 	public:
 		MainMenu(StateMenu* pS);
 		~MainMenu();
 
-		void Update();
-		void Draw();
-		void Reset();
+		void Select();
 	};
 }

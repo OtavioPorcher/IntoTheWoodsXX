@@ -8,7 +8,8 @@ Game::Game() :
 {
 	StateMachine* pAux = static_cast<StateMachine*>(this);
 	addState(static_cast<State*>(new Evening(pAux)));
-	changeCurrentState(sID::Evening);
+	addState(static_cast<State*> (new StateMenu(pAux, sID::MainMenu)));
+	changeCurrentState(sID::MainMenu);
 }
 Game::~Game()
 {
@@ -37,7 +38,6 @@ void Game::executar()
 {
 	while(pGM->isWindowOpen())
 	{
-		
 		pGM->clear();
 		runCurrentState();
 		pGM->display();
