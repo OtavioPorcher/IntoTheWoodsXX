@@ -1,0 +1,20 @@
+All Levels:
+	"P": Player
+	"G": Ground
+	"P": Random Platform (Seguido imediatamente por um número)
+	"S": Snake
+	"C": Random Snake
+
+Evening:
+	"E" : Scorpion
+	"Y": Random Scorpion
+	"N": Nest
+	"M": Random Nest
+
+Dawn:
+	"B": Bear
+	"R": Random Bear 
+	"T": Trap
+	"A": Random Trap
+	"G": Grass
+	"V": Random Grass Patch
