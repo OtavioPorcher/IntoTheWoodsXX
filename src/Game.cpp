@@ -9,6 +9,7 @@ Game::Game() :
 	StateMachine* pAux = static_cast<StateMachine*>(this);
 	addState(static_cast<State*>(new Evening(pAux)));
 	addState(static_cast<State*> (new StateMenu(pAux, sID::MainMenu)));
+	addState(static_cast<State*>(new StateMenu(pAux, sID::newGameMenu)));
 	changeCurrentState(sID::MainMenu);
 }
 Game::~Game()

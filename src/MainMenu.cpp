@@ -5,8 +5,8 @@ using namespace Menus;
 MainMenu::MainMenu(StateMenu* pS):Menu(pS),
 	twoPlayers(false)
 {
-	newButton({ RES_X / 2.f, 200.f }, 30, "New Game");
-	newButton({ RES_X / 2.f, 300.f }, 30, "Two Players: OFF");
+	newButton({ RES_X / 2.f, 200.f }, 40, "New Game");
+	newButton({ RES_X / 2.f, 300.f }, 40, "Two Players: OFF");
 }
 
 MainMenu::~MainMenu()
@@ -20,7 +20,7 @@ void MainMenu::Select()
 	switch (hovering)
 	{
 	case 0:
-		pState->changeState(sID::Evening);
+		pState->changeState(sID::newGameMenu);
 		Levels::Level::setTwoPlayers(twoPlayers);
 		break;
 	case 1:

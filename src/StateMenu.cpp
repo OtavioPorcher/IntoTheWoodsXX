@@ -35,6 +35,16 @@ StateMenu::StateMenu(StateMachine* pSM, sID id_) : State(pSM, id_),
 			}
 		}
 		break;
+	case sID::newGameMenu:
+		try { pMenu = static_cast<Menu*>(new NewGameMenu(this)); }
+		catch (int error)
+		{
+			if (!error)
+			{
+				std::cout << "ERROR: Failed to Allocate Memory (NewGameMenu)" << std::endl;
+				exit(1);
+			}
+		}
 	}
 }
 
