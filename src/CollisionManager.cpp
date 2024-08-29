@@ -169,6 +169,8 @@ void CollisionManager::CollisionPlayerEnemies(Entities::Entity* pPlayer)
 {
 	if (enemyList.empty())
 		return;
+	if (!(pPlayer->getActive()))
+		return;
 	
 	Collision collision;
 

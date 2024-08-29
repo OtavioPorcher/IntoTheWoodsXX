@@ -223,9 +223,9 @@ void Level::updateView()
 
 const bool Level::checkWipe()const
 {
-	if (!pPlayer1->getActive() && (!twoPlayers || !pPlayer2->getActive()))
-		return 1;
-	return 0;
+	if (!pPlayer1->getActive() && !pPlayer2->getActive())
+		return true;
+	return false;
 }
 
 const bool Level::checkDone()const

@@ -35,7 +35,7 @@ void Evening::Update()
 
 	if (checkWipe())
 	{
-		//game over
+		changeState(sID::MainMenu);
 	}
 	updateView();
 	if (checkDone())

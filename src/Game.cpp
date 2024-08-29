@@ -43,8 +43,6 @@ void Game::executar()
 		runCurrentState();
 		pGM->display();
 		pEM->Run();
-
-		std::cout << (int)getCurrentStateID() << std::endl;
 	}
 }
 
