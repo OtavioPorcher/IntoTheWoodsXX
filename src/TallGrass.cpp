@@ -4,11 +4,12 @@ using namespace Obstacles;
 
 #include "..\Include\Entities\Characters\Player.h"
 
-TallGrass::TallGrass(sf::Vector2f position, float slow) : Obstacle(false, bID::grass, {50.f,50.f}),
+TallGrass::TallGrass(sf::Vector2f position, float slow) : Obstacle(false, bID::grass, {50.f,25.f}),
 	speedRedution(slow)
 {
 	body.setFillColor(sf::Color::White);
-	pos = position;
+	pos.x = position.x;
+	pos.y = position.y + 25.f;
 }
 
 TallGrass::~TallGrass()

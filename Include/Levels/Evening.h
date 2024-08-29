@@ -20,7 +20,7 @@ namespace Levels
 		void Reset();
 
 		void CreateEntity(char id, sf::Vector2f pos);
-		void CreateScorpion(sf::Vector2f pos);
-		void CreateNest(sf::Vector2f pos, const bool random);
+		void CreateScorpion(sf::Vector2f pos, const bool random = false);
+		void CreateNest(sf::Vector2f pos, const bool random = false);
 	};
 }
