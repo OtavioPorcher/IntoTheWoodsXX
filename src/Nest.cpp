@@ -2,7 +2,7 @@
 using namespace Entities;
 using namespace Obstacles;
 
-Nest::Nest(Evening* pL, sf::Vector2f position): Obstacle(bID::nest),
+Nest::Nest(Evening* pL, sf::Vector2f position): Obstacle(true, bID::nest),
 	pLevel(pL),
 	internalclock(0.f),
 	activated(false)
@@ -16,25 +16,10 @@ Nest::~Nest()
 
 }
 
-void Nest::Activate()
+const bool Nest::Collide(Characters::Player* pPlayer)
 {
-	if (!activated)
-	{
-		activated = true;
-		return;
-	}
-	internalclock += deltaTime;
-	if (internalclock >= 0.6f)
-	{
-		pLevel->CreateScorpion({ pos.x,pos.y - size.y });
-		pLevel->CreateGround(pos);
-		setActive(false);
-	}
-}
-
-void Nest::Move()
-{
-	pos += vel * deltaTime;
+	activated = true;
+	return solid;
 }
 
 void Nest::Update()
@@ -42,13 +27,16 @@ void Nest::Update()
 	body.setPosition(pos);
 
 	if (activated)
-		Activate();
+	{
+		internalclock += deltaTime;
+		if (internalclock >= 0.6f)
+		{
+			pLevel->CreateScorpion({ pos.x,pos.y - size.y });
+			pLevel->CreateGround(pos);
+			setActive(false);
+		}
+	}
 
 	Gravity();
 	ThrustForce();
-}
-
-void Nest::Draw()
-{
-	pGM->render(&body);
 }

@@ -1,9 +1,10 @@
 #include "..\Include\Entities\Obstacles\Obstacle.h"
-
+#include "..\Include\Entities\Characters\Player.h"
 using namespace Entities;
 using namespace Obstacles;
 
-Obstacle::Obstacle(bID id_) : Entity({50.0f,50.0f},id_)
+Obstacle::Obstacle(const bool sld, bID id_, sf::Vector2f size) : Entity(size,id_),
+	solid(sld)
 {
 	grounded = true;
 }
@@ -13,7 +14,17 @@ Obstacle::~Obstacle()
 
 }
 
-void Obstacle::Activate()
+void Obstacle::Move()
 {
+	pos += vel * deltaTime;
+}
 
+void Obstacle::Draw()
+{
+	pGM->render(&body);
+}
+
+const bool Obstacle::Collide(Characters::Player* pPlayer)
+{
+	return solid;
 }

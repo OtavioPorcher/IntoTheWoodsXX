@@ -5,21 +5,23 @@
 
 namespace Entities
 {
+    namespace Characters { class Player; }
+
     namespace Obstacles
     {
         class Obstacle : public Entity
         {
         protected:
-            //sprite
+            const bool solid;
         public:
-            Obstacle(bID id_);
+            Obstacle(const bool sld, bID id_, sf::Vector2f size = { 50.0f,50.0f });
             virtual ~Obstacle();
 
-            virtual void Move() = 0;
             virtual void Update() = 0;
-            virtual void Draw() = 0; //Se mudar a armadilha de urso, deixa de ser virtual e coloca a sprite nessa classe
+            void Move();
+            void Draw(); //Se mudar a armadilha de urso, deixa de ser virtual e coloca a sprite nessa classe
 
-            virtual void Activate();
+            virtual const bool Collide(Characters::Player* pPlayer);
         };
     }
 }

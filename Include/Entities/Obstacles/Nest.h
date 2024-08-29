@@ -12,7 +12,6 @@ namespace Entities
 		class Nest : public Obstacle
 		{
 		private:
-
 			Evening* pLevel; 
 			
 			float internalclock; // Cooldown after collision
@@ -21,11 +20,9 @@ namespace Entities
 			Nest(Evening* pL, sf::Vector2f position);
 			~Nest();
 
-			void Activate();
+			const bool Collide(Characters::Player* pPlayer);
 
 			void Update();
-			void Move();
-			void Draw();
 		};
 	}
 }

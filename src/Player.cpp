@@ -105,8 +105,6 @@ void Player::Update()
 	Move();
 	Gravity();
 	ThrustForce();
-
-	setGrounded(false);
 }
 
 void Player::Draw()
@@ -187,6 +185,8 @@ void Player::sufferDMG(int damage, bool unstoppable)
 {
 	if (!unstoppable && (!Blocking && rand() % 2))
 		lives-= damage;
+	if (lives <= 0)
+		setActive(false);
 }
 
 void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
@@ -195,7 +195,7 @@ void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
 }
 
 void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTrajectory)
-{
+{ /*
 	static bool touchingGrass;
 
 	if ((!touchingGrass) && (pO->getId() == bID::grass))
@@ -208,20 +208,23 @@ void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTraject
 		touchingGrass = false;
 		velMultiplier = 1.f;
 	}
-	if (!xAxis)
+	*/
+
+	if (pO->Collide(this))
 	{
-		vel.y = 0;
-		pos.y = pO->getPosition().y + (positiveTrajectory ? -size.y + 0.0001f : size.y + 0.0001f);
-		if ((positiveTrajectory) && (!grounded))
-			setGrounded(true);
+		if (!xAxis)
+		{
+			vel.y = 0;
+			pos.y = pO->getPosition().y + (positiveTrajectory ? -size.y + 0.0001f : size.y + 0.0001f);
+			if ((positiveTrajectory) && (!grounded))
+				setGrounded(true);
+		}
+		else
+		{
+			vel.x = 0;
+			pos.x = pO->getPosition().x + (positiveTrajectory ? -size.x + 0.0001f : size.x - 0.0001f);
+		}
 	}
-	else
-	{
-		vel.x = 0;
-		pos.x = pO->getPosition().x + (positiveTrajectory ? -size.x + 0.0001f : size.x - 0.0001f);
-	}
-	
-	pO->Activate();
 }
 unsigned char Player::counter(1);
 unsigned int Player::points(0);
