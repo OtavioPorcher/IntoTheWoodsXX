@@ -11,7 +11,7 @@ namespace Entities
 		private:
 			float speedRedution;
 		public:
-			TallGrass(sf::Vector2f position, float slow = 0.8);
+			TallGrass(sf::Vector2f position, float slow = 0.6);
 			~TallGrass();
 
 			void Update();

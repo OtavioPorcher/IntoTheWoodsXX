@@ -68,6 +68,9 @@ void Evening::CreateEntity(char id, sf::Vector2f pos)
 	case 'N':
 		CreateNest(pos);
 		break;
+	case 'X':
+		CreateGrass({pos.x, pos.y});
+		break;
 	}
 }
 

@@ -4,7 +4,7 @@ All Levels:
 	"Q": Random Platform (Seguido imediatamente por um número)
 	"S": Snake
 	"C": Random Snake
-	"G": Grass
+	"X": Grass
 	"V": Random Grass Patch
 
 Evening:

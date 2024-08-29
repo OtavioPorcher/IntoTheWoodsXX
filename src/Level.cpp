@@ -140,7 +140,7 @@ void Level::CreateRandomPlatform(sf::Vector2f pos, const bool first)
 
 	if (growing)
 	{
-		if ((rand() % 10)>0)
+		if ((rand() % 7)>0)
 		{
 			CreateGround(pos * 50.f);
 			return;
@@ -174,10 +174,13 @@ void Level::CreateRandomGrassPatch(sf::Vector2f pos, const bool first)
 		growing = true;
 	}
 
-	if ((growing) && (rand() % 2))
+	if (growing)
 	{
-		CreateGrass({pos.x*50.f, pos.y*20.f});
-		return;
+		if ((rand() % 7)>0)
+		{
+			CreateGrass(pos * 50.f);
+			return;
+		}
 	}
 
 	growing = false;
