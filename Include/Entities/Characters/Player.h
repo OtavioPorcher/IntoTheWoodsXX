@@ -53,6 +53,8 @@ namespace Entities
 			void attack();
 			void sufferDMG(int damage = 1, bool unstoppable = false);
 
+			void setVelMultiplier(const float mult);
+
 			void Collision(Enemies::Enemy* pE, bool xAxis, bool positiveTrajectory);
 			void Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTrajectory);
 			//void Collision(Projectiles::Projectile, bool xAxis, bool positiveTrajectory);

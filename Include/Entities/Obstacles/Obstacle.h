@@ -22,6 +22,7 @@ namespace Entities
             void Draw(); //Se mudar a armadilha de urso, deixa de ser virtual e coloca a sprite nessa classe
 
             virtual const bool Collide(Characters::Player* pPlayer);
+            virtual void updateVelMultiplier(Characters::Player* pPlayer);
         };
     }
 }

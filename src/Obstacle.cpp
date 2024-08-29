@@ -28,3 +28,8 @@ const bool Obstacle::Collide(Characters::Player* pPlayer)
 {
 	return solid;
 }
+
+void Obstacle::updateVelMultiplier(Characters::Player* pPlayer)
+{
+	pPlayer->setVelMultiplier(1.f);
+}

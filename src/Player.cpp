@@ -195,20 +195,9 @@ void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
 }
 
 void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTrajectory)
-{ /*
-	static bool touchingGrass;
+{ 
 
-	if ((!touchingGrass) && (pO->getId() == bID::grass))
-	{
-		touchingGrass = true;
-		velMultiplier = 0.8f;
-	}
-	if ((touchingGrass) && (pO->getId() != bID::grass))
-	{
-		touchingGrass = false;
-		velMultiplier = 1.f;
-	}
-	*/
+	pO->updateVelMultiplier(this);
 
 	if (pO->Collide(this))
 	{
@@ -226,5 +215,11 @@ void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTraject
 		}
 	}
 }
+
+void Player::setVelMultiplier(const float mult)
+{
+	velMultiplier = mult;
+}
+
 unsigned char Player::counter(1);
 unsigned int Player::points(0);
