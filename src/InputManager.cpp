@@ -40,6 +40,7 @@ InputManager::InputManager()
 	keyMap[sf::Keyboard::Right] = "Right";
 	keyMap[sf::Keyboard::Space] = "Space";
 	keyMap[sf::Keyboard::LShift] = "LShift";
+	keyMap[sf::Keyboard::RShift] = "RShift";
 	keyMap[sf::Keyboard::LControl] = "LControl";
 	keyMap[sf::Keyboard::RControl] = "RControl";
 	keyMap[sf::Keyboard::BackSpace] = "BackSpace";

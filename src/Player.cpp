@@ -12,7 +12,7 @@ Player::Player(sf::Vector2f position):Character({(float)SIZEX,(float)SIZEY}, bID
 	velMultiplier(1),
 	playerId(counter++),
 	atkDurationTimer(0.f),
-	atkCDTimer(0.f),
+	atkCDTimer(1.f),
 	attacking(false),
 	facingRight(true)
 {
@@ -71,9 +71,13 @@ void Player::Move()
 	pos += vel * deltaTime * 10.f;
 
 	if (vel.x > 0)
+	{
 		facingRight = true;
-	else
+	}
+	else if (vel.x < 0)
+	{
 		facingRight = false;
+	}
 
 	body.setPosition(pos);
 }
@@ -108,6 +112,10 @@ void Player::Block(bool b)
 
 void Player::Update()
 {
+	body.setSize(size);
+
+	attack();
+
 	Move();
 	Gravity();
 	ThrustForce();
@@ -141,20 +149,29 @@ void Player::Score(bID id_)
 	}
 }
 
+unsigned int Player::getPoints()
+{
+	return points;
+}
+
 void Player::setGrounded(bool a)
 {
 	grounded = a;	
 }
 
-void atkDimentions(bool a, sf::Vector2f* pos, sf::Vector2f* size) // Função auxiliar para mudar o tamanho da hitbox durante um ataque
+void atkDimentions(bool a, sf::Vector2f* pos, sf::Vector2f* size, const bool facingRight) // Função auxiliar para mudar o tamanho da hitbox durante um ataque
 {
 	if (a)
 	{
 		(*size).x += 30.f;
+		if (!facingRight)
+			pos->x -= 30.f;
 	}
 	else
 	{
 		(*size).x -= 30.f;
+		if (!facingRight)
+			pos->x += 30.f;
 	}
 }
 
@@ -164,8 +181,7 @@ void Player::attack(bool a)
 		return;
 
 	attacking = a;
-	std::cout << "ATTACK" << std::endl;
-	atkDimentions(a, &pos, &size);
+	atkDimentions(a, &pos, &size, facingRight);
 	if (a)
 	{
 		atkDurationTimer = 0;
@@ -214,7 +230,8 @@ void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
 	}
 	else if (positive)
 	{
-		//Jump(true);
+		Jump(true);
+		pE->sufferDMG();
 	}
 }
 

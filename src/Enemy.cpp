@@ -19,4 +19,9 @@ Enemy::~Enemy()
 void Enemy::sufferDMG()
 {
 	lives--;
+	if (lives <= 0)
+	{
+		this->setActive(false);
+		Player::Score(getId());
+	}
 }

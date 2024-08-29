@@ -47,6 +47,7 @@ namespace Entities
 			const unsigned char getPlayerId()const;
 
 			static void Score(bID id_);
+			static unsigned int getPoints();
 
 			void setGrounded(bool a);
 

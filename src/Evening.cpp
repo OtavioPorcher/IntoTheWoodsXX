@@ -41,6 +41,7 @@ void Evening::Update()
 	if (checkDone())
 	{
 		pGM->closeWindow();
+		std::cout << Player::getPoints() << std::endl;
 	}
 }
 

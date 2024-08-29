@@ -17,7 +17,7 @@ Observers::PlayerInputObserver::PlayerInputObserver(Player* pP1, Player* pP2, St
 	inputSet2["Right"] = "Right";
 	inputSet2["Left"] = "Left";
 	inputSet2["Down"] = "Down";
-	inputSet2["Attack"] = "rCtrl";
+	inputSet2["Attack"] = "RShift";
 }
 
 Observers::PlayerInputObserver::~PlayerInputObserver()
