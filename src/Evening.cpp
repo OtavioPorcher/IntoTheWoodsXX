@@ -66,11 +66,13 @@ void Evening::CreateEntity(char id, sf::Vector2f pos)
 		CreateScorpion(pos);
 		break;
 	case 'N':
-		CreateNest(pos);
+		CreateNest(pos, false);
 		break;
 	case 'X':
 		CreateGrass({pos.x, pos.y});
 		break;
+	case 'M':
+		CreateNest(pos, true);
 	}
 }
 
@@ -92,8 +94,14 @@ void Evening::CreateScorpion(sf::Vector2f pos)
 	auxEntities = NULL;
 }
 
-void Evening::CreateNest(sf::Vector2f pos)
+void Evening::CreateNest(sf::Vector2f pos, const bool random)
 {
+	srand(time(NULL) + rand());
+	if (random && ((rand() % 3) > 0))
+	{
+		CreateGround(pos);
+		return;
+	}
 	Nest* aux = new Nest(this, pos);
 	if (!aux)
 	{
