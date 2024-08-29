@@ -3,7 +3,7 @@
 using namespace Menus;
 
 
-Menu::Menu(StateMenu* pS, bID id_): Being(id_),
+Menu::Menu(StateMenu* pS): Being(bID::menu),
 	pState(pS),
 	buttonPool(),
 	hovering(0)
@@ -31,9 +31,9 @@ void Menu::MoveDown()
 		hovering += buttonPool.size();
 }
 
-void Menu::Close()
+void Menu::Escape()
 {
-	pGM->closeWindow();
+	pState->changeState(pState->getPreviousState()->getStateID());
 }
 
 void Menu::Update()

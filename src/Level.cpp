@@ -93,8 +93,6 @@ void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 	else if (aux->getPlayerId() == 2)
 	{
 		pPlayer2 = aux;
-		if (!twoPlayers)
-			pPlayer2->setActive(false);
 	}
 	else
 	{

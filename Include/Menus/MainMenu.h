@@ -14,5 +14,6 @@ namespace Menus
 		~MainMenu();
 
 		void Select();
+		void Escape();
 	};
 }

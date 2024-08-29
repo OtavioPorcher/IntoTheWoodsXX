@@ -34,6 +34,7 @@ StateMenu::StateMenu(StateMachine* pSM, sID id_) : State(pSM, id_),
 				exit(1);
 			}
 		}
+		break;
 	}
 }
 
@@ -68,7 +69,7 @@ void StateMenu::Select()
 	pMenu->Select();
 }
 
-void StateMenu::Close()
+void StateMenu::Escape()
 {
-	pMenu->Close();
+	pMenu->Escape();
 }

@@ -5,11 +5,9 @@ using namespace Menus;
 
 
 Button::Button(sf::Vector2f position, unsigned int pt, std::string txt) : Being(bID::button),
-	pos(position)
+	pos(position),
+	text(txt, pGM->getFont(), pt)
 {
-	text.setPosition(pos);
-	text.setFont(pGM->getFont());
-	text.setCharacterSize(pt);
 	setText(txt);
 	hovering(false);
 }
@@ -22,6 +20,11 @@ Button::~Button()
 void Button::setText(std::string txt)
 {
 	text.setString(txt);
+
+	sf::FloatRect aux = text.getLocalBounds();
+	text.setOrigin(aux.width / 2, aux.height / 2);
+
+	text.setPosition(pos);
 }
 
 void Button::hovering(const bool a)

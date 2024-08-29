@@ -7,7 +7,7 @@ using namespace Obstacles;
 
 Evening::Evening(StateMachine* psm):Level(psm, sID::Evening)
 {
-
+	setupLevel();
 }
 
 Evening::~Evening()
@@ -24,11 +24,10 @@ void Evening::Update()
 {
 	if (!isRuning)
 	{
-		setupLevel();
 		isRuning = true;
+		if (!twoPlayers)
+			pPlayer2->setActive(false);
 	}
-
-
 
 	entityList.UpdateEntities();
 	updateDeltaTime();

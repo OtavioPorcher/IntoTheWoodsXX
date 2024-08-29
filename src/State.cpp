@@ -30,6 +30,11 @@ const bool State::getIsRuning()const
 	return isRuning;
 }
 
+State* State::getPreviousState()
+{
+	return previousState;
+}
+
 void State::changeState(sID id_)
 {
 	isRuning = false;

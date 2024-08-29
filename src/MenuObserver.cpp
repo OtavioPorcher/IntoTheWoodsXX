@@ -7,7 +7,7 @@ MenuObserver::MenuObserver(Menus::StateMenu* cSate) : Observer(),
 	inputSet["Up"] = "W";
 	inputSet["Down"] = "S";
 	inputSet["Select"] = "Enter";
-	inputSet["Close"] = "Esc";
+	inputSet["Escape"] = "Esc";
 }
 
 MenuObserver::~MenuObserver()
@@ -40,11 +40,9 @@ void MenuObserver::notifyKeyPressed(std::string key)
 				linkedState->Select();
 				return;
 			}
-			if (mapIt->first == "Close")
+			if (mapIt->first == "Escape")
 			{
-				if (linkedState->getStateID() == sID::MainMenu)
-					linkedState->Close();
-				
+				linkedState->Escape();
 				return;
 			}
 		}

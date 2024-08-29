@@ -18,7 +18,7 @@ namespace Menus
 		std::vector<Button*> buttonPool; // Circular Buffer
 		int hovering;
 	public:
-		Menu(StateMenu* pS, bID id_);
+		Menu(StateMenu* pS);
 		~Menu();
 
 		void Update();
@@ -28,7 +28,7 @@ namespace Menus
 		void MoveDown();
 		virtual void Select() = 0;
 
-		void Close();
+		virtual void Escape();
 
 		void newButton(sf::Vector2f pos, unsigned int fontSize, std::string text);
 	};

@@ -27,7 +27,7 @@ namespace Menus
 		void MoveUp();
 		void MoveDown();
 		void Select();
-		void Close();
+		void Escape();
 
 	};
 
