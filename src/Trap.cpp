@@ -7,6 +7,7 @@ using namespace Obstacles;
 Trap::Trap(sf::Vector2f position, unsigned int dmg) : Obstacle(false, bID::trap, {20.f,50.f}),
 	sharpness(dmg)
 {
+	body.setFillColor(sf::Color::Blue);
 	pos = position;
 }
 

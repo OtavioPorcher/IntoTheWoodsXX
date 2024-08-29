@@ -2,6 +2,7 @@
 using namespace Levels;
 
 #include <fstream>
+#include <ctime>
 
 Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
 	pIM(Managers::InputManager::getInstance()),
@@ -71,6 +72,10 @@ void Level::createMap()
 		{
 			if (line[j] == '*')
 				end = j * 50.0f;
+			if (line[j] == 'Q')
+				CreateRandomPlatform(sf::Vector2f((float)j, (float)i), (line[j - 1] == ' '));
+			if (line[j] == 'V')
+				CreateRandomGrassPatch(sf::Vector2f((float)j, (float)i), (line[j - 1] != 'V'));
 			else if (line[j] != ' ')
 				CreateEntity(line[j], sf::Vector2f((float)j, (float)i));
 		}
@@ -120,6 +125,63 @@ void Level::CreateGround(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 
 	aux = NULL;
 	auxEntity = NULL;
+}
+
+void Level::CreateRandomPlatform(sf::Vector2f pos, const bool first)
+{
+	static bool growing;
+
+	srand(time(nullptr));
+
+	if (first)
+	{
+		growing = true;
+	}
+
+
+	if (growing)
+	{
+		if (rand() % 3)
+		{
+			CreateGround(pos * 50.f);
+			return;
+		}
+		else
+			growing = false;
+	}
+}
+
+void Level::CreateGrass(sf::Vector2f pos)
+{
+	Entities::Obstacles::TallGrass* aux = new Entities::Obstacles::TallGrass(pos);
+
+	Entity* auxEntity = static_cast<Entity*>(aux);
+
+	entityList.insertFront(auxEntity);
+	pCM->addEntity(auxEntity);
+
+	aux = NULL;
+	auxEntity = NULL;
+}
+
+void Level::CreateRandomGrassPatch(sf::Vector2f pos, const bool first)
+{
+	static bool growing;
+
+	srand(time(nullptr));
+
+	if (first)
+	{
+		growing = true;
+	}
+
+	if ((growing) && (rand() % 2))
+	{
+		CreateGrass({pos.x*50.f, pos.y*20.f});
+		return;
+	}
+
+	growing = false;
 }
 
 void Level::updateDeltaTime()

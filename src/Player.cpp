@@ -105,6 +105,8 @@ void Player::Update()
 	Move();
 	Gravity();
 	ThrustForce();
+
+	setGrounded(false);
 }
 
 void Player::Draw()

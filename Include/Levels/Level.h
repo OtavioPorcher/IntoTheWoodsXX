@@ -4,6 +4,7 @@
 #include "../Managers/CollisionManager.h"
 #include "../Entities/Characters/Player.h"
 #include "../Entities/Obstacles/Ground.h"
+#include "..\Entities\Obstacles\TallGrass.h"
 
 #include "../States/State.h"
 using namespace States;
@@ -57,6 +58,9 @@ namespace Levels
 
         void CreatePlayer(sf::Vector2f pos);
         void CreateGround(sf::Vector2f pos);
+        void CreateRandomPlatform(sf::Vector2f pos, const bool first);
+        void CreateGrass(sf::Vector2f pos);
+        void CreateRandomGrassPatch(sf::Vector2f pos, const bool first);
 
         const bool checkWipe()const;
         const bool checkDone()const;
