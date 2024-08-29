@@ -7,21 +7,23 @@ namespace Entities
 	namespace Characters
 	{
 		class Player;
+
 		namespace Enemies
 		{
 			class Enemy : public Character
 			{
 			protected:
-				float atkCd;
+				float atkCdTimer;
 			public:
-				Enemy(sf::Vector2f size, bID id_, const float atckCooldown = 1.0f);
+				Enemy(sf::Vector2f size, bID id_);
 				~Enemy();
 
 				virtual void Move() = 0;
 				virtual void Update() = 0;
 				virtual void Draw() = 0;
 
-				//virtual void initialize() = 0;
+				virtual void attack(Player* pPlayer) = 0;
+				virtual void sufferDMG();
 			};
 
 		}

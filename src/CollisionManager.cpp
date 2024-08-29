@@ -148,7 +148,9 @@ void CollisionManager::CollisionPlayerObstacles(Entities::Entity* pPlayer)
 {
 	if (obstacleList.empty())
 		return;
-	
+	if (!(pPlayer->getActive()))
+		return;
+
 	Collision collision;
 
 	Lists::List<Entities::Entity>::Iterator<Entities::Entity> it = obstacleList.begin();

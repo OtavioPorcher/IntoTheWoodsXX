@@ -1,4 +1,5 @@
 #include <cmath>
+#include "..\Include\Entities\Characters\Player.h"
 #include "..\Include\Entities\Characters\Enemies\Scorpion.h"
 using namespace Entities;
 using namespace Characters;
@@ -30,6 +31,8 @@ void Scorpion::Move()
 
 void Scorpion::Update()
 {
+	atkCdTimer += deltaTime;
+
 	body.setPosition(pos);
 	if (dist >= range)
 		facingRight = (!facingRight);
@@ -42,4 +45,13 @@ void Scorpion::Update()
 void Scorpion::Draw()
 {
 	pGM->render(&body);
+}
+
+void Scorpion::attack(Player* pPlayer)
+{
+	if (atkCdTimer > 0.5f)
+	{
+		pPlayer->sufferDMG();
+		atkCdTimer = 0;
+	}
 }

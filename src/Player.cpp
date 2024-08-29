@@ -13,7 +13,8 @@ Player::Player(sf::Vector2f position):Character({(float)SIZEX,(float)SIZEY}, bID
 	playerId(counter++),
 	atkDurationTimer(0.f),
 	atkCDTimer(0.f),
-	attacking(false)
+	attacking(false),
+	facingRight(true)
 {
 	maxVelocity = MAXVEL;
 	lives = LIVES;
@@ -68,6 +69,11 @@ void Player::Move()
 	}
 	
 	pos += vel * deltaTime * 10.f;
+
+	if (vel.x > 0)
+		facingRight = true;
+	else
+		facingRight = false;
 
 	body.setPosition(pos);
 }
@@ -158,7 +164,7 @@ void Player::attack(bool a)
 		return;
 
 	attacking = a;
-
+	std::cout << "ATTACK" << std::endl;
 	atkDimentions(a, &pos, &size);
 	if (a)
 	{
@@ -185,15 +191,31 @@ void Player::attack()
 
 void Player::sufferDMG(int damage, bool unstoppable)
 {
+	std::cout << lives << std::endl;
 	if (!unstoppable && (!Blocking && rand() % 2))
-		lives-= damage;
+		lives -= damage;
 	if (lives <= 0)
-		setActive(false);
+	{
+		this->setActive(false);
+		std::cout << "DEAD" << std::endl;
+	}
 }
 
 void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
 {
-
+	if (xAxis )
+	{
+		if (attacking && (positive == facingRight))
+		{
+			pE->sufferDMG();
+		}
+		else 
+			pE->attack(this);
+	}
+	else if (positive)
+	{
+		//Jump(true);
+	}
 }
 
 void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTrajectory)

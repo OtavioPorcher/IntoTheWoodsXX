@@ -25,6 +25,7 @@ namespace Entities
 			bool MovingRight;
 			bool Falling;
 			bool Blocking;
+			bool facingRight;
 
 			bool attacking;
 			float atkDurationTimer;

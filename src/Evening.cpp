@@ -82,7 +82,7 @@ void Evening::CreateEntity(char id, sf::Vector2f pos)
 
 void Evening::CreateScorpion(sf::Vector2f pos, const bool random)
 {
-	srand(time(NULL) + rand());
+	srand((unsigned int)time(NULL) + rand());
 	if (random && ((rand() % 2) > 0))
 	{
 		return;
@@ -106,7 +106,7 @@ void Evening::CreateScorpion(sf::Vector2f pos, const bool random)
 
 void Evening::CreateNest(sf::Vector2f pos, const bool random)
 {
-	srand(time(NULL) + rand());
+	srand((unsigned int)time(NULL) + rand());
 	if (random && ((rand() % 3) > 0))
 	{
 		CreateGround(pos);

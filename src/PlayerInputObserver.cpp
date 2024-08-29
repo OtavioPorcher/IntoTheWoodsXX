@@ -94,7 +94,15 @@ void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 				break;
 			}
 			if (mapIt->first == "Down")
+			{
 				pPlayerAux->Block(true);
+				break;
+			}
+			if (mapIt->first == "Attack")
+			{
+				pPlayerAux->attack(true);
+				break;
+			}
 		}
 	}
 	pPlayerAux = NULL;

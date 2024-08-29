@@ -131,7 +131,7 @@ void Level::CreateRandomPlatform(sf::Vector2f pos, const bool first)
 {
 	static bool growing;
 
-	srand(time(NULL)+rand());
+	srand((unsigned int)time(NULL)+rand());
 
 	if (first)
 	{
