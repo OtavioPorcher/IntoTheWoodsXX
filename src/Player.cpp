@@ -159,19 +159,19 @@ void Player::setGrounded(bool a)
 	grounded = a;	
 }
 
-void atkDimentions(bool a, sf::Vector2f* pos, sf::Vector2f* size, const bool facingRight) // Função auxiliar para mudar o tamanho da hitbox durante um ataque
+void atkDimentions(bool a, sf::RectangleShape* body, sf::Vector2f* size, const bool facingRight) // Função auxiliar para mudar o tamanho da hitbox durante um ataque
 {
 	if (a)
 	{
 		(*size).x += 30.f;
 		if (!facingRight)
-			pos->x -= 30.f;
+			body->setOrigin({ 30.f, 0.f});
 	}
 	else
 	{
 		(*size).x -= 30.f;
 		if (!facingRight)
-			pos->x += 30.f;
+			body->setOrigin({ 0.f, 0.f});
 	}
 }
 
@@ -181,7 +181,7 @@ void Player::attack(bool a)
 		return;
 
 	attacking = a;
-	atkDimentions(a, &pos, &size, facingRight);
+	atkDimentions(a, &body, &size, facingRight);
 	if (a)
 	{
 		atkDurationTimer = 0;
