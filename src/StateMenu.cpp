@@ -45,6 +45,18 @@ StateMenu::StateMenu(StateMachine* pSM, sID id_) : State(pSM, id_),
 				exit(1);
 			}
 		}
+		break;
+	case sID::leaderBoard:
+		try { pMenu = static_cast<Menu*>(new Ranking(this)); }
+		catch (int error)
+		{
+			if (!error)
+			{
+				std::cout << "ERROR: Failed to Allocate Memory (Ranking)" << std::endl;
+				exit(1);
+			}
+		}
+
 	}
 }
 

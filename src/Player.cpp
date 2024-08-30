@@ -161,16 +161,18 @@ void Player::setGrounded(bool a)
 
 void atkDimentions(bool a, sf::RectangleShape* body, sf::Vector2f* size, const bool facingRight) // Função auxiliar para mudar o tamanho da hitbox durante um ataque
 {
+	static bool atkDirection;
 	if (a)
 	{
 		(*size).x += 30.f;
-		if (!facingRight)
+		atkDirection = facingRight;
+		if (!atkDirection)
 			body->setOrigin({ 30.f, 0.f});
 	}
 	else
 	{
 		(*size).x -= 30.f;
-		if (!facingRight)
+		if (!atkDirection)
 			body->setOrigin({ 0.f, 0.f});
 	}
 }

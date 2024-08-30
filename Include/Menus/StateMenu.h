@@ -5,6 +5,7 @@ using namespace States;
 
 #include "MainMenu.h"
 #include "NewGameMenu.h"
+#include "Ranking.h"
 
 #include "..\Managers\InputManager.h"
 namespace Observers { class MenuObserver; }

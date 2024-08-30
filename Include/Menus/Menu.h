@@ -21,8 +21,8 @@ namespace Menus
 		Menu(StateMenu* pS);
 		~Menu();
 
-		void Update();
-		void Draw();
+		virtual void Update();
+		virtual void Draw();
 
 		void MoveUp();
 		void MoveDown();

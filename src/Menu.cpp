@@ -16,14 +16,14 @@ Menu::~Menu()
 
 }
 
-void Menu::MoveUp()
+void Menu::MoveDown()
 {
 	buttonPool[hovering]->hovering(false);
 	hovering++;
 	hovering = hovering % buttonPool.size();
 }
 
-void Menu::MoveDown()
+void Menu::MoveUp()
 {
 	buttonPool[hovering]->hovering(false);
 	hovering--;
@@ -40,7 +40,6 @@ void Menu::Update()
 {
 	pGM->centerView({ RES_X/2,RES_Y/2});
 	buttonPool[hovering]->hovering(true);
-	
 }
 
 void Menu::Draw()

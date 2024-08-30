@@ -3,7 +3,6 @@ using namespace Menus;
 
 #include <iostream>
 
-
 Button::Button(sf::Vector2f position, unsigned int pt, std::string txt) : Being(bID::button),
 	pos(position),
 	text(txt, pGM->getFont(), pt)

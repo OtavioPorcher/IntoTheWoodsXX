@@ -32,7 +32,6 @@ TextObserver::TextObserver(States::GameOverState* pGO) : Observer(),
 	inputSet["Z"] = "Z";
 	inputSet["Enter"] = "Enter";
 	inputSet["BackSpace"] = "BackSpace";
-	inputSet["Space"] = " ";
 }
 
 TextObserver::~TextObserver()

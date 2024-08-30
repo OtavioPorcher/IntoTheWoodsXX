@@ -5,7 +5,7 @@ using namespace States;
 #include "..\Include\Managers\InputManager.h"
 #include "..\Include\Observers\TextObserver.h"
 
-void setText(sf::Text* text, std::string txt);
+#include "../Include/Utils/TextUtils.h"
 
 GameOverState::GameOverState(StateMachine* pSM) : State(pSM, sID::gameOver),
 pGM(Managers::GraphicManager::getInstance()),
@@ -43,13 +43,6 @@ GameOverState::~GameOverState()
 
 }
 
-void setText(sf::Text* text, std::string txt)
-{
-	text->setString(txt);
-
-	sf::FloatRect aux = text->getLocalBounds();
-	text->setOrigin(aux.width / 2, aux.height / 2);
-}
 
 void GameOverState::Update()
 {
@@ -118,7 +111,7 @@ void GameOverState::saveLeaderboard()
 
 	std::ofstream RankingOutput;
 	RankingOutput.open("Assets/Leaderboard.txt");
-	for (int i = 0; i < rankingScores.size(); i++)
+	for (unsigned int i = 0;(i < 5) && (i < rankingScores.size()); i++)
 	{
 		RankingOutput << rankingNameTags[i] << " " << rankingScores[i] << std::endl;
 	}
@@ -141,7 +134,7 @@ void swap(std::vector<int>& A, int i, int j, std::vector<std::string>& B)
 
 void InsertionSort(std::vector<int>& Scores, std::vector<std::string>& Names)
 {
-	unsigned int i, j, key;
+	unsigned int i, j;
 	for (i = 1; i < Scores.size(); i++)
 	{
 		j = i;

@@ -11,6 +11,7 @@ Game::Game() :
 	addState(static_cast<State*> (new StateMenu(pAux, sID::MainMenu)));
 	addState(static_cast<State*>(new StateMenu(pAux, sID::newGameMenu)));
 	addState(static_cast<State*>(new GameOverState(pAux)));
+	addState(static_cast<State*>(new StateMenu(pAux, sID::leaderBoard)));
 	changeCurrentState(sID::MainMenu);
 }
 Game::~Game()

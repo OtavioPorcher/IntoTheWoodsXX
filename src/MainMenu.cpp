@@ -7,6 +7,7 @@ MainMenu::MainMenu(StateMenu* pS):Menu(pS),
 {
 	newButton({ RES_X / 2.f, 200.f }, 40, "New Game");
 	newButton({ RES_X / 2.f, 300.f }, 40, "Two Players: OFF");
+	newButton({ RES_X / 2.f, 400.f }, 40, "Leaderboard");
 }
 
 MainMenu::~MainMenu()
@@ -14,7 +15,7 @@ MainMenu::~MainMenu()
 
 }
 
-#include "..\Levels\Level.h"
+#include "../Include\Levels\Level.h"
 void MainMenu::Select()
 {
 	switch (hovering)
@@ -26,6 +27,9 @@ void MainMenu::Select()
 	case 1:
 		twoPlayers = !twoPlayers;
 		(twoPlayers ? buttonPool[1]->setText("Two Players: ON") : buttonPool[1]->setText("Two Players: OFF"));
+		break;
+	case 2:
+		pState->changeState(sID::leaderBoard);
 		break;
 	}
 }
