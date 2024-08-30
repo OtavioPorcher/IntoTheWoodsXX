@@ -84,7 +84,71 @@ void GameOverState::keyInput(std::string key)
 	NameTag.append(key);
 }
 
+#include <fstream>
+#include <vector>
+
+void InsertionSort(std::vector<int>& Scores, std::vector<std::string>& Names);
+
 void GameOverState::saveLeaderboard()
 {
+	std::vector<std::string> rankingNameTags;
+	std::vector<int> rankingScores;
 
+	std::ifstream RankingInput;
+	std::string line;
+	RankingInput.open("Assets/Leaderboard.txt");
+	if (!RankingInput.is_open())
+	{
+		std::cout << "ERROR: Failed to open Leaderboard File!" << std::endl;
+		exit(1);
+	}
+	while (std::getline(RankingInput, line))
+	{
+		if (!line.empty())
+		{
+			rankingNameTags.push_back(line.substr(0, line.find_first_of(' ')));
+			rankingScores.push_back(stoi(line.substr(line.find_first_of(' ') + 1)));
+		}
+	}
+	
+	rankingNameTags.push_back(NameTag);
+	rankingScores.push_back(Levels::Level::getPoints());
+
+	InsertionSort(rankingScores, rankingNameTags);
+
+	std::ofstream RankingOutput;
+	RankingOutput.open("Assets/Leaderboard.txt");
+	for (int i = 0; i < rankingScores.size(); i++)
+	{
+		RankingOutput << rankingNameTags[i] << " " << rankingScores[i] << std::endl;
+	}
+	RankingOutput.close();
+
+	pGM->closeWindow();
+}
+
+
+void swap(std::vector<int>& A, int i, int j, std::vector<std::string>& B)
+{
+	int auxInt = A[i]; // Troca a posição das pontuações
+	A[i] = A[j];
+	A[j] = auxInt;
+
+	std::string auxString = B[i]; // Troca a posição dos nomes 
+	B[i] = B[j];
+	B[j] = auxString;
+}
+
+void InsertionSort(std::vector<int>& Scores, std::vector<std::string>& Names)
+{
+	unsigned int i, j, key;
+	for (i = 1; i < Scores.size(); i++)
+	{
+		j = i;
+		while ((j > 0) && (Scores[j] > Scores[j - 1]))
+		{
+			swap(Scores, j, j - 1, Names);
+			j = j - 1;
+		}
+	}
 }

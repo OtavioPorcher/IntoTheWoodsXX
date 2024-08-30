@@ -49,7 +49,7 @@ void Scorpion::Draw()
 
 void Scorpion::attack(Player* pPlayer)
 {
-	if (atkCdTimer > 0.5f)
+	if (atkCdTimer > 0.8f)
 	{
 		pPlayer->sufferDMG();
 		atkCdTimer = 0;

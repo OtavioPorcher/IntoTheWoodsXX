@@ -39,14 +39,13 @@ void Evening::Update()
 
 	if (checkWipe())
 	{
-		changeState(sID::MainMenu);
+		changeState(sID::gameOver);
 	}
 	updateView();
 	if (checkDone())
 	{
 		points += (int)(Player::getPoints() * (100 / levelTimer));
 		points -= points % 10;
-		std::cout << points << std::endl;
 		changeState(sID::gameOver);
 	}
 }

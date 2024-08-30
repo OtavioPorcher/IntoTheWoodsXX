@@ -207,13 +207,11 @@ void Player::attack()
 
 void Player::sufferDMG(int damage, bool unstoppable)
 {
-	std::cout << lives << std::endl;
-	if (!unstoppable && (!Blocking && rand() % 2))
+	if (!unstoppable && (!Blocking || rand() % 2))
 		lives -= damage;
 	if (lives <= 0)
 	{
-		this->setActive(false);
-		std::cout << "DEAD" << std::endl;
+		setActive(false);
 	}
 }
 
