@@ -66,5 +66,7 @@ namespace Levels
         const bool checkWipe()const;
         const bool checkDone()const;
 
+        static const unsigned int getPoints();
+
     };
 }

@@ -3,7 +3,7 @@
 #define SIZEX 50.f
 #define SIZEY 50.f
 
-#define LIVES 2
+#define LIVES 10
 #define MAXVEL 45.f
 #define ACCEL 50.f
 #define FRICTION 30.f

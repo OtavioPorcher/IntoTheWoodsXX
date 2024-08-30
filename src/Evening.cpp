@@ -47,7 +47,7 @@ void Evening::Update()
 		points += (int)(Player::getPoints() * (100 / levelTimer));
 		points -= points % 10;
 		std::cout << points << std::endl;
-		pGM->closeWindow();
+		changeState(sID::gameOver);
 	}
 }
 

@@ -1,10 +1,7 @@
 #pragma once
 
-#include "Entities\Characters\Player.h" // Provisório enquanto não há fase implementada
-#include "Entities/Characters/Enemies/Scorpion.h"
-#include "Entities\Obstacles\Ground.h"
-
-#include "States/StateMachine.h"
+#include "States\StateMachine.h"
+#include "States\GameOverState.h"
 using namespace States;
 
 #include "Managers\EventManager.h"
@@ -12,7 +9,7 @@ using namespace States;
 #include "Managers\InputManager.h"
 using namespace Managers;
 
-#include "Menus/StateMenu.h"
+#include "Menus\StateMenu.h"
 using namespace Menus;
 
 #include "Levels/Evening.h"

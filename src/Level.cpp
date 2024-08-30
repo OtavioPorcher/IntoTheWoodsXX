@@ -235,6 +235,11 @@ const bool Level::checkDone()const
 	return false;
 }
 
+const unsigned int Levels::Level::getPoints()
+{
+	return points;
+}
+
 void Level::setTwoPlayers(bool b)
 {
 	twoPlayers = b;
