@@ -5,7 +5,8 @@ using namespace Levels;
 using namespace Entities;
 using namespace Obstacles;
 
-Evening::Evening(StateMachine* psm):Level(psm, sID::Evening)
+Evening::Evening(StateMachine* psm):Level(psm, sID::Evening),
+	levelTimer(0)
 {
 	setupLevel();
 }
@@ -31,6 +32,9 @@ void Evening::Update()
 
 	entityList.UpdateEntities();
 	updateDeltaTime();
+	levelTimer += dt;
+
+
 	pCM->Manage();
 
 	if (checkWipe())
@@ -40,8 +44,10 @@ void Evening::Update()
 	updateView();
 	if (checkDone())
 	{
+		points += (int)(Player::getPoints() * (100 / levelTimer));
+		points -= points % 10;
+		std::cout << points << std::endl;
 		pGM->closeWindow();
-		std::cout << Player::getPoints() << std::endl;
 	}
 }
 

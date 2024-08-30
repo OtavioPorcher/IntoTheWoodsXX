@@ -27,6 +27,7 @@ namespace Levels
         Managers::CollisionManager* pCM;
         Observers::PlayerInputObserver* pPIO;
 
+        static unsigned int points;
 
         static bool twoPlayers;
         Player* pPlayer1;

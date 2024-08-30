@@ -9,7 +9,7 @@ namespace Levels
 	class Evening : public Level
 	{
 	private:
-		
+		float levelTimer;
 	public:
 		Evening(StateMachine* psm);
 		~Evening();

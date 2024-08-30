@@ -241,3 +241,4 @@ void Level::setTwoPlayers(bool b)
 }
 
 bool Level::twoPlayers(true);
+unsigned int Level::points(0);
