@@ -17,7 +17,7 @@ namespace Managers
 		GraphicManager* pGM;
 	public:
 		~EventManager();
-		static EventManager* getInstance();
+		static EventManager* getInstance(); // TODO: Reestruturar os Singletons de forma a deixar a variável instance acessível somente dentro da getInstance e mantendo a Threadsafe.
 
 		void Run();		
 	};

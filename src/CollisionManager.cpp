@@ -150,7 +150,7 @@ void CollisionManager::CollisionPlayerObstacles(Entities::Entity* pPlayer)
 		return;
 	if (!(pPlayer->getActive()))
 		return;
-
+	// TODO: DESACOPLAR A COLISÃO DA CLASSE
 	Collision collision;
 
 	Lists::List<Entities::Entity>::Iterator<Entities::Entity> it = obstacleList.begin();
