@@ -47,3 +47,6 @@ CppProperties.json
 
 #Personal Source Path Include file
 /Include/DefineSource/SourcePath.h
+
+#Leaderboard (Pra deixar em branco no github)
+/Assets/Leaderboard.txt
