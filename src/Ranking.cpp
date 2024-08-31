@@ -22,12 +22,20 @@ Ranking::Ranking(StateMenu* pState) : Menu(pState),
 	Fourth.setPosition({ RES_X / 2 , 325 });
 	Fifth.setPosition({ RES_X / 2 , 400 });
 
-	setText(&First, "1: " + std::string(RankingNameTags[0]) + " " + std::string(std::to_string(RankingScores[0])));
-	setText(&Second, "2: " + std::string(RankingNameTags[1]) + " " + std::string(std::to_string(RankingScores[1])));
-	setText(&Third, "3: " + std::string(RankingNameTags[2]) + " " + std::string(std::to_string(RankingScores[2])));
-	setText(&Fourth, "4: " + std::string(RankingNameTags[3]) + " " + std::string(std::to_string(RankingScores[3])));
-	setText(&Fifth, "5: " + std::string(RankingNameTags[4]) + " " + std::string(std::to_string(RankingScores[4])));
+	switch (RankingNameTags.size())
+	{
+	case 5:
+		setText(&Fifth, "5: " + std::string(RankingNameTags[4]) + " " + std::string(std::to_string(RankingScores[4])));
+	case 4:
+		setText(&Fourth, "4: " + std::string(RankingNameTags[3]) + " " + std::string(std::to_string(RankingScores[3])));
+	case 3:
+		setText(&Third, "3: " + std::string(RankingNameTags[2]) + " " + std::string(std::to_string(RankingScores[2])));
+	case 2:
+		setText(&Second, "2: " + std::string(RankingNameTags[1]) + " " + std::string(std::to_string(RankingScores[1])));
+	case 1:
+		setText(&First, "1: " + std::string(RankingNameTags[0]) + " " + std::string(std::to_string(RankingScores[0])));
 	
+	}
 }
 
 Ranking::~Ranking()
