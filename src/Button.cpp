@@ -11,6 +11,13 @@ Button::Button(sf::Vector2f position, unsigned int pt, std::string txt) : Being(
 	hovering(false);
 }
 
+Menus::Button::Button(sf::Vector2f position) :
+	pos(position),
+	text("", pGM->getFont(), 30)
+{
+	hovering(false);
+}
+
 Button::~Button()
 {
 

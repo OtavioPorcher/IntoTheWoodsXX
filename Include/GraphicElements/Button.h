@@ -13,6 +13,7 @@ namespace Menus
 		sf::Font font;
 	public:
 		Button(sf::Vector2f position, unsigned int pt, std::string txt);
+		Button(sf::Vector2f position);
 		~Button();
 
 		void setText(std::string txt);
