@@ -1,10 +1,9 @@
-GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-G						                                                        	G
-G						                                                        	G
-G						                                    S                   	G
-G						S                                  GGQQQ  GGGQQQQ       	G
-G						GGQQQ  QQQQ                  GGG                         G
-G	P	P				           QQQQQ                                       G
-GC      		 	C            E		XXVVVV XXVVVVV       Y  		S        *G
-GGGGGGGGGGGGNGGGGGGGGGGGGGGGMGGGGGGGGNGGGGGGGGGGGGGGGGMGGGGGGGGGG
-                            G                         G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+G                                                                                                               G
+G                                                                                                               G
+G                                                                                                               G
+G             S      QQQ                                                  C                      GGQQQ          G
+G             GGGGG              S        QQQQQQ       S     QQQQ      GGMGG               GGG                  G
+G P P                            GGQQQ                GGGQQ                                                     G
+G                      E VVVV            XXVVVV        Y    XXXX  VVV      E               VVVVV   XX  Y       *G
+GGGGGGGGNGGGGGGGGGGGGGGGGGGMGGGGGGGGGGGGGGGGGGGGNGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGMGGGGGG

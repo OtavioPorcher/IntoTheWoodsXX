@@ -13,3 +13,8 @@ Character::~Character()
 {
 
 }
+
+const unsigned int Character::getLives()
+{
+	return lives;
+}

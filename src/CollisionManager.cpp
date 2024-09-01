@@ -144,8 +144,6 @@ void CollisionManager::CollisionPlayerProjectiles(Entities::Entity* pPlayer)
 	if (!(pPlayer->getActive()))
 		return;
 
-	bool xAxis, positiveTrajectory;
-
 	Lists::List<Entities::Entity>::Iterator<Entities::Entity> it = projectileList.begin();
 	for (it; it != projectileList.end(); it++)
 	{
@@ -163,8 +161,6 @@ void CollisionManager::CollisionProjectileObstacles(Entities::Entity* pProjectil
 		return;
 	if (!(pProjectile->getActive()))
 		return;
-
-	bool xAxis, positiveTrajectory;
 
 	Lists::List<Entities::Entity>::Iterator<Entities::Entity> it = obstacleList.begin();
 	for (it; it != obstacleList.end(); it++)
