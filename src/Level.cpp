@@ -79,7 +79,7 @@ void Level::createMap()
 			else if (line[j] != ' ')
 				CreateEntity(line[j], sf::Vector2f((float)j, (float)i));
 		}
-
+	Entities::Characters::Enemies::Enemy::setPlayers(pPlayer1, pPlayer2);
 }
 
 void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYCATCH!
@@ -184,6 +184,36 @@ void Level::CreateRandomGrassPatch(sf::Vector2f pos, const bool first)
 	}
 
 	growing = false;
+}
+
+void Level::CreateSnake(sf::Vector2f pos, const bool random)
+{
+	srand((unsigned int)time(NULL) + rand());
+	if (random && ((rand() % 2) > 0))
+	{
+		return;
+	}
+
+	Entities::Characters::Enemies::Snake* aux = new Entities::Characters::Enemies::Snake(this, pos);
+	if (!aux)
+	{
+		std::cout << "ERROR: Failed to Allocate Memory (Snake)!" << std::endl;
+		exit(1);
+	}
+
+	Entity* auxEntities = static_cast<Entity*>(aux);
+
+	entityList.insertFront(auxEntities);
+	pCM->addEntity(auxEntities);
+
+	aux = NULL;
+	auxEntities = NULL;
+}
+
+void Level::addEntity(Entities::Entity* pEntity)
+{
+	entityList.insertFront(pEntity);
+	pCM->addEntity(pEntity);
 }
 
 void Level::updateDeltaTime()

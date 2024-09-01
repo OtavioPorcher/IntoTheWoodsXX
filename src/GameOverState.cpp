@@ -70,7 +70,9 @@ void GameOverState::keyInput(std::string key)
 	}
 	if (key == "BackSpace")
 	{
-		NameTag.pop_back();
+		if (!NameTag.empty())
+			NameTag.pop_back();
+
 		return;
 	}
 	

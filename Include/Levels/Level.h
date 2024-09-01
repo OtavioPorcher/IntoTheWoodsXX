@@ -5,6 +5,7 @@
 #include "../Entities/Characters/Player.h"
 #include "../Entities/Obstacles/Ground.h"
 #include "..\Entities\Obstacles\TallGrass.h"
+#include "../Entities/Characters/Enemies/Snake.h"
 
 #include "../States/State.h"
 using namespace States;
@@ -62,6 +63,10 @@ namespace Levels
         void CreateRandomPlatform(sf::Vector2f pos, const bool first);
         void CreateGrass(sf::Vector2f pos);
         void CreateRandomGrassPatch(sf::Vector2f pos, const bool first);
+        void CreateSnake(sf::Vector2f pos, const bool random = false);
+
+        void addEntity(Entities::Entity* pEntity);
+
 
         const bool checkWipe()const;
         const bool checkDone()const;

@@ -1,11 +1,12 @@
 #pragma once
 
 #include "../Entities/Entity.h"
-#include "../Entities/Characters/Player.h"
 #include "../Entities/Obstacles/Obstacle.h"
 
 namespace Entities
 {
+	namespace Characters { class Player; }
+
 	namespace Projectiles
 	{
 		class Projectile : public Entity

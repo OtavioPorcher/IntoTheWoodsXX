@@ -4,7 +4,7 @@
 
 #include "Enemies\Enemy.h"
 #include "..\Obstacles\Obstacle.h"
-//Projetil
+#include "../Projectiles/Projectile.h"
 
 namespace Entities
 {
@@ -59,7 +59,7 @@ namespace Entities
 
 			void Collision(Enemies::Enemy* pE, bool xAxis, bool positiveTrajectory);
 			void Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTrajectory);
-			//void Collision(Projectiles::Projectile, bool xAxis, bool positiveTrajectory);
+			void Collision(Projectiles::Projectile* pP);
 		};
 	}
 

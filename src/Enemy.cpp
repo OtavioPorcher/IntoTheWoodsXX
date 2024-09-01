@@ -21,7 +21,16 @@ void Enemy::sufferDMG()
 	lives--;
 	if (lives <= 0)
 	{
-		this->setActive(false);
+		setActive(false);
 		Player::Score(getId());
 	}
 }
+
+void Enemy::setPlayers(Player* pP1, Player* pP2)
+{
+	pPlayer1 = pP1;
+	pPlayer2 = pP2;
+}
+
+Player* Enemy::pPlayer1(NULL);
+Player* Enemy::pPlayer2(NULL);

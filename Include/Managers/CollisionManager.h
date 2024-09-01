@@ -3,7 +3,7 @@
 #include "..\Entities\Characters\Player.h"
 #include "..\Entities\Characters\Enemies\Enemy.h"
 #include "..\Entities\Obstacles\Obstacle.h"
-//Projetil
+#include "../Entities/Projectiles/Projectile.h"
 
 #include "..\Utils\EntityList.h"
 

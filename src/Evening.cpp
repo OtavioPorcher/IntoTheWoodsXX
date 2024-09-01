@@ -68,7 +68,7 @@ void Evening::CreateEntity(char id, sf::Vector2f pos)
 	case 'P':
 		CreatePlayer(pos);
 		break;
-	case 'S':
+	case 'E':
 		CreateScorpion(pos);
 		break;
 	case 'N':
@@ -83,6 +83,13 @@ void Evening::CreateEntity(char id, sf::Vector2f pos)
 	case 'Y':
 		CreateScorpion(pos, true);
 		break;
+	case 'S':
+		CreateSnake(pos);
+		break;
+	case 'C':
+		CreateSnake(pos, true);
+		break;
+
 	}
 }
 

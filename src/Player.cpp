@@ -215,20 +215,21 @@ void Player::sufferDMG(int damage, bool unstoppable)
 	{
 		setActive(false);
 	}
+	std::cout << "Lifes: " << lives << std::endl;
 }
 
-void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positive)
+void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positiveTrajectory)
 {
 	if (xAxis )
 	{
-		if (attacking && (positive == facingRight))
+		if (attacking && (positiveTrajectory == facingRight))
 		{
 			pE->sufferDMG();
 		}
 		else 
 			pE->attack(this);
 	}
-	else if (positive)
+	else if (positiveTrajectory)
 	{
 		Jump(true);
 		pE->sufferDMG();
@@ -255,6 +256,11 @@ void Player::Collision(Obstacles::Obstacle* pO, bool xAxis, bool positiveTraject
 			pos.x = pO->getPosition().x + (positiveTrajectory ? -size.x + 0.0001f : size.x - 0.0001f);
 		}
 	}
+}
+
+void Player::Collision(Projectiles::Projectile* pP)
+{
+	pP->Collide(this);
 }
 
 void Player::setVelMultiplier(const float mult)

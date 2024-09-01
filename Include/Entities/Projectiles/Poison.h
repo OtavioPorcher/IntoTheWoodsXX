@@ -9,10 +9,12 @@ namespace Entities
 		class Poison : public Projectile
 		{
 		private:
-			bool detonated;
+			float distance;
 		public:
-			Poison(sf::Vector2f velocity, sf::Vector2f position);
+			Poison(sf::Vector2f targetPosition, sf::Vector2f position);
 			~Poison();
+
+			void setTrajectory(sf::Vector2f targetPosition);
 
 			void Update();
 			void Move();

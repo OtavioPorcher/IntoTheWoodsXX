@@ -1,10 +1,10 @@
 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 G						                                                        	G
 G						                                                        	G
-G						                                                        	G
-G						                                   GGQQQ  GGGQQQQ       	G
-G						GGQQQ  QQQQ                                              G
-G	P	P				                                  GGGQQ                G
-G       		 	             S		XXVVVV XXVVVVV       Y  		         *G
+G						                                    S                   	G
+G						S                                  GGQQQ  GGGQQQQ       	G
+G						GGQQQ  QQQQ                  GGG                         G
+G	P	P				           QQQQQ                                       G
+GC      		 	C            E		XXVVVV XXVVVVV       Y  		S        *G
 GGGGGGGGGGGGNGGGGGGGGGGGGGGGMGGGGGGGGNGGGGGGGGGGGGGGGGMGGGGGGGGGG
                             G                         G

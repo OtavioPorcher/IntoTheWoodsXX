@@ -13,6 +13,8 @@ namespace Entities
 			class Enemy : public Character
 			{
 			protected:
+				static Player* pPlayer1;
+				static Player* pPlayer2;
 				float atkCdTimer;
 			public:
 				Enemy(sf::Vector2f size, bID id_);
@@ -24,6 +26,8 @@ namespace Entities
 
 				virtual void attack(Player* pPlayer) = 0;
 				virtual void sufferDMG();
+
+				static void setPlayers(Player* pP1, Player* pP2);
 			};
 
 		}
