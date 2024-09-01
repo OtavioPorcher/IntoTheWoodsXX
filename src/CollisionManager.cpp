@@ -82,8 +82,8 @@ const bool Collide(Entities::Entity* pE1, Entities::Entity* pE2, bool* xAxis = N
 	sf::Vector2f halfSize1 = pE1->getSize() / 2.f;
 	sf::Vector2f halfSize2 = pE2->getSize() / 2.f;
 
-	sf::Vector2f Center1 = pE1->getPosition() + (halfSize1);
-	sf::Vector2f Center2 = pE2->getPosition() + (halfSize2);
+	sf::Vector2f Center1 = pE1->getPosition(true) + (halfSize1);
+	sf::Vector2f Center2 = pE2->getPosition(true) + (halfSize2);
 
 	sf::Vector2f distance = Center1 - Center2;
 	sf::Vector2f minDistance = halfSize1 + halfSize2;

@@ -215,7 +215,7 @@ void Player::sufferDMG(int damage, bool unstoppable)
 	{
 		setActive(false);
 	}
-	std::cout << "Lifes: " << lives << std::endl;
+	std::cout <<"Player "<< (int)playerId << " Lifes: " << lives << std::endl;
 }
 
 void Player::Collision(Enemies::Enemy* pE, bool xAxis, bool positiveTrajectory)

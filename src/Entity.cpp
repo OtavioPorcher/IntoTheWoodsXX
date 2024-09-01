@@ -31,9 +31,9 @@ const sf::RectangleShape* Entity::getBody()
 	return &body;
 }
 
-const sf::Vector2f Entity::getPosition()const
+const sf::Vector2f Entity::getPosition(const bool collision)const
 {
-	return pos;
+	return (collision ? pos-body.getOrigin() : pos);
 }
 
 const sf::Vector2f Entity::getSize()const

@@ -33,7 +33,7 @@ namespace Entities
 		static void updateDeltaTime(const float dt);
 
 		const sf::RectangleShape* getBody();
-		const sf::Vector2f getPosition()const;
+		const sf::Vector2f getPosition(const bool collision = false)const;
 		const sf::Vector2f getSize()const;
 
 		void setActive(const bool b);

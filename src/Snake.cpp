@@ -24,7 +24,7 @@ Snake::~Snake()
 void Snake::Shoot()
 {
 	Player* target;
-	target = (getDistance(pPlayer1) > getDistance(pPlayer2) ? target = pPlayer1 : target = pPlayer2);
+	target = (getDistance(pPlayer1) < getDistance(pPlayer2) ? target = pPlayer1 : target = pPlayer2);
 	Projectiles::Poison* auxPoison = new Projectiles::Poison(target->getPosition(), pos);
 	pLevel->addEntity(static_cast<Entity*>(auxPoison));
 	atkCdTimer = 0.f;

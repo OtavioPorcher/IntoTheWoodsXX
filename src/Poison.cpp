@@ -17,17 +17,16 @@ Poison::~Poison()
 {
 
 }
-#include <iostream>
+
 void Poison::Update()
 {
 	Move();
 	Gravity();
 	ThrustForce();
 
-	if (distance > 500.f) {
+	if (distance > 500.f)
 		setActive(false);
-		std::cout << "APAGOU" << std::endl;
-	}
+	
 	body.setPosition(pos);
 	body.setSize(size);
 
