@@ -31,10 +31,11 @@ void Snake::Shoot()
 }
 
 #include <cmath>
+#include <climits>
 const float Snake::getDistance(Player* pPlayer)
 {
 	if (!pPlayer->getActive())
-		return -1.f;
+		return (float)INT_MAX;
 
 	sf::Vector2f halfSizePlayer = pPlayer->getSize() / 2.f;
 	sf::Vector2f halfSizeEnemy = size / 2.f;

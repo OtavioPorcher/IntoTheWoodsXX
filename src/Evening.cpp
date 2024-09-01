@@ -5,6 +5,10 @@ using namespace Levels;
 using namespace Entities;
 using namespace Obstacles;
 
+#include "..\Entities\Characters\Enemies\Scorpion.h"
+using namespace Enemies;
+
+
 Evening::Evening(StateMachine* psm):Level(psm, sID::Evening),
 	levelTimer(0)
 {
@@ -108,13 +112,12 @@ void Evening::CreateScorpion(sf::Vector2f pos, const bool random)
 		exit(1);
 	}
 
-	Entity* auxEntities = static_cast<Entity*>(aux);
+	Entity* auxEntity = static_cast<Entity*>(aux);
 
-	entityList.insertFront(auxEntities);
-	pCM->addEntity(auxEntities);
+	addEntity(auxEntity);
 
 	aux = NULL;
-	auxEntities = NULL;
+	auxEntity = NULL;
 }
 
 void Evening::CreateNest(sf::Vector2f pos, const bool random)
@@ -132,11 +135,10 @@ void Evening::CreateNest(sf::Vector2f pos, const bool random)
 		exit(1);
 	}
 
-	Entity* auxEntities = static_cast<Entity*>(aux);
+	Entity* auxEntity = static_cast<Entity*>(aux);
 
-	entityList.insertFront(auxEntities);
-	pCM->addEntity(auxEntities);
+	addEntity(auxEntity);
 
 	aux = NULL;
-	auxEntities = NULL;
+	auxEntity = NULL;
 }

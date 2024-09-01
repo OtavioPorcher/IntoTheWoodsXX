@@ -1,8 +1,6 @@
 #pragma once
 
 #include "Level.h"
-#include "..\Entities\Characters\Enemies\Scorpion.h"
-using namespace Enemies;
 
 namespace Levels
 {

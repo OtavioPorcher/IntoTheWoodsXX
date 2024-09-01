@@ -1,6 +1,10 @@
 #include "../include/Levels/Level.h"
 using namespace Levels;
 
+#include "../Entities/Obstacles/Ground.h"
+#include "..\Entities\Obstacles\TallGrass.h"
+#include "../Entities/Characters/Enemies/Snake.h"
+
 #include <fstream>
 #include <ctime>
 
@@ -107,8 +111,7 @@ void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 
 	Entity* auxEntity = static_cast<Entity*>(aux);
 
-	entityList.insertFront(auxEntity);
-	pCM->addEntity(auxEntity);
+	addEntity(auxEntity);
 
 	aux = NULL;
 	auxEntity = NULL;
@@ -120,8 +123,7 @@ void Level::CreateGround(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 
 	Entity* auxEntity = static_cast<Entity*>(aux);
 
-	entityList.insertFront(auxEntity);
-	pCM->addEntity(auxEntity);
+	addEntity(auxEntity);
 
 	aux = NULL;
 	auxEntity = NULL;
@@ -156,8 +158,7 @@ void Level::CreateGrass(sf::Vector2f pos)
 
 	Entity* auxEntity = static_cast<Entity*>(aux);
 
-	entityList.insertFront(auxEntity);
-	pCM->addEntity(auxEntity);
+	addEntity(auxEntity);
 
 	aux = NULL;
 	auxEntity = NULL;
@@ -201,13 +202,12 @@ void Level::CreateSnake(sf::Vector2f pos, const bool random)
 		exit(1);
 	}
 
-	Entity* auxEntities = static_cast<Entity*>(aux);
+	Entity* auxEntity = static_cast<Entity*>(aux);
 
-	entityList.insertFront(auxEntities);
-	pCM->addEntity(auxEntities);
+	addEntity(auxEntity);
 
 	aux = NULL;
-	auxEntities = NULL;
+	auxEntity = NULL;
 }
 
 void Level::addEntity(Entities::Entity* pEntity)

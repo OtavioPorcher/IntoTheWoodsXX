@@ -3,9 +3,6 @@
 #include "../Managers/InputManager.h"
 #include "../Managers/CollisionManager.h"
 #include "../Entities/Characters/Player.h"
-#include "../Entities/Obstacles/Ground.h"
-#include "..\Entities\Obstacles\TallGrass.h"
-#include "../Entities/Characters/Enemies/Snake.h"
 
 #include "../States/State.h"
 using namespace States;
