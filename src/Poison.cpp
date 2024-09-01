@@ -3,12 +3,12 @@
 using namespace Entities;
 using namespace Projectiles;
 
-Poison::Poison(sf::Vector2f targetPosition, sf::Vector2f position) : Projectile(1, false, {5.f,5.f}),
+Poison::Poison(sf::Vector2f targetPosition, sf::Vector2f position) : Projectile(1, false, {10.f,10.f}),
 	distance(0.f)
 {
 	vel.x = 200.f;
 	pos = position;
-	body.setFillColor(sf::Color::Blue);
+	body.setFillColor(sf::Color(165,11,94));
 	setTrajectory(targetPosition);
 
 }

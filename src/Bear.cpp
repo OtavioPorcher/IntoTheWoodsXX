@@ -13,7 +13,7 @@ Bear::Bear(Levels::Dawn* pL, sf::Vector2f position) : Enemy({100.f, 50.f}, bID::
 	pLevel(pL)
 {
 	pos = position;
-	body.setFillColor(sf::Color::Red);
+	body.setFillColor(sf::Color(162, 42, 42));
 
 	vel.x = 150.f;
 	lives = 2;

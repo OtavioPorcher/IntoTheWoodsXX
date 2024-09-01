@@ -128,7 +128,6 @@ void Dawn::CreateTrap(sf::Vector2f pos, const bool random)
 	srand((unsigned int)time(NULL) + rand());
 	if (random && ((rand() % 3) > 0))
 	{
-		CreateGround(pos);
 		return;
 	}
 	Trap* aux = new Trap(pos, rand()%2+1);
