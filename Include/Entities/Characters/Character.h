@@ -11,7 +11,7 @@ namespace Entities
 		class Character : public Entity
 		{
 		protected:
-			unsigned int lives;
+			int lives;
 		public:
 			Character(sf::Vector2f size, bID id_);
 			virtual ~Character();
@@ -20,7 +20,7 @@ namespace Entities
 			virtual void Update() = 0;
 			virtual void Draw() = 0;
 
-			const unsigned int getLives();
+			const int getLives();
 		};
 	}
 }

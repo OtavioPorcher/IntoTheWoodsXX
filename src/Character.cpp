@@ -14,7 +14,7 @@ Character::~Character()
 
 }
 
-const unsigned int Character::getLives()
+const int Character::getLives()
 {
 	return lives;
 }

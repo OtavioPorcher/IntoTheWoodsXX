@@ -144,7 +144,7 @@ void Player::Score(bID id_)
 		points += 3000;
 		break;
 	case bID::bear:
-		points += 20000;
+		points += 30000;
 		break;
 	}
 }
@@ -214,7 +214,7 @@ void Player::attack()
 
 void Player::sufferDMG(int damage, bool unstoppable)
 {
-	if (!unstoppable && (!Blocking || rand() % 2))
+	if (!unstoppable || (!Blocking || rand() % 2))
 		lives -= damage;
 	if (lives <= 0)
 	{

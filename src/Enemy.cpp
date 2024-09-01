@@ -5,7 +5,8 @@ using namespace Characters;
 using namespace Enemies;
 
 Enemy::Enemy(sf::Vector2f size, bID id_) : Character(size, id_),
-	atkCdTimer(0.f)
+	atkCdTimer(0.f),
+	dmgCdTimer(0.f)
 {
 	vel = { 300.f, 0.f };
 	grounded = true;
@@ -18,11 +19,15 @@ Enemy::~Enemy()
 
 void Enemy::sufferDMG()
 {
-	lives--;
-	if (lives <= 0)
+	if (dmgCdTimer > 0.5f)
 	{
-		setActive(false);
-		Player::Score(getId());
+		lives--;
+		if (lives <= 0)
+		{
+			setActive(false);
+			Player::Score(getId());
+		}
+		dmgCdTimer = 0.f;
 	}
 }
 

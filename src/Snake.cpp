@@ -58,6 +58,8 @@ void Snake::Move()
 void Snake::Update()
 {
 	atkCdTimer += deltaTime;
+	dmgCdTimer += deltaTime;
+
 	if (atkCdTimer > 2.5f)
 		Shoot();
 	body.setPosition(pos);

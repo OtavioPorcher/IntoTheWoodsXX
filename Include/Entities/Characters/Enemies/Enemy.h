@@ -16,6 +16,7 @@ namespace Entities
 				static Player* pPlayer1;
 				static Player* pPlayer2;
 				float atkCdTimer;
+				float dmgCdTimer;
 			public:
 				Enemy(sf::Vector2f size, bID id_);
 				~Enemy();

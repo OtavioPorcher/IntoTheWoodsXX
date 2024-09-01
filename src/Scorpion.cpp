@@ -32,6 +32,7 @@ void Scorpion::Move()
 void Scorpion::Update()
 {
 	atkCdTimer += deltaTime;
+	dmgCdTimer += deltaTime;
 
 	body.setPosition(pos);
 	if (dist >= range)

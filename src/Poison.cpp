@@ -28,8 +28,6 @@ void Poison::Update()
 		setActive(false);
 	
 	body.setPosition(pos);
-	body.setSize(size);
-
 }
 
 void Poison::Move()
@@ -42,13 +40,12 @@ void Poison::Draw()
 {
 	pGM->render(&body);
 }
-#include <iostream>
+
 void Poison::Collide(Characters::Player* pPlayer)
 {
 	pPlayer->sufferDMG();
 	setActive(false);
 }
-
 
 void Poison::setTrajectory(sf::Vector2f targetPosition)
 {
