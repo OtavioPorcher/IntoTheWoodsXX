@@ -50,7 +50,8 @@ void Evening::Update()
 	{
 		points += (int)(Player::getPoints() * (100 / levelTimer));
 		points -= points % 10;
-		changeState(sID::gameOver);
+		Player::ResetPoints();
+		changeState(sID::Dawn);
 	}
 }
 

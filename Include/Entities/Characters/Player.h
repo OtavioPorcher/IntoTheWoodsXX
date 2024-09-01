@@ -48,6 +48,7 @@ namespace Entities
 
 			static void Score(bID id_);
 			static unsigned int getPoints();
+			static void ResetPoints();
 
 			void setGrounded(bool a);
 

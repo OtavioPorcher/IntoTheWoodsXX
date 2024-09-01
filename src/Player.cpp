@@ -20,11 +20,11 @@ Player::Player(sf::Vector2f position):Character({(float)SIZEX,(float)SIZEY}, bID
 	lives = LIVES;
 	pos = position;
 
-	if (playerId == 1)
+	if (playerId%2 == 1)
 	{
 		body.setFillColor(sf::Color::Magenta);
 	}
-	else if (playerId ==2)
+	else if (playerId%2 == 0)
 	{
 		body.setFillColor(sf::Color::Red);
 	}
@@ -152,6 +152,11 @@ void Player::Score(bID id_)
 unsigned int Player::getPoints()
 {
 	return points;
+}
+
+void Player::ResetPoints()
+{
+	points = 0;
 }
 
 void Player::setGrounded(bool a)

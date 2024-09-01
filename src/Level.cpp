@@ -95,11 +95,11 @@ void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 		exit(1);
 	}
 
-	if (aux->getPlayerId() == 1)
+	if (aux->getPlayerId()%2 == 1)
 	{
 		pPlayer1 = aux;
 	}
-	else if (aux->getPlayerId() == 2)
+	else if (aux->getPlayerId()%2 == 0)
 	{
 		pPlayer2 = aux;
 	}
@@ -109,7 +109,7 @@ void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYC
 		return;
 	}
 
-	Entity* auxEntity = static_cast<Entity*>(aux);
+ 	Entity* auxEntity = static_cast<Entity*>(aux);
 
 	addEntity(auxEntity);
 
