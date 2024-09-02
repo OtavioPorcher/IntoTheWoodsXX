@@ -83,7 +83,6 @@ void Level::createMap()
 			else if (line[j] != ' ')
 				CreateEntity(line[j], sf::Vector2f((float)j, (float)i));
 		}
-	Entities::Characters::Enemies::Enemy::setPlayers(pPlayer1, pPlayer2);
 }
 
 void Level::CreatePlayer(sf::Vector2f pos) // TEM QUE VER SE DÁ PRA COLOCAR TRYCATCH!
@@ -201,6 +200,8 @@ void Level::CreateSnake(sf::Vector2f pos, const bool random)
 		std::cout << "ERROR: Failed to Allocate Memory (Snake)!" << std::endl;
 		exit(1);
 	}
+
+	aux->setPlayers(pPlayer1, pPlayer1);
 
 	Entity* auxEntity = static_cast<Entity*>(aux);
 

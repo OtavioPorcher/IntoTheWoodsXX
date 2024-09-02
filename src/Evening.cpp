@@ -33,6 +33,7 @@ void Evening::Update()
 		if (!twoPlayers)
 			pPlayer2->setActive(false);
 		clock.restart();
+		Enemies::Enemy::setPlayers(pPlayer1, pPlayer1);
 	}
 
 	entityList.UpdateEntities();
