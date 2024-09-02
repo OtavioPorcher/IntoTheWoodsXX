@@ -56,6 +56,18 @@ StateMenu::StateMenu(StateMachine* pSM, sID id_) : State(pSM, id_),
 				exit(1);
 			}
 		}
+		break;
+	case sID::pauseMenu:
+		try { pMenu = static_cast<Menu*>(new MenuPause(this)); }
+		catch (int error)
+		{
+			if (!error)
+			{
+				std::cout << "ERROR: Failed to Allocate Memory (MenuPause)" << std::endl;
+				exit(1);
+			}
+		}
+		break;
 
 	}
 }

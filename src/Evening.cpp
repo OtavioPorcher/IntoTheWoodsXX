@@ -32,6 +32,7 @@ void Evening::Update()
 		isRuning = true;
 		if (!twoPlayers)
 			pPlayer2->setActive(false);
+		clock.restart();
 	}
 
 	entityList.UpdateEntities();

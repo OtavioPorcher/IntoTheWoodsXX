@@ -21,10 +21,6 @@ namespace Entities
 				Enemy(sf::Vector2f size, bID id_);
 				~Enemy();
 
-				virtual void Move() = 0;
-				virtual void Update() = 0;
-				virtual void Draw() = 0;
-
 				virtual void attack(Player* pPlayer) = 0;
 				virtual void sufferDMG();
 

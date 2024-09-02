@@ -17,7 +17,6 @@ namespace Entities
             Obstacle(const bool sld, bID id_, sf::Vector2f size = { 50.0f,50.0f });
             virtual ~Obstacle();
 
-            virtual void Update() = 0;
             void Move();
             void Draw(); //Se mudar a armadilha de urso, deixa de ser virtual e coloca a sprite nessa classe
 

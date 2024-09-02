@@ -17,8 +17,6 @@ Bear::Bear(Levels::Dawn* pL, sf::Vector2f position) : Enemy({100.f, 50.f}, bID::
 
 	vel.x = 150.f;
 	lives = 2;
-
-	std::cout << "O DEMONIO VIVE!" << std::endl;
 }
 
 Bear::~Bear()

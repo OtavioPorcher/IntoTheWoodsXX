@@ -82,12 +82,12 @@ void GameOverState::keyInput(std::string key)
 #include <fstream>
 #include <vector>
 
-void InsertionSort(std::vector<int>& Scores, std::vector<std::string>& Names);
+void InsertionSort(std::vector<unsigned int>& Scores, std::vector<std::string>& Names);
 
 void GameOverState::saveLeaderboard()
 {
 	std::vector<std::string> rankingNameTags;
-	std::vector<int> rankingScores;
+	std::vector<unsigned int> rankingScores;
 
 	std::ifstream RankingInput;
 	std::string line;
@@ -105,6 +105,8 @@ void GameOverState::saveLeaderboard()
 			rankingScores.push_back(stoi(line.substr(line.find_first_of(' ') + 1)));
 		}
 	}
+
+	RankingInput.close();
 	
 	rankingNameTags.push_back(NameTag);
 	rankingScores.push_back(Levels::Level::getPoints());
@@ -123,7 +125,7 @@ void GameOverState::saveLeaderboard()
 }
 
 
-void swap(std::vector<int>& A, int i, int j, std::vector<std::string>& B)
+void swap(std::vector<unsigned int>& A, int i, int j, std::vector<std::string>& B)
 {
 	int auxInt = A[i]; // Troca a posição das pontuações
 	A[i] = A[j];
@@ -134,7 +136,7 @@ void swap(std::vector<int>& A, int i, int j, std::vector<std::string>& B)
 	B[j] = auxString;
 }
 
-void InsertionSort(std::vector<int>& Scores, std::vector<std::string>& Names)
+void InsertionSort(std::vector<unsigned int>& Scores, std::vector<std::string>& Names)
 {
 	unsigned int i, j;
 	for (i = 1; i < Scores.size(); i++)

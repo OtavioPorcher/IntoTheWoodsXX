@@ -2,6 +2,8 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 G                                                                                                               G
 G                                                                                                               G
 G                                                                                                               G
+G                                                                                                               G
+G                                                                                                               G
 G             S      QQQ                                                  C                      GGQQQ          G
 G             GGGGG              S        QQQQQQ       S     QQQQ      GGMGG               GGG                  G
 G P P                            GGQQQ                GGGQQ                                                     G

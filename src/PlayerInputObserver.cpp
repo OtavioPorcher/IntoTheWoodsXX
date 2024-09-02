@@ -35,7 +35,7 @@ void Observers::PlayerInputObserver::notifyKeyPressed(std::string key)
 
 	if (key == "Esc")
 	{
-		//linkedState->changeState(States::sID::pauseMenu);
+		linkedState->changeState(States::sID::pauseMenu);
 	}
 
 	playerInputPressed(1, key);
