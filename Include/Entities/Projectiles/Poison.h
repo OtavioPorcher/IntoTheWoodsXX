@@ -20,7 +20,7 @@ namespace Entities
 			void Move();
 			void Draw();
 
-			void save();
+			void save(nlohmann::json& saveJson);
 
 			void Collide(Characters::Player* pPlayer);
 

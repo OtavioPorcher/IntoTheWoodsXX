@@ -8,7 +8,7 @@ using namespace Obstacles;
 #include "../Include/Levels/Dawn.h"
 using namespace Levels;
 
-Dawn::Dawn(StateMachine* pSM) : Level(pSM, sID::Dawn),
+Dawn::Dawn(StateMachine* pSM) : Level(pSM, sID::Dawn, bID::dawn),
 	bossesDead(false),
 	counterBosses(0)
 {

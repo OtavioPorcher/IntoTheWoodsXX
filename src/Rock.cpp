@@ -36,7 +36,7 @@ void Entities::Projectiles::Rock::Draw()
 	pGM->render(&body);
 }
 
-void Rock::save()
+void Rock::save(nlohmann::json& saveJson)
 {
 
 }

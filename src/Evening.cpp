@@ -9,7 +9,7 @@ using namespace Obstacles;
 using namespace Enemies;
 
 
-Evening::Evening(StateMachine* psm):Level(psm, sID::Evening),
+Evening::Evening(StateMachine* psm):Level(psm, sID::Evening, bID::evening),
 	levelTimer(0)
 {
 	setupLevel();

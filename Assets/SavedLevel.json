@@ -1,0 +1,13 @@
+[
+    {
+        "Fase": 2
+    },
+    {
+        "Class": "Player",
+        "Lives": 15,
+        "PositionX": 100.0,
+        "PositionY": 304.20361328125,
+        "VelocityX": 0.0,
+        "VelocityY": -18.527862548828125
+    }
+]

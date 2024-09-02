@@ -61,13 +61,13 @@ List<Entities::Entity>& EntityList::getList()
 	return list;
 }
 
-void Lists::EntityList::SaveEntities()
+void Lists::EntityList::SaveEntities(nlohmann::json& saveJson)
 {
 	List<Entity>::Iterator<Entity> it = list.begin();
 	for (it; it != list.end(); it++)
 	{
-		//if ((*it)->getActive())
-			//(*it)->Save();
+		if ((*it)->getActive())
+			(*it)->save(saveJson);
 	}
 }
 

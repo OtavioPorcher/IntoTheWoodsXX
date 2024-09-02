@@ -1,7 +1,7 @@
 All Levels:
 	"P": Player
 	"G": Ground
-	"Q": Random Platform (Seguido imediatamente por um número)
+	"Q": Random Platform
 	"S": Snake
 	"C": Random Snake
 	"X": Grass

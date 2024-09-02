@@ -25,7 +25,7 @@ void TallGrass::Update()
 	body.setPosition(pos);
 }
 
-void TallGrass::save()
+void TallGrass::save(nlohmann::json& saveJson)
 {
 
 }

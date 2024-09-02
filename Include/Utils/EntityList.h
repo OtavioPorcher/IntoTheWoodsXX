@@ -26,8 +26,8 @@ namespace Lists
 
 		List<Entity>& getList();
 
-		void SaveEntities();
-		//void LoadEntities();
+		void SaveEntities(nlohmann::json& saveJson);
+		//void LoadEntities(nlohmann::json& saveJson);
 
 		int getSize();
 	};

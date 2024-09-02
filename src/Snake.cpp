@@ -70,7 +70,7 @@ void Snake::Draw()
 	pGM->render(&body);
 }
 
-void Snake::save()
+void Snake::save(nlohmann::json& saveJson)
 {
 
 }

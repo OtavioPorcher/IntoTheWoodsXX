@@ -8,7 +8,7 @@ using namespace Levels;
 #include <fstream>
 #include <ctime>
 
-Level::Level(StateMachine* psm, sID id_) : State(psm, id_),
+Level::Level(StateMachine* psm, sID id_, bID bid_) : State(psm, id_), Being(bid_),
 	pIM(Managers::InputManager::getInstance()),
 	pPIO(NULL),
 	pCM(NULL),
@@ -210,15 +210,110 @@ void Level::CreateSnake(sf::Vector2f pos, const bool random)
 	auxEntity = NULL;
 }
 
+void Level::CreatePlayer(nlohmann::json json)
+{
+	sf::Vector2f position = { json["PositionX"].get<float>(), json["PositionY"].get<float>() };
+	CreatePlayer(position);
+}
+
+void Level::CreateGround(nlohmann::json json)
+{
+
+}
+
+void Level::CreateGrass(nlohmann::json json)
+{
+
+}
+
+void Level::CreateSnake(nlohmann::json json)
+{
+
+}
+
 void Level::addEntity(Entities::Entity* pEntity)
 {
 	entityList.insertFront(pEntity);
 	pCM->addEntity(pEntity);
 }
 
+#include <fstream>
 void Level::saveLevel()
 {
 
+	std::cout << (int)getId() << std::endl;
+	nlohmann::json savedLevel;
+	nlohmann::json auxJson = { {"Level" , ((int)getId()) - 10} };
+	savedLevel.push_back(auxJson);
+
+	entityList.SaveEntities(savedLevel);
+
+	std::ofstream jsonFile(SAVEFILE);
+	
+	if (!jsonFile.is_open())
+	{
+		std::cout << "" << std::endl;
+		exit(1);
+	}
+
+	jsonFile << std::setw(4) <<savedLevel;
+	jsonFile.close();
+}
+
+void Level::loadLevel()
+{
+
+	std::ifstream jsonFile(SAVEFILE);
+	if (!jsonFile.is_open())
+	{
+		std::cout << "ERROR: Failed to open Leaderboard File!" << std::endl;
+		exit(1);
+	}
+
+	nlohmann::json SaveFile;
+	jsonFile >> SaveFile;
+	int levelID = 0;
+	for (auto it : SaveFile)
+	{
+		if (!levelID)
+			levelID = it["Level"].get<int>();
+		else
+		{
+			std::string Class = it["Class"];
+			 if (Class == "Player")
+			{
+				 CreatePlayer(it);
+			}
+			else  if (Class == "Ground")
+			 {
+				 CreateGround(it);
+			 }
+			else if (Class == "Grass")
+			 {
+				 CreateGrass(it);
+			 }
+			else if (Class == "Snake")
+			 {
+				 CreateSnake(it);
+			 }
+			else if (Class == "Bear")
+			 {
+				 CreateBear(it);
+			 }
+			else if (Class == "Trap")
+			 {
+				 CreateTrap(it);
+			 }
+			else if (Class == "Scorpion")
+			 {
+				 CreateScorpion(it);
+			 }
+			else if (Class == "Nest")
+			 {
+				 CreateNest(it);
+			 }
+		}
+	}
 }
 
 void Level::updateDeltaTime()

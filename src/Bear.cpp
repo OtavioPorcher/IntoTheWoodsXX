@@ -75,7 +75,7 @@ void Bear::Draw()
 	pGM->render(&body);
 }
 
-void Bear::save()
+void Bear::save(nlohmann::json& saveJson)
 {
 
 }

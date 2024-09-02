@@ -28,7 +28,7 @@ void MenuPause::Select()
 		pState->changeState(pState->getPreviousState()->getStateID());
 		break;
 	case 1:
-		//static_cast<Levels::Level*>(pState->getPreviousState())->saveLevel();
+		static_cast<Levels::Level*>(pState->getPreviousState())->saveLevel();
 		break;
 	case 2:
 		pGM->closeWindow();

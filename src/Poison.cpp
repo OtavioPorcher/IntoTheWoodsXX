@@ -41,7 +41,7 @@ void Poison::Draw()
 	pGM->render(&body);
 }
 
-void Poison::save()
+void Poison::save(nlohmann::json& saveJson)
 {
 
 }

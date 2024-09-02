@@ -27,7 +27,7 @@ namespace Entities
 		virtual void Draw() = 0;
 		virtual void Move() = 0;
 
-		virtual void save() = 0;
+		virtual void save(nlohmann::json& saveJson) = 0;
 
 		void Gravity();
 		void ThrustForce();

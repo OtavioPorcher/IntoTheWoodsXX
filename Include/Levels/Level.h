@@ -40,7 +40,7 @@ namespace Levels
         //Background
         //Texture
     public:
-        Level(StateMachine* psm, sID id_);
+        Level(StateMachine* psm, sID id_, bID bid_);
         virtual ~Level();
         
         static void setTwoPlayers(const bool b);
@@ -64,9 +64,23 @@ namespace Levels
         void CreateRandomGrassPatch(sf::Vector2f pos, const bool first);
         void CreateSnake(sf::Vector2f pos, const bool random = false);
 
+        void CreatePlayer(nlohmann::json json);
+        void CreateGround(nlohmann::json json);
+        void CreateGrass(nlohmann::json json);
+        void CreateSnake(nlohmann::json json);
+        virtual void CreateBear(nlohmann::json json) {  }
+        virtual void CreateTrap(nlohmann::json json) {  }
+        virtual void CreateScorpion(nlohmann::json json) {  }
+        virtual void CreateNest(nlohmann::json json) {  }
+        virtual void CreateScorpion(sf::Vector2f pos, const bool random = false) { }
+        virtual void CreateNest(sf::Vector2f pos, const bool random = false) { }
+        virtual void CreateBear(sf::Vector2f pos, const bool random = false) { }
+        virtual void CreateTrap(sf::Vector2f pos, const bool random = false) { }
+
         void addEntity(Entities::Entity* pEntity);
 
         void saveLevel();
+        void loadLevel();
 
         const bool checkWipe()const;
         const bool checkDone()const;

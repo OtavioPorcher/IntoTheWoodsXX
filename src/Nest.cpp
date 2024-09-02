@@ -41,7 +41,7 @@ void Nest::Update()
 	ThrustForce();
 }
 
-void Nest::save()
+void Nest::save(nlohmann::json& saveJson)
 {
 
 }

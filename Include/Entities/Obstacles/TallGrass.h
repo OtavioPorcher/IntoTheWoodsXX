@@ -16,8 +16,7 @@ namespace Entities
 
 			void Update();
 
-			void save();
-
+			void save(nlohmann::json& saveJson);
 
 			void updateVelMultiplier(Characters::Player* pPlayer);
 		};

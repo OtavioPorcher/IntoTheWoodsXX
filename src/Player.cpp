@@ -128,9 +128,21 @@ void Player::Draw()
 	pGM->render(&body);
 }
 
-void Player::save()
+void Player::save(nlohmann::json& saveJson)
 {
 
+
+	nlohmann::json dataPlayer = { 
+		{"Class", "Player"},
+		{"PositionX", pos.x},
+		{"PositionY", pos.y},
+		{"VelocityX", vel.x},
+		{"VelocityY", vel.y},
+		{"Lives", lives}
+
+	};
+
+	saveJson.push_back(dataPlayer);
 }
 
 const unsigned char Player::getPlayerId()const

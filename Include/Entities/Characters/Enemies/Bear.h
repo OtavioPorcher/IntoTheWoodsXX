@@ -26,7 +26,7 @@ namespace Entities
 					void Update();
 					void Draw();
 
-					void save();
+					void save(nlohmann::json& saveJson);
 
 					void throwRock();
 					

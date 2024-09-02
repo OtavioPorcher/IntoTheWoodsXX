@@ -31,7 +31,7 @@ namespace Entities
 				void Update();
 				void Draw();
 
-				void save();
+				void save(nlohmann::json& saveJson);
 
 				const std::vector<Projectiles::Poison*>* getProjetileList();
 

@@ -1,6 +1,9 @@
 #pragma once
 #include "Managers/GraphicManager.h"
 
+#include "Utils/json.hpp"
+#define SAVEFILE "Assets/SavedLevel.json"
+
 enum class bID
 {
 	empty	   = -1,

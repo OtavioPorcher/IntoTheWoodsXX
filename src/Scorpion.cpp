@@ -48,7 +48,7 @@ void Scorpion::Draw()
 	pGM->render(&body);
 }
 
-void Scorpion::save()
+void Scorpion::save(nlohmann::json& saveJson)
 {
 
 }

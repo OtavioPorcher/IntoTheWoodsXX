@@ -30,7 +30,7 @@ void Ground::Draw()
 	pGM->render(&body);
 }
 
-void Ground::save()
+void Ground::save(nlohmann::json& saveJson)
 {
 
 }
