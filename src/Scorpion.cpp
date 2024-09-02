@@ -8,7 +8,7 @@ using namespace Enemies;
 Scorpion::Scorpion(sf::Vector2f position) : Enemy({50.0f,50.0f}, bID::scorpion),
 origin(position),
 facingRight(true),
-range(160.0f),
+range(150.0f),
 dist(0.0f)
 {
 	pos = position;

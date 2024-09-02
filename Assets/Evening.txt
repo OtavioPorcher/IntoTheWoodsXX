@@ -5,7 +5,7 @@ G                                                                               
 G                                                                                                               G
 G                                                                                                               G
 G             S      QQQ                                                  C                      GGQQQ          G
-G             GGGGG              S        QQQQQQ       S     QQQQ      GGMGG               GGG                  G
+G             GGGGG              S        QQQQQQ       S     QQQQ     GGGNGGG              GGG                  G
 G P P                            GGQQQ                GGGQQ                                                     G
 G                      E VVVV            XXVVVV        Y    XXXX  VVV      E               VVVVV   XX  Y       *G
 GGGGGGGGNGGGGGGGGGGGGGGGGGGMGGGGGGGGGGGGGGGGGGGGNGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGMGGGGGG
