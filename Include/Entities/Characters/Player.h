@@ -44,6 +44,8 @@ namespace Entities
 			void Update();
 			void Draw();
 
+			void save();
+
 			const unsigned char getPlayerId()const;
 
 			static void Score(bID id_);

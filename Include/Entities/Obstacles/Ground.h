@@ -16,7 +16,8 @@ namespace Entities
 			void Move();
 			void Update();
 			void Draw();
-			
+
+			void save();			
 		};
 	}
 }

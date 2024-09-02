@@ -75,6 +75,11 @@ void Bear::Draw()
 	pGM->render(&body);
 }
 
+void Bear::save()
+{
+
+}
+
 void Bear::throwRock()
 {
 	if (timerRockCD < 1.f)

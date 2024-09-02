@@ -25,6 +25,11 @@ void TallGrass::Update()
 	body.setPosition(pos);
 }
 
+void TallGrass::save()
+{
+
+}
+
 void TallGrass::updateVelMultiplier(Characters::Player* pPlayer)
 {
 	pPlayer->setVelMultiplier(speedRedution);

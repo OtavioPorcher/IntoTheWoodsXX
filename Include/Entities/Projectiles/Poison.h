@@ -20,6 +20,8 @@ namespace Entities
 			void Move();
 			void Draw();
 
+			void save();
+
 			void Collide(Characters::Player* pPlayer);
 
 

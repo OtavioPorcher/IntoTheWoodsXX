@@ -41,6 +41,11 @@ void Poison::Draw()
 	pGM->render(&body);
 }
 
+void Poison::save()
+{
+
+}
+
 void Poison::Collide(Characters::Player* pPlayer)
 {
 	pPlayer->sufferDMG();

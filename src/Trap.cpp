@@ -28,3 +28,8 @@ void Trap::Update()
 {
 	body.setPosition(pos);
 }
+
+void Trap::save()
+{
+
+}

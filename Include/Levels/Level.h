@@ -31,6 +31,8 @@ namespace Levels
         Player* pPlayer1;
         Player* pPlayer2;
 
+        //sf::Text
+
         EntityList entityList;
         
         float end;
@@ -64,6 +66,7 @@ namespace Levels
 
         void addEntity(Entities::Entity* pEntity);
 
+        void saveLevel();
 
         const bool checkWipe()const;
         const bool checkDone()const;

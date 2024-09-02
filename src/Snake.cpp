@@ -70,6 +70,11 @@ void Snake::Draw()
 	pGM->render(&body);
 }
 
+void Snake::save()
+{
+
+}
+
 const std::vector<Projectiles::Poison*>* Snake::getProjetileList()
 {
 	return &projectileList;

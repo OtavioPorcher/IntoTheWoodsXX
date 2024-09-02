@@ -18,6 +18,8 @@ namespace Entities
 			const bool Collide(Characters::Player* pPlayer);
 
 			void Update();
+
+			void save();
 		};
 	}
 }

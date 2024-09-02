@@ -48,6 +48,11 @@ void Scorpion::Draw()
 	pGM->render(&body);
 }
 
+void Scorpion::save()
+{
+
+}
+
 void Scorpion::attack(Player* pPlayer)
 {
 	if (atkCdTimer > 0.8f)

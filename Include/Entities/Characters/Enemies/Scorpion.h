@@ -25,6 +25,8 @@ namespace Entities
 				void Update();
 				void Draw();
 
+				void save();
+
 				void attack(Player* pPlayer);
 			};
 		}

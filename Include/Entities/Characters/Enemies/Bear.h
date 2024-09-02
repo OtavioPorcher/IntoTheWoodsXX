@@ -26,6 +26,8 @@ namespace Entities
 					void Update();
 					void Draw();
 
+					void save();
+
 					void throwRock();
 					
 					void attack(Player* pPlayer);

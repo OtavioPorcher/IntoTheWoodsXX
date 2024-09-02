@@ -26,7 +26,7 @@ namespace Lists
 
 		List<Entity>& getList();
 
-		//void SaveEntities();
+		void SaveEntities();
 		//void LoadEntities();
 
 		int getSize();

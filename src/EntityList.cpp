@@ -61,6 +61,16 @@ List<Entities::Entity>& EntityList::getList()
 	return list;
 }
 
+void Lists::EntityList::SaveEntities()
+{
+	List<Entity>::Iterator<Entity> it = list.begin();
+	for (it; it != list.end(); it++)
+	{
+		//if ((*it)->getActive())
+			//(*it)->Save();
+	}
+}
+
 int EntityList::getSize()
 {
 	return list.getSize();

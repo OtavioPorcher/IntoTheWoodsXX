@@ -216,6 +216,11 @@ void Level::addEntity(Entities::Entity* pEntity)
 	pCM->addEntity(pEntity);
 }
 
+void Level::saveLevel()
+{
+
+}
+
 void Level::updateDeltaTime()
 {
 	dt = clock.getElapsedTime().asSeconds();
@@ -246,7 +251,6 @@ void Level::updateView()
 		auxView = minX;
 	if (auxView > maxX)
 		auxView = maxX;
-
 
 	pGM->centerView({auxView, RES_Y/2});
 }

@@ -36,6 +36,11 @@ void Entities::Projectiles::Rock::Draw()
 	pGM->render(&body);
 }
 
+void Rock::save()
+{
+
+}
+
 void Entities::Projectiles::Rock::Collide(Characters::Player* pPlayer)
 {
 	pPlayer->sufferDMG(damage, true);

@@ -16,6 +16,9 @@ namespace Entities
 
 			void Update();
 
+			void save();
+
+
 			void updateVelMultiplier(Characters::Player* pPlayer);
 		};
 	}

@@ -128,6 +128,11 @@ void Player::Draw()
 	pGM->render(&body);
 }
 
+void Player::save()
+{
+
+}
+
 const unsigned char Player::getPlayerId()const
 {
 	return playerId;

@@ -40,3 +40,8 @@ void Nest::Update()
 	Gravity();
 	ThrustForce();
 }
+
+void Nest::save()
+{
+
+}

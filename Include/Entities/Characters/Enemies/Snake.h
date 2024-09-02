@@ -31,6 +31,8 @@ namespace Entities
 				void Update();
 				void Draw();
 
+				void save();
+
 				const std::vector<Projectiles::Poison*>* getProjetileList();
 
 				void attack(Player* pPlayer);
