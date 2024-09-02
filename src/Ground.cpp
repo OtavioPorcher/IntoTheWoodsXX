@@ -6,7 +6,7 @@ Ground::Ground(sf::Vector2f position):
 	Obstacle(true, bID::ground)
 {
 	pos = position;
-	body.setFillColor(sf::Color::Green);
+	body.setFillColor(sf::Color(4, 82, 12));
 }
 Ground::~Ground()
 {

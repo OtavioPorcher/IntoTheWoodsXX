@@ -37,8 +37,6 @@ Level::~Level()
 
 void Level::Draw()
 {
-	//background.setPos(pGM->getViewCenter());
-	//pGM->render(&background);
 	entityList.DrawEntities();
 }
 

@@ -12,7 +12,7 @@ Snake::Snake(Levels::Level* pL, sf::Vector2f position) : Enemy({50.f, 50.f}, bID
 	projectileList(),
 	pLevel(pL)
 {
-	body.setFillColor(sf::Color::Blue);
+	body.setFillColor(sf::Color::Yellow);
 	pos = position;
 }
 

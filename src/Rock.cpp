@@ -7,7 +7,7 @@ using namespace Projectiles;
 Entities::Projectiles::Rock::Rock(sf::Vector2f position) : Projectile(2, true, {30.f, 30.f}),
 	damage(2)
 {
-	body.setFillColor(sf::Color(146, 142, 133));
+	body.setFillColor(sf::Color(232, 220, 134));
 	pos = position;
 	grounded = false;
 }

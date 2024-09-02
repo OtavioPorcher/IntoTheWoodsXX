@@ -8,7 +8,7 @@ Nest::Nest(Evening* pL, sf::Vector2f position): Obstacle(true, bID::nest),
 	activated(false)
 {
 	pos = position;
-	body.setFillColor(sf::Color::Yellow);
+	body.setFillColor(sf::Color(2, 51, 7));
 }
 
 Nest::~Nest()

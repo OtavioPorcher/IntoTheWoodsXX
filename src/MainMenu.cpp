@@ -5,9 +5,9 @@ using namespace Menus;
 MainMenu::MainMenu(StateMenu* pS):Menu(pS),
 	twoPlayers(false)
 {
-	newButton({ RES_X / 2.f, 200.f }, 40, "New Game");
-	newButton({ RES_X / 2.f, 300.f }, 40, "Two Players: OFF");
-	newButton({ RES_X / 2.f, 400.f }, 40, "Leaderboard");
+	newButton({ RES_X / 2.f, 200.f }, 60, "New Game");
+	newButton({ RES_X / 2.f, 300.f }, 60, "Two Players: OFF");
+	newButton({ RES_X / 2.f, 400.f }, 60, "Leaderboard");
 }
 
 MainMenu::~MainMenu()

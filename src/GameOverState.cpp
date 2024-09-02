@@ -10,9 +10,9 @@ using namespace States;
 GameOverState::GameOverState(StateMachine* pSM) : State(pSM, sID::gameOver),
 pGM(Managers::GraphicManager::getInstance()),
 pTO(NULL),
-GameOver("", pGM->getFont(), 50),
-name("",pGM->getFont(), 30),
-Score("", pGM->getFont(), 30)
+GameOver("", pGM->getFont(), 80),
+name("",pGM->getFont(), 50),
+Score("", pGM->getFont(), 50)
 {
 	Managers::InputManager* pIM = Managers::InputManager::getInstance();
 	try { pTO = new Observers::TextObserver(this); }

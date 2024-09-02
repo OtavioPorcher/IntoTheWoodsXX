@@ -37,8 +37,6 @@ namespace Levels
         
         float end;
 
-        //Background
-        //Texture
     public:
         Level(StateMachine* psm, sID id_);
         virtual ~Level();

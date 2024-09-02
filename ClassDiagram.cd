@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entities::Entity" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAQAIAgAAIGYAgAAAKAACIAAASAAAAAAAAABIAAACAA=</HashCode>
+      <FileName>Include\Entities\Entity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Projectiles::Poison" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAICCAgAAAAAAAAQAAEAIAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Entities\Projectiles\Poison.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Characters::Player" Collapsed="true">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASEAASBCqCAAhgAAAAAAAgQACAAAQOIQBCQIQAAADA=</HashCode>
+      <FileName>Include\Entities\Characters\Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Projectiles::Projectile" Collapsed="true">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAgAAAAgAAAAQAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Include\Entities\Projectiles\Projectile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Projectiles::Rock" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAICAggAAAEAAABQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Entities\Projectiles\Rock.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Obstacles::Trap" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAEACAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Entities\Obstacles\Trap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Obstacles::Obstacle" Collapsed="true">
+    <Position X="18" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggAAAAAAIAAAgAAAAAAAAQAAAgAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Include\Entities\Obstacles\Obstacle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Obstacles::Nest" Collapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAgAAACAAAAAAgAAQAQAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Entities\Obstacles\Nest.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Obstacles::TallGrass" Collapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAEACAAAAAAAAAAAQAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Include\Entities\Obstacles\TallGrass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Obstacles::Ground" Collapsed="true">
+    <Position X="21.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAICAAgAAAAAAAAAAAAAAAAAAAAAAAAAAECA=</HashCode>
+      <FileName>Include\Entities\Obstacles\Ground.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Characters::Character" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAACAAAAAAKAA=</HashCode>
+      <FileName>Include\Entities\Characters\Character.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Characters::Enemies::Enemy" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAAgAAAAAAAAAAAAIAAgAAAAAAAACABAAQAAAAEAA=</HashCode>
+      <FileName>Include\Entities\Characters\Enemies\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Characters::Enemies::Scorpion" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQCAAAIAKCAEgAACAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Entities\Characters\Enemies\Scorpion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Levels::Dawn" Collapsed="true">
+    <Position X="2.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAQAAAAAABAAAAQBAAAAAIAAAAQAACAAACAAAAAQ=</HashCode>
+      <FileName>Include\Levels\Dawn.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Characters::Enemies::Bear" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAKCAQiAAAgAAAAAIAAAAQACAAAAQAAAAAAA=</HashCode>
+      <FileName>Include\Entities\Characters\Enemies\Bear.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Levels::Level" Collapsed="true">
+    <Position X="3.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EISAAAGCBYJARgQjACJAAQAAEAAAAQARAAQDBAiAACA=</HashCode>
+      <FileName>Include\Levels\Level.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities::Characters::Enemies::Snake" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAAAAICARgAAAgAAAAAIEAAIAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Entities\Characters\Enemies\Snake.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Levels::Evening" Collapsed="true">
+    <Position X="5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAGAAAAAAABAAAAABAAAAAACAACQCAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Levels\Evening.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Managers::CollisionManager" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAAAAAAAAAQAABEAAAAAAgEAAAAAAAAAAACACIgAA=</HashCode>
+      <FileName>Include\Managers\CollisionManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Managers::EventManager" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAABAAAAAAAAAAAAAAAAAAAAFAAAQAAAAAAAAAAII=</HashCode>
+      <FileName>Include\Managers\EventManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Managers::GraphicManager" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMIAAAAAAAAAAACAAAAQAAAAAAFAAAQIAQAAABCQCAA=</HashCode>
+      <FileName>Include\Managers\GraphicManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Managers::InputManager" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAQAgAAQCQAAAAABAAAUBAAQAIAAAAAA=</HashCode>
+      <FileName>Include\Managers\InputManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menus::MainMenu" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIACQAAAAAAAAAAQAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Include\Menus\MainMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menus::StateMenu" Collapsed="true">
+    <Position X="7.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJUAAAAAAIAAAgAgAAAAAAACAAgAAAAAQAAAQAAAAAA=</HashCode>
+      <FileName>Include\Menus\StateMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menus::Menu" Collapsed="true">
+    <Position X="3.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAIBAAgCAAAAAAAAAAEAIAAAAQAAAwAAAAAA=</HashCode>
+      <FileName>Include\Menus\Menu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menus::MenuPause" Collapsed="true">
+    <Position X="7.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQgAAAAA=</HashCode>
+      <FileName>Include\Menus\MenuPause.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menus::NewGameMenu" Collapsed="true">
+    <Position X="2.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAACAQAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Include\Menus\NewGameMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menus::Ranking" Collapsed="true">
+    <Position X="5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAABAAwAAAAAAQAoAIAAAAAAAAAAAQBAAARA=</HashCode>
+      <FileName>Include\Menus\Ranking.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Observers::Observer" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAASAE=</HashCode>
+      <FileName>Include\Observers\Observer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Observers::MenuObserver" Collapsed="true">
+    <Position X="10.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAQCE=</HashCode>
+      <FileName>Include\Observers\MenuObserver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Observers::PlayerInputObserver" Collapsed="true">
+    <Position X="12.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAgAQAgAAAAAAAgAIIAAAAAAAAIAAAMAAAAAAIAQAE=</HashCode>
+      <FileName>Include\Observers\PlayerInputObserver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Observers::TextObserver" Collapsed="true">
+    <Position X="15" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIIAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAQAE=</HashCode>
+      <FileName>Include\Observers\TextObserver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="States::GameOverState" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARQgAAAAAAAAggAAAAgAAAAAAAEAAAAAAAABgAACIA=</HashCode>
+      <FileName>Include\States\GameOverState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="States::StateMachine" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAYAIAAACAAQAAAIAAAAAAEAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\States\StateMachine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="States::State" Collapsed="true">
+    <Position X="3.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAAAAABgAAACQAAAAAAAQIAAAAAABABBgABgA=</HashCode>
+      <FileName>Include\States\State.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lists::EntityList" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAgAAAIAAAAAABAAABQIAAAAAAAAQAQAAggBAAAA=</HashCode>
+      <FileName>Include\Utils\EntityList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lists::List&lt;TYPE&gt;" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAACAIBAAAAEgIAAAQASAAEgAgAQCAAAAAAAgAI=</HashCode>
+      <FileName>Include\Utils\List.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="States::sID" Collapsed="true">
+    <Position X="24" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAgAAAABASAAAACAAACAAAAAAAAIA=</HashCode>
+      <FileName>Include\States\State.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

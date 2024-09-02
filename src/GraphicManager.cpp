@@ -7,7 +7,7 @@ GraphicManager::GraphicManager():
     window(sf::VideoMode(RES_X, RES_Y), "IntoTheWoods++"),
     view(window.getView())
 {
-    try { font.loadFromFile("Assets/arialbd.ttf"); }
+    try { font.loadFromFile("Assets/font.ttf"); }
     catch (int error)
     {
         if (!error)

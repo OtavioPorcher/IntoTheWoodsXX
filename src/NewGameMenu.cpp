@@ -4,10 +4,10 @@ using namespace Menus;
 
 NewGameMenu::NewGameMenu(StateMenu* pState) : Menu(pState)
 {
-	newButton({ RES_X / 2, 150 }, 50, "Evening");
-	newButton({ RES_X / 2, 250 }, 50, "Dawn");
+	newButton({ RES_X / 2, 150 }, 80, "Evening");
+	newButton({ RES_X / 2, 250 }, 80, "Dawn");
 	if (saveLoaded)
-		newButton({ RES_X / 2, 350 }, 50, "Saved Level");
+		newButton({ RES_X / 2, 350 }, 80, "Saved Level");
 }
 
 NewGameMenu::~NewGameMenu()

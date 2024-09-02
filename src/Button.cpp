@@ -36,7 +36,7 @@ void Button::setText(std::string txt)
 void Button::hovering(const bool a)
 {
 	if (a)
-		text.setFillColor(sf::Color::Yellow);
+		text.setFillColor(sf::Color(245, 204, 69));
 	else
 		text.setFillColor(sf::Color::White);
 }

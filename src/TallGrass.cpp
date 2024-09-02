@@ -7,7 +7,7 @@ using namespace Obstacles;
 TallGrass::TallGrass(sf::Vector2f position, float slow) : Obstacle(false, bID::grass, {50.f,25.f}),
 	speedRedution(slow)
 {
-	body.setFillColor(sf::Color::White);
+	body.setFillColor(sf::Color(65, 152, 10));
 	pos.x = position.x;
 	pos.y = position.y + 25.f;
 }
