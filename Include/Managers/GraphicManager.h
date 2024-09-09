@@ -5,7 +5,8 @@
 
 namespace Managers {
 
-    class GraphicManager {
+    class GraphicManager // Gerenciador Gráfico adaptado dos tutoriais da monitoria da disciplina de Técnicas de Programação
+    {
     private:
         static Managers::GraphicManager* instance;
         GraphicManager();

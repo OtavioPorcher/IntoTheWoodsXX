@@ -7,7 +7,7 @@
 
 namespace Managers
 {
-	class InputManager
+	class InputManager //Estrutura de Gerenciamento de Inputs e Eventos baseada nas oficinas do PETECO.
 	{
 	private:
 		static InputManager* instance;

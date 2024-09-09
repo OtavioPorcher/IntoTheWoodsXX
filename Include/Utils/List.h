@@ -7,7 +7,7 @@ namespace Lists
 {
 
 	template <class TYPE>
-	class List
+	class List // Classe List implementada aplicando os conceitos apresentados na disciplina Técnicas de Programação.
 	{
 	public:
 

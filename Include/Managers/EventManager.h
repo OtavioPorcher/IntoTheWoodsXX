@@ -7,7 +7,7 @@ using namespace Managers;
 
 namespace Managers
 {
-	class EventManager
+	class EventManager //Estrutura de Gerenciamento de Inputs e Eventos baseada nas oficinas do PETECO.
 	{
 	private:
 		EventManager();
